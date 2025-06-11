@@ -18,6 +18,7 @@ function Navbar2() {
   const handleClick = (e) => {
     handlefocus();
   };
+
   return (
     <nav
       id="nav2"
@@ -90,6 +91,7 @@ function Navbar2() {
       >
         <NavLink
           to="/"
+          onClick={handleClick}
           className={({ isActive }) => (isActive ? "linkanimate mobilenavbar" : "mobilenavbar")}
         >
           Home
@@ -97,6 +99,7 @@ function Navbar2() {
        
         <NavLink
           to="/About"
+          onClick={handleClick}
           className={({ isActive }) => (isActive ? "linkanimate mobilenavbar" : "mobilenavbar")}
         >
           About
@@ -104,6 +107,7 @@ function Navbar2() {
         
         <NavLink
           to="/Events"
+          onClick={handleClick}
           className={({ isActive }) => (isActive ? "linkanimate mobilenavbar" : "mobilenavbar")}
         >
           Events
@@ -111,6 +115,7 @@ function Navbar2() {
         
         <NavLink
           to="/Memberinfo"
+          onClick={handleClick}
           className={({ isActive }) => (isActive ? "linkanimate mobilenavbar" : "mobilenavbar")}
         >
           Technical Committee
@@ -118,6 +123,7 @@ function Navbar2() {
         
         <NavLink
           to="/Contact"
+          onClick={handleClick}
           className={({ isActive }) => (isActive ? "linkanimate mobilenavbar" : "mobilenavbar")}
         >
           Enquiry
