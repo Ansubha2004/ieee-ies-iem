@@ -91,17 +91,17 @@
     },
     {
         "id":"7",
-        "name":"",
-        "role":"",
-        "image":"",
-        "description":"",
+        "name":"Somsuddha Dasgupta",
+        "role":"Treasurer",
+        "image":"Somsuddha",
+        "description":"Manages financial planning and budgeting for chapter activities, ensures transparent allocation of resources, and supports the execution of technical initiatives aligned with the chapter’s objectives in industrial applications of electrical and electronic engineering.",
         "socialmedia":[{
             "platform":"LinkedIn",
-            "link":""
+            "link":"https://www.linkedin.com/in/somsuddha-dasgupta-618b70284/"
         },
         {
             "platform":"Mail",
-            "link":""
+            "link":"somsuddha07@gmail.com"
         }]
     }
 ]
