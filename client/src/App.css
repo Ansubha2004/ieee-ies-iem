@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@layer components{
+    .Navbar{
+        @apply w-full box-border px-[4%] sm:px-[8%] flex justify-between items-center h-auto;
+    }
+    .Navbar2{
+        @apply w-full box-border px-[4%] sm:px-[8%] flex flex-col h-auto;
+    }
+    .navbaricons{
+        @apply h-[2rem] object-contain ;
+    }
+    .linkanimate
+    {
+        @apply transition-all  duration-100 ease-in-out sm:scale-[1]  font-[600] text-amber-600 ;
+    }
+    .dotcomponent{
+        @apply aspect-square w-[8px] rounded-full bg-amber-600;
+    }
+    .btn1{
+        @apply bg-gradient-to-r from-amber-700 to-amber-500 rounded-[5px] py-[2%] hover:opacity-[0.9] px-[3.5%] sm:px-[2%] text-white cursor-pointer active:scale-[0.95] transition-all  ;
+     }
+     .iconanimate{
+        @apply hover:scale-[0.95] active:scale-[0.95] hover:opacity-[0.8] cursor-pointer;
+       }
+    .mobilenavbar
+    {
+        @apply w-full py-4 px-4 text-center
+    }
+    .animatedbutton1
+    {
+        @apply font-[400] cursor-pointer focus:underline text-[0.9rem] text-zinc-500 focus:underline-offset-4 hover:scale-[1.02] active:scale-[1.02] focus:font-[500] focus:text-amber-600 transition-all duration-200 ease-in-out;
+    }
+    .heading
+    {
+        @apply font-[900] sm:font-[700] text-[1.6rem] sm:text-[2rem] bg-gradient-to-b from-orange-700 to-amber-300 bg-clip-text text-transparent;
+    }
+    .paratext
+    {
+        @apply text-justify sm:text-left text-zinc-500 font-[400];
+    }
+    .profilecard
+    {
+        @apply w-full h-fit p-7 bg-gradient-to-br from-white to-amber-100 scroll-mt-[170px] rounded-[5px] relative shadow-[0px_0px_15px_0px_rgba(0,0,0,0.2)] flex;
+    }
+}

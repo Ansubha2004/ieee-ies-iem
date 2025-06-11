@@ -1,0 +1,107 @@
+[
+    {
+        "id":"1",
+        "name":"Dr. Prof Sourav Das",
+        "role":"Founder and Advisor",
+        "image":"Sourav",
+        "description":"The IEEE-Industrial Electronics Society (IES) Student Branch Chapter (SBC) is established in 2025 at the Institute of Engineering and Management (IEM), Kolkata. As a recently launched chapter, it is committed to promoting innovation, research, and professional development in the field of industrial electronics. Operating under the enthusiastic guidance of Prof. Dr. Sourav Das from the Department of Electrical Engineering, IEM Kolkata, the chapter aims to bridge the gap between industry and academia, empowering students to explore cutting-edge technologies and practical applications in industrial automation, power electronics, and control systems.",
+        "socialmedia":[{
+            "platform":"LinkedIn",
+            "link":"https://www.linkedin.com/in/dr-sourav-das-phd-bb003092/"
+        },
+        {
+            "platform":"Mail",
+            "link":"sourav.das@iem.edu.in"
+        }]
+    },
+    {
+        "id":"2",
+        "name":"Arkadeep Ghosh",
+        "role":"Chairperson",
+        "image":"Arkadeep",
+        "description":"Oversees the planning and execution of student-driven technical initiatives, promotes industry-oriented learning, and facilitates collaboration within the chapter to advance innovation in industrial electronics, including areas such as automation, power electronics, embedded systems, and control technologies.",
+        "socialmedia":[{
+            "platform":"LinkedIn",
+            "link":"https://www.linkedin.com/in/arkadeep-ghosh-7bb86028b/"
+        },
+        {
+            "platform":"Mail",
+            "link":"arkadeep.ghosh2022@iem.edu.in"
+        }]
+    },
+    {
+        "id":"3",
+        "name":"Agnik Mitra",
+        "role":"Vice Chairman",
+        "image":"Agnik",
+        "description":"Supports the leadership team in organizing technical events, coordinating member activities, and promoting interdisciplinary engagement to enhance student involvement in industrial electronics, focusing on areas such as smart systems, power conversion, automation, and embedded technologies.",
+        "socialmedia":[{
+            "platform":"LinkedIn",
+            "link":"https://www.linkedin.com/in/agnik-mitra-6aa27028b/"
+        },
+        {
+            "platform":"Mail",
+            "link":"agnik.mitra2023@iem.edu.in"
+        }]
+    },
+    {
+        "id":"4",
+        "name":"Srija Pal",
+        "role":"Secretary",
+        "image":"Srija",
+        "description":"Supports the leadership team by managing communications, maintaining official records, and coordinating meetings and events. Plays a key role in organizing technical activities, engaging members, and fostering interdisciplinary collaboration to enhance student participation in the field of industrial electronics, including automation, power electronics, and embedded systems.",
+        "socialmedia":[{
+            "platform":"LinkedIn",
+            "link":"https://www.linkedin.com/in/srija-pal-38440428b/"
+        },
+        {
+            "platform":"Mail",
+            "link":"srijapal2005@gMail.com"
+        }]
+    },
+    {
+        "id":"5",
+        "name":"Ansubha Dhar",
+        "role":"Web Master",
+        "image":"Ansubha",
+        "description":"Responsible for designing, developing, and maintaining the chapter’s digital presence. Manages the official website, updates content related to events, achievements, and announcements, and ensures seamless online engagement. Supports the chapter’s mission by enhancing visibility, promoting technical activities, and enabling effective communication through digital platforms.",
+        "socialmedia":[{
+            "platform":"LinkedIn",
+            "link":"https://www.linkedin.com/in/ansubha-dhar-856176296/"
+        },
+        {
+            "platform":"Mail",
+            "link":"ansubha.dhar2023@iem.edu.in"
+        }]
+    },
+    {
+        "id":"6",
+        "name":"Sneha Mondal",
+        "role":"Treasurer",
+        "image":"Sneha",
+        "description":"Manages financial planning and budgeting for chapter activities, ensures transparent allocation of resources, and supports the execution of technical initiatives aligned with the chapter’s objectives in industrial applications of electrical and electronic engineering.",
+        "socialmedia":[{
+            "platform":"LinkedIn",
+            "link":"https://www.linkedin.com/in/sneha-mondal-395792291/"
+        },
+        {
+            "platform":"Mail",
+            "link":"sneha.mondal2023@iem.edu.in"
+        }]
+    },
+    {
+        "id":"7",
+        "name":"",
+        "role":"",
+        "image":"",
+        "description":"",
+        "socialmedia":[{
+            "platform":"LinkedIn",
+            "link":""
+        },
+        {
+            "platform":"Mail",
+            "link":""
+        }]
+    }
+]

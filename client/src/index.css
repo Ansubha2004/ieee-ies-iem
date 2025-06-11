@@ -1,0 +1,35 @@
+body,
+html {
+  
+  overscroll-behavior: none;
+  position: relative;
+  font-size: 20px;
+}
+#root {
+  
+  background-color: white;
+  width: 100vw;
+  height: auto;
+  user-select: none;
+  position: relative;
+}
+@media (max-width: 640px) {
+  body,
+  html {
+    font-size: 14px;
+  }
+}
+@media (min-width:641px)and (max-width: 1024px) {
+  body,
+  html {
+    font-size: 16px;
+  }
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
+}
