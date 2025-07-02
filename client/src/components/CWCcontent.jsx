@@ -16,7 +16,7 @@ function CWCcontent() {
       <p className="font-bold  ">Content :-</p>
       <ol className="flex flex-col gap-1">
         <li>
-          <button onClick={()=>scrollTo("#advisor")} className="animatedbutton1"> Founder/Advisor</button>
+          <button onClick={()=>scrollTo("#advisor")} className="animatedbutton1"> The Advisor</button>
         </li>
         <li>
           <button onClick={()=>scrollTo("#cwcmembers")} className="animatedbutton1"> CWC Members</button>

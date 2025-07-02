@@ -8,7 +8,7 @@ function CWCintro() {
         Organising members of IEEE-IES
       </p>
       <br />
-      <p className="paratext">
+      <p className="paratext"> 
         The core committee members of the IEEE IES IEM Student Chapter are
         dedicated student leaders who actively drive the chapter’s mission
         forward. They are responsible for planning and organizing technical

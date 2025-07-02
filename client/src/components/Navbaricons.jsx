@@ -10,19 +10,20 @@ import iemlogo from "../assets/images/iemlogo.png";
 function Navbaricons({ additionalcss }) {
   return (
     <div className={clsx("sm:w-[50%] justify-end flex gap-2 items-center py-1",additionalcss)}>
-      <a href="">
+      <a target="main" href="https://www.instagram.com/ieee_ies_official?igsh=MTB0djBzdWdoOXFncA==">
         <img src={instagram} className="navbaricons iconanimate" alt="" />
       </a>
-      <a href="">
+      <a target="main" href="https://www.linkedin.com/company/ieee-ies-iem/">
         <img src={linkedin} className="navbaricons iconanimate" alt="" />
       </a>
-      <a href="">
+      <a target="main" href="https://www.facebook.com/profile.php?id=61577417579820&mibextid=ZbWKwL">
         <img src={facebook} className="navbaricons iconanimate" alt="" />
       </a>
 
       <Button
         Content="Join IEEE-IES"
         themecss="btn1 whitespace-nowrap sm:text-[1rem] text-[0.9rem]"
+        click={()=>window.open("https://www.ieee.org/membership-catalog/productdetail/showProductDetailPage.html?product=MEMIE013")}
       />
       <img
         src={iemlogo}
