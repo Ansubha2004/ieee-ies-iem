@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { ImMenu3 } from "react-icons/im";
 import clsx from "clsx";
 import iemlogo from "../assets/images/iemlogo.png";
+import uemlogo from "../assets/images/uemlogo.png";
 import Navbaricons from "../components/Navbaricons.jsx";
 
 function Navbar2() {
@@ -29,10 +30,16 @@ function Navbar2() {
           <img src={ieeeieslogo} className=" h-[3.3rem] lg:h-[3.5rem] my-2" />
         </div>
         <Navbaricons additionalcss="sm:flex hidden" />
-        <img
-          src={iemlogo}
-          className="sm:hidden  h-[3.3rem]  lg:h-[3.5rem] my-2"
-        />
+        <div className="sm:hidden flex items-center gap-2">
+          <img
+            src={iemlogo}
+            className="h-[3.3rem]  lg:h-[3.5rem] my-2"
+          />
+          <img
+            src={uemlogo}
+            className="h-[3.3rem]  lg:h-[3.5rem] my-2"
+          />
+        </div>
       </div>
       <div className="w-full px-3 flex justify-between  sm:hidden">
         <button
@@ -96,7 +103,7 @@ function Navbar2() {
         >
           Home
         </NavLink>
-       
+
         <NavLink
           to="/About"
           onClick={handleClick}
@@ -104,7 +111,7 @@ function Navbar2() {
         >
           About
         </NavLink>
-        
+
         <NavLink
           to="/Events"
           onClick={handleClick}
@@ -112,7 +119,7 @@ function Navbar2() {
         >
           Events
         </NavLink>
-        
+
         <NavLink
           to="/Memberinfo"
           onClick={handleClick}
@@ -120,7 +127,7 @@ function Navbar2() {
         >
           Technical Committee
         </NavLink>
-        
+
         <NavLink
           to="/Contact"
           onClick={handleClick}

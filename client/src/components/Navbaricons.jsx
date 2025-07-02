@@ -5,6 +5,7 @@ import instagram from "../assets/icons/instagram.png";
 import facebook from "../assets/icons/facebook.png";
 import linkedin from "../assets/icons/linkedin.png";
 import iemlogo from "../assets/images/iemlogo.png";
+import uemlogo from "../assets/images/uemlogo.png";
 
 
 function Navbaricons({ additionalcss }) {
@@ -29,6 +30,7 @@ function Navbaricons({ additionalcss }) {
         src={iemlogo}
         className="hidden sm:block  h-[3.3rem]  lg:h-[3.5rem] my-2"
       />
+      <img src={uemlogo} className="hidden sm:block  h-[3.2rem]  lg:h-[3.5rem] my-2" alt="" />
     </div>
   );
 }
