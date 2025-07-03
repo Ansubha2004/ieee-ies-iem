@@ -26,9 +26,9 @@ function Homebanner() {
     >
       <img
         src={homebackground}
-        className="absolute h-full w-full z-[0] object-cover "
+        className="absolute h-full w-full z-[0] object-cover  "
       />
-      <div className="relative oswald-text z-[1]  w-[80%] rounded-[15px] sm:w-[80%] md:w-[70%] h-auto max-h-[90%]  shadow-[0px_0px_10px_10px_rgba(255,255,255,.1)] flex flex-col justify-around items-center box-border px-[3%] py-[3%]">
+      <div className="relative oswald-text z-[1]  w-full rounded-[15px] h-full bg-black/50  flex flex-col justify-evenly items-center box-border px-[3%] py-[3%]">
         <div className=" whitespace-nowrap  text-orange-100 text-[1.3rem] sm:text-[1.5rem] md:text-[1.9rem] lg:text-[2.5rem] text-center  font-bold">
           <p className="text-[0.9rem] textshadow sm:text-[1.1rem]  ">Welcome to IEEE</p>
           <p className="textshadow">Industrial Electronics Society</p>
@@ -38,12 +38,12 @@ function Homebanner() {
         </div>
         <div
           id="logo"
-          className="w-full flex justify-center gap-[1rem] my-2 items-center scale-[0.8]"
+          className="w-full flex justify-center gap-[1rem] items-center scale-[0.8]"
         >
           <img src={ieeeieslogo} className="h-[2.8rem]" />
           <img src={iemlogo} className="h-[3.2rem]" />
         </div>
-        <p className=" text-center text-white textshadow font-700 w-[80%] text-[0.7rem]  sm:text-[0.9rem] my-4 sm:my-6 italiana-regular  ">
+        <p className=" text-center text-white textshadow font-700 w-[80%] text-[0.7rem]  sm:text-[0.9rem]  italiana-regular  ">
           {quotes[currentIndex]}
         </p>
         <Button
