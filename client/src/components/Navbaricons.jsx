@@ -10,7 +10,7 @@ import uemlogo from "../assets/images/uemlogo.png";
 
 function Navbaricons({ additionalcss }) {
   return (
-    <div className={clsx("sm:w-[50%] justify-end flex gap-2 items-center py-1",additionalcss)}>
+    <div className={clsx("sm:w-auto justify-end flex gap-2 items-center py-1",additionalcss)}>
       <a target="main" href="https://www.instagram.com/ieee_ies_official?igsh=MTB0djBzdWdoOXFncA==">
         <img src={instagram} className="navbaricons iconanimate" alt="" />
       </a>

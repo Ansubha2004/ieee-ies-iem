@@ -13,10 +13,24 @@ html {
   user-select: none;
   position: relative;
 }
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.textshadow
+{
+  filter: drop-shadow(3px 3px 0px rgba(0, 0, 0));
+}
 @media (max-width: 640px) {
   body,
   html {
     font-size: 14px;
+  }
+  .textshadow{
+    filter:drop-shadow(2px 2px 0px rgba(0,0,0))
   }
 }
 @media (min-width:641px)and (max-width: 1024px) {
@@ -24,12 +38,4 @@ html {
   html {
     font-size: 16px;
   }
-}
-
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.hide-scrollbar {
-  -ms-overflow-style: none; /* IE/Edge */
-  scrollbar-width: none; /* Firefox */
 }

@@ -26,7 +26,7 @@ function Navbar2() {
       className="sticky top-0 bg-white  Navbar2 z-[2] border-solid  border-black/20 border-b-[2px]"
     >
       <div className="w-full flex justify-between border-solid border-b-[2px] border-yellow-600">
-        <div className="w-[50%] flex gap-10">
+        <div className="w-auto flex gap-10">
           <img src={ieeeieslogo} className=" h-[3.3rem] lg:h-[3.5rem] my-2" />
         </div>
         <Navbaricons additionalcss="sm:flex hidden" />

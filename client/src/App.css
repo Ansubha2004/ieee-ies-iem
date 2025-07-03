@@ -20,6 +20,9 @@
     .btn1{
         @apply bg-gradient-to-r from-amber-700 to-amber-500 rounded-[5px] py-[2%] hover:opacity-[0.9] px-[3.5%] sm:px-[2%] text-white cursor-pointer active:scale-[0.95] transition-all  ;
      }
+     .btn2{
+        @apply  rounded-l-full border-solid border-white sm:border-[4px] border-[2px] rounded-r-full py-[1.5%] hover:opacity-[0.9] sm:font-bold  px-[3.5%] sm:px-[2%] text-white cursor-pointer active:scale-[0.95] transition-all  ;
+     }
      .iconanimate{
         @apply hover:scale-[0.95] active:scale-[0.95] hover:opacity-[0.8] cursor-pointer;
        }
