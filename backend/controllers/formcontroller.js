@@ -2,7 +2,7 @@ import SendMail from "../utils/mailer.js"
 
 export const formdatasubmission=(req,res)=>{
     try{
-        const {name,email,message}=res.body;
+        const {name,email,message}=req.body;
         if(!name || !email || !message)
         {
             return res.json({success:false,message:"Empty credentials..."});
