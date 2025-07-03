@@ -1,8 +1,6 @@
 import express from "express";
 import cors from "cors";
-
-
-
+import formroute from "./routes/formroute.js";
 
 import dotenv from "dotenv";
 dotenv.config();
@@ -25,10 +23,10 @@ app.get("/", (req, res) => {
     return res.json({ success: true, message: "IEEE IES backend running successfully" })
 })
 
-
+app.use('/',formroute);
 
 app.all("*", (req, res) => {
-    return res.json({ success: false, message: "invalid path" })
+    return res.json({ success: false, message: "invalid route" })
 })
 
 
