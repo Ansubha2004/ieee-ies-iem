@@ -5,11 +5,14 @@ import CWCintro from "../components/CWCintro.jsx";
 import CWCadvisor from "../components/CWCadvisor.jsx";
 import CWCmember from "../components/CWCmember.jsx";
 import { cwcimage } from "../assets/cwc/cwc.js";
+import orangebg from "../assets/designs/orangebg.png";
 
 function CWC() {
   return (
     <div className="relative  min-h-[calc(100vh-7.6rem)] flex flex-col items-center z-[1] box-border  ">
-      <div className="absolute w-full bg-gradient-to-br from-orange-700 to-amber-400  h-[130px]"></div>
+      <div className="absolute w-full   h-auto">
+        <img src={orangebg} className="w-full h-[130px]" alt="" />
+      </div>
       <div className="relative mt-[30px] sm:mt-[65px] flex flex-col gap-7 px-[3%]">
         <div className="w-full flex gap-5 relative  justify-center">
           <CWCcontent />
@@ -26,7 +29,7 @@ function CWC() {
               Core Student members of IEEE-IES
             </p>
           </div>
-          {cwc.slice(1).map((member,index) => (
+          {cwc.slice(1).map((member, index) => (
             <CWCmember
               key={index}
               name={member.name}

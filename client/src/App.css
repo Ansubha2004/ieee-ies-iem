@@ -36,7 +36,7 @@
     }
     .heading
     {
-        @apply font-[900] sm:font-[700] text-[1.6rem] sm:text-[2rem] bg-gradient-to-b from-orange-700 to-amber-300 bg-clip-text text-transparent;
+        @apply font-[900] sm:font-[700] text-[1.6rem] sm:text-[2rem] bg-gradient-to-b from-orange-700 to-amber-400 bg-clip-text text-transparent;
     }
     .paratext
     {
