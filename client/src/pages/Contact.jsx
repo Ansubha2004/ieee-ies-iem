@@ -11,14 +11,9 @@ function Contact() {
         <img src={orangebg2} className="absolute w-full h-[400px] z-[0]" alt="" />
         <Joinbanner />
       </div>
-      <div className="px-[5%] w-full pt-[30px] text-center">
-        <p className="heading">Need Help? Ping Us!</p>
-        <p className="paratext text-[0.8rem] text-center">Whether it's about membership, events, or collaboration, we’re here to help.</p>
-        <br />
-      </div>
-      <div className="px-[5%] pb-[30px] w-full relative flex justify-between">
+      <div className="px-[5%] py-[30px] w-full relative flex sm:flex-row flex-col justify-between gap-5">
         <Socialcontactbanner/>
-        <div className="w-[50%]  relative flex flex-col justify-center relative">
+        <div className="w-full sm:w-[50%]  relative flex flex-col justify-center relative">
           <form >
             <div className="flex flex-col mb-3">
               <label htmlFor="name" className="font-[600] text-amber-700 mx-1">Enter Name</label>
@@ -30,9 +25,9 @@ function Contact() {
             </div>
             <div className="flex flex-col mb-5">
               <label htmlFor="message" className="font-[600] text-amber-700 mx-1">Enter Message</label>
-              <textarea id="message" type="text" placeholder="Type your query..." name="message" className="inputbox h-[100px]" ></textarea>
+              <textarea id="message" type="text" placeholder="Type your query..." name="message" className="inputbox h-[130px]" ></textarea>
             </div>
-            <Button themecss="btn1 px-[7%]  py-2" Content="Submit" />
+            <Button themecss="btn1 sm:w-auto w-full px-[7%] justify-center py-2" Content="Submit" />
           </form>
         </div>
       </div>
