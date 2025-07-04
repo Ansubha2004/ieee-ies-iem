@@ -28,7 +28,7 @@ function Homebanner() {
         src={homebackground}
         className="absolute h-full w-full z-[0] object-cover  "
       />
-      <div className="relative oswald-text z-[1]  w-full rounded-[15px] h-full bg-black/50  flex flex-col justify-evenly items-center box-border px-[3%] py-[3%]">
+      <div className="relative oswald-text z-[1]  w-full h-full bg-black/50  flex flex-col justify-evenly items-center box-border px-[3%] py-[3%]">
         <div className=" whitespace-nowrap  text-orange-100 text-[1.3rem] sm:text-[1.5rem] md:text-[1.9rem] lg:text-[2.5rem] text-center  font-bold">
           <p className="text-[0.9rem] textshadow sm:text-[1.1rem]  ">Welcome to IEEE</p>
           <p className="textshadow">Industrial Electronics Society</p>

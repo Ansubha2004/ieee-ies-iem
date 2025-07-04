@@ -46,4 +46,7 @@
     {
         @apply w-full h-fit p-7 bg-gradient-to-br from-white to-amber-100 scroll-mt-[170px] rounded-[5px] relative shadow-[0px_0px_15px_0px_rgba(0,0,0,0.2)] flex;
     }
+    .inputbox{
+        @apply w-full h-[50px] box-border p-2 bg-zinc-100 outline-none mt-2 rounded-[5px];
+    }
 }

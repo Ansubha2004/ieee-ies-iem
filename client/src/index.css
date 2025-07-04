@@ -24,6 +24,10 @@ html {
 {
   filter: drop-shadow(3px 3px 0px rgba(0, 0, 0));
 }
+.textshadow1
+{
+  filter: drop-shadow(1px 3px 2px rgba(0, 0, 0,0.5));
+}
 @media (max-width: 640px) {
   body,
   html {
@@ -38,4 +42,9 @@ html {
   html {
     font-size: 16px;
   }
+}
+input:-webkit-autofill {
+  box-shadow: 0 0 0 1000px #FFFFFF12 inset !important; /* your dark background color */
+  -webkit-text-fill-color: black !important;         /* text color to match */
+  transition: background-color 9999s ease-in-out 0s;
 }
