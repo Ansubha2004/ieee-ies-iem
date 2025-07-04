@@ -4,6 +4,8 @@ import Joinbanner from "../components/Joinbanner.jsx";
 import Button from "../components/Button.jsx";
 import Socialcontactbanner from "../components/SocialContactbanner.jsx";
 import axios from "axios";
+import { ToastContainer } from "react-toastify";
+import { successmessage, errormessage } from "../utils/notification.js";
 
 function Contact() {
 
@@ -26,6 +28,7 @@ function Contact() {
     const {name,email,message}=formdata;
     if(!name.trim() || !email.trim() || !message.trim())
     {
+      errormessage("Kindly fill all the credentials");
       console.log("Kindly fill up")
     }
     try{
@@ -39,8 +42,8 @@ function Contact() {
         const {success,error,message}=response.data;
         if (success) {
         console.log("Data posted successfully");
-        //successmessage("Thanks for contacting! Will reach out to you soon ");
-        // ✅ Reset form data here
+        successmessage("Thanks for contacting! Will reach out to you soon ");
+        //✅ Reset form data here
         setformdata({
           name: "",
           email: "",
@@ -48,7 +51,7 @@ function Contact() {
         });
       }
       if (error) {
-        //errormessage("Glitch occured");
+        errormessage("Glitch occured");
         console.log("Error occured while data posting");
       }
     }
