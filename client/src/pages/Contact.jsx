@@ -89,6 +89,7 @@ function Contact() {
           </form>
         </div>
       </div>
+       <ToastContainer />
     </div>
   )
 }
