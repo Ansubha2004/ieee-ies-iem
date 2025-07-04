@@ -5,7 +5,7 @@ import Button from "../components/Button.jsx";
 import Socialcontactbanner from "../components/SocialContactbanner.jsx";
 import axios from "axios";
 import { ToastContainer } from "react-toastify";
-import { successmessage, errormessage } from "../utils/notification.js";
+import { successmessage, errormessage } from "../utils/notification.jsx";
 
 function Contact() {
 
