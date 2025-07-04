@@ -23,9 +23,10 @@ function Socialbanner({ additionalcss }) {
             <div>
                 <p className="heading sm:text-left text-center">Need Help? Ping Us!</p>
                 <p className="paratext text-[0.8rem] sm:text-left text-center">Whether it's about membership, events, or collaboration, we’re here to help.</p>
+                <br className="sm:hidden" />
             </div>
             <div className="w-full flex flex-col gap-4">
-                <a href="mailto:ieeeies.iem@gmail.com" id="gmail" className="w-full flex gap-3">
+                <a href="mailto:ieeeies.iem@gmail.com" id="gmail" className="w-full flex gap-3 animation2">
                     <div className="contacticondesign">
                         <SiGmail size={(width>640)?30:15} />
                     </div>
@@ -34,7 +35,7 @@ function Socialbanner({ additionalcss }) {
                         <p className="paratext text-[0.8rem]">ieeeies.iem@gmail.com</p>
                     </div>
                 </a>
-                <a href="https://www.google.com/maps/place/IEM+Kolkata/@22.5740893,88.4345229,16.62z/data=!4m6!3m5!1s0x3a027514cd20d659:0x4b66eefc1cb3ed78!8m2!3d22.5726925!4d88.4373735!16s%2Fg%2F11fcv9lb9h?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D" id="location" className="w-full flex gap-3">
+                <a href="https://www.google.com/maps/place/IEM+Kolkata/@22.5740893,88.4345229,16.62z/data=!4m6!3m5!1s0x3a027514cd20d659:0x4b66eefc1cb3ed78!8m2!3d22.5726925!4d88.4373735!16s%2Fg%2F11fcv9lb9h?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D" id="location" className="w-full flex gap-3 animation2">
                     <div className="contacticondesign">
                         <FaLocationDot size={(width>640)?30:15} />
                     </div>

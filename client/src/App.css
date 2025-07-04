@@ -47,10 +47,13 @@
         @apply w-full h-fit p-7 bg-gradient-to-br from-white to-amber-100 scroll-mt-[170px] rounded-[5px] relative shadow-[0px_0px_15px_0px_rgba(0,0,0,0.2)] flex;
     }
     .inputbox{
-        @apply w-full h-[50px] box-border p-2 bg-zinc-100 outline-none mt-2 rounded-[5px];
+        @apply w-full h-[50px] box-border p-2 bg-zinc-100 outline-none mt-2 rounded-[5px] ;
     }
     .contacticondesign
     {
         @apply bg-zinc-100 min-w-[30px] h-[30px] sm:min-w-[60px] sm:h-[60px] flex justify-center items-center rounded-[5px] bg-gradient-to-br from-orange-800 to-amber-600 text-amber-50 ;
+    }
+    .animation2{
+        @apply transition-all ease-in-out duration-100 hover:scale-[1.01] hover:bg-amber-50 active:scale-[1.01] active:bg-amber-50;
     }
 }
