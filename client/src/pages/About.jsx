@@ -3,10 +3,10 @@ import Aboutcontent from '../components/Aboutcontent'
 
 function About() {
     return (
-        <div className="relative  min-h-[calc(100vh-7.6rem)] flex px-[5%] py-[20px] sm:py-[40px] text-justify z-[1] box-border gap-5  w-full">
+        <div className="relative  min-h-[calc(100vh-7.6rem)] flex px-[5%] py-[20px] sm:py-[40px] text-justify z-[1] box-border lg:gap-4 md:gap-2  w-full">
             <Aboutcontent />
-            <div className="min-w-full md:min-w-[80%] h-fit z-[2] px-7 space-y-5 ">
-                <div id="About" className="w-full">
+            <div className="min-w-full md:min-w-[80%] h-fit z-[2] md:px-4 lg:px-7 md:text-left text-center space-y-10 ">
+                <div id="About" className="w-full scroll-mt-[185px]">
                     <p className="heading">About The Chapter</p>
                     <p className="subheading">Introducing IEM's IEEE IES Students Chapter</p>
                     <div className="paratext mt-3 space-y-2">
@@ -17,21 +17,58 @@ function About() {
                         <p>As part of the globally connected <a href="https://www.ieee-ies.org/" className="linkanimate text-zinc-700">IEEE IES</a> community, this student chapter is committed to:</p>
                         <ul className="list-disc pl-7">
                             <li>Hosting technical workshops, seminars, and webinars</li>
-
-                        <li>Facilitating industrial visits and field-based learning</li>
-
-                        <li>Encouraging innovation, research, and technical publications</li>
-
-                        <li>Organizing conferences, competitions, and collaborative projects</li>
+                            <li>Facilitating industrial visits and field-based learning</li>
+                            <li>Encouraging innovation, research, and technical publications</li>
+                            <li>Organizing conferences, competitions, and collaborative projects</li>
                         </ul>
-                        
+
                         <p>Driven by a mission to bridge classroom learning with real-world applications, the chapter empowers students to explore cutting-edge industrial technologies and prepares them for impactful careers in the field.</p>
                     </div>
                 </div>
-                <div id="Mission" className="w-full ">misssion</div>
-                <div id="Vision" className="w-full ">vision</div>
-                <div id="Membership" className="w-full">membership</div>
-                <div id="Benifits" className="w-full ">benifits</div>
+                <div id="Mission" className="w-full md:scroll-mt-[150px] lg:scroll-mt-[185px]">
+                    <p className="heading">Chapter's Mission</p>
+                    <div className="paratext mt-3 space-y-2">
+                        <p>The mission of the IEEE Industrial Electronics Society Student Chapter is to serve as a distinguished platform for fostering intellectual curiosity, technical excellence, and leadership among students in the realm of industrial electronics. The chapter is dedicated to advancing knowledge through the integration of academic learning with real-world engineering practices, encouraging innovation, interdisciplinary collaboration, and research-driven exploration.</p>
+                        <p>By organizing technical workshops, seminars, industrial visits, and knowledge-sharing sessions, the chapter seeks to bridge the gap between education and industry, equipping students with the practical skills and ethical grounding required in modern engineering environments. We strive to nurture a generation of professionals who are not only technically proficient but also socially responsible, globally aware, and committed to contributing meaningfully to technological progress and sustainable development.</p>
+                    </div>
+                </div>
+                <div id="Vision" className="w-full md:scroll-mt-[150px] lg:scroll-mt-[185px]">
+                    <p className="heading">Chapter's Vision</p>
+                    <div className="paratext mt-3 space-y-2">
+                        <p>To advance technological excellence and global progress by fostering innovation, nurturing student leadership, and promoting the integration and application of knowledge in industrial and information technologies. The chapter envisions becoming a catalyst for professional growth and academic collaboration, empowering students to contribute meaningfully to society, industry, and the engineering profession.</p>
+                    </div>
+                </div>
+                <div id="Membership" className="w-full md:scroll-mt-[150px] lg:scroll-mt-[185px]">
+                    <p className="heading">Membership Details</p>
+                    <p className="subheading">Guidance to apply for membership</p>
+                    <div className="paratext mt-3 space-y-2">
+                        <ul className="list-disc pl-7">
+                            <li>Hosting technical workshops, seminars, and webinars</li>
+
+                            <li>Facilitating industrial visits and field-based learning</li>
+
+                            <li>Encouraging innovation, research, and technical publications</li>
+
+                            <li>Organizing conferences, competitions, and collaborative projects</li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="Benifits" className="w-full md:scroll-mt-[150px] lg:scroll-mt-[185px]">
+                    <p className="heading">Membership Benifits</p>
+                    <p className="subheading">Perks of joining the chapter</p>
+                    <div className="paratext mt-3 space-y-2 mb-10">
+                        <ul className="list-disc pl-7">
+                            <li>Full access to IEEE IES Magazine</li>
+                            <li>Exposure to various IEEE Communities</li>
+                            <li>Students can direcrtly collaborate with Indutrial Experts</li>
+                            <li>Full access to varoius research papers worldwide on various domain</li>
+                            <li>GRANTS: Academic grants for best research paper publication</li>
+                            <li>Exposure to various technical workshops, events & industries</li>
+                            <li>Access to Digital library (over 56 lakh + artcicles) and E-learning library</li>
+                            <li>Access to Technical Publications and Networking Opportunities</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     )
