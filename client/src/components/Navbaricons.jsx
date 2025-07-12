@@ -24,7 +24,7 @@ function Navbaricons({ additionalcss }) {
       <Button
         Content="Join IEEE-IES"
         themecss="btn1 whitespace-nowrap sm:text-[1rem] text-[0.9rem]"
-        click={()=>window.open("https://www.ieee.org/membership-catalog/productdetail/showProductDetailPage.html?product=MEMIE013")}
+        click={()=>window.open("https://forms.gle/Z9jAjDcjha463atS8")}
       />
       <img
         src={iemlogo}

@@ -1,7 +1,21 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import Aboutcontent from '../components/Aboutcontent'
+import {useLocation} from "react-router-dom"
 
 function About() {
+
+    const location=useLocation();
+
+    useEffect(()=>{
+        if(location.hash)
+        {
+            const ele=document.querySelector(location.hash); 
+            if(ele)
+                ele.scrollIntoView({behavior:'smooth'})
+        }
+    },[])
+
+
     return (
         <div className="relative  min-h-[calc(100vh-7.6rem)] flex px-[5%] py-[20px] sm:py-[40px] text-justify z-[1] box-border lg:gap-4 md:gap-2  w-full">
             <Aboutcontent />
@@ -9,7 +23,7 @@ function About() {
                 <div id="About" className="w-full scroll-mt-[185px]">
                     <p className="heading">About The Chapter</p>
                     <p className="subheading">Introducing IEM's IEEE IES Students Chapter</p>
-                    <div className="paratext mt-3 space-y-2">
+                    <div className="paratext mt-3 space-y-2 ">
                         <p>The IEEE Industrial Electronics Society (IES) Student Chapter at the <a href="https://iem.edu.in/" className="linkanimate text-zinc-700">Institute of Engineering & Management (IEM)</a>, Kolkata was officially established on 5th May 2025 under the aegis of the Department of Electrical Engineering. The chapter is recognized by the <a href="https://www.ieee.org/" className="linkanimate text-zinc-700">IEEE</a> with the official Student Branch Chapter (SBC) Code: SBC14301J.
                         </p>
                         <p>Serving as a vibrant hub for students interested in industrial electronics, automation, control systems, and intelligent technologies, the chapter is guided by its esteemed advisor, Dr. Sourav Das.
@@ -27,7 +41,7 @@ function About() {
                 </div>
                 <div id="Mission" className="w-full md:scroll-mt-[150px] lg:scroll-mt-[185px]">
                     <p className="heading">Chapter's Mission</p>
-                    <div className="paratext mt-3 space-y-2">
+                    <div className="paratext mt-3 space-y-2 ">
                         <p>The mission of the IEEE Industrial Electronics Society Student Chapter is to serve as a distinguished platform for fostering intellectual curiosity, technical excellence, and leadership among students in the realm of industrial electronics. The chapter is dedicated to advancing knowledge through the integration of academic learning with real-world engineering practices, encouraging innovation, interdisciplinary collaboration, and research-driven exploration.</p>
                         <p>By organizing technical workshops, seminars, industrial visits, and knowledge-sharing sessions, the chapter seeks to bridge the gap between education and industry, equipping students with the practical skills and ethical grounding required in modern engineering environments. We strive to nurture a generation of professionals who are not only technically proficient but also socially responsible, globally aware, and committed to contributing meaningfully to technological progress and sustainable development.</p>
                     </div>
@@ -41,23 +55,21 @@ function About() {
                 <div id="Membership" className="w-full md:scroll-mt-[150px] lg:scroll-mt-[185px]">
                     <p className="heading">Membership Details</p>
                     <p className="subheading">Guidance to apply for membership</p>
-                    <div className="paratext mt-3 space-y-2">
-                        <ul className="list-disc pl-7">
-                            <li>Hosting technical workshops, seminars, and webinars</li>
-
-                            <li>Facilitating industrial visits and field-based learning</li>
-
-                            <li>Encouraging innovation, research, and technical publications</li>
-
-                            <li>Organizing conferences, competitions, and collaborative projects</li>
+                    <div className="paratext mt-3 space-y-2 text-left">
+                        <ul className="list-disc pl-4 sm:pl-7">
+                            <li>Visit the <a href="https://www.ieee.org/membership/join" className="linkanimate text-zinc-700">registration page</a> of IEEE and apply for membership.</li>
+                            <li>Visit the <a href="https://www.ieee.org/membership-catalog/productdetail/showProductDetailPage.html?product=MEMIE013" className="linkanimate text-zinc-700">registration page</a> of IEEE Industrial Electronics Society and apply for membership.</li>
+                            <li>On successful registration of membership, kindly download the membership card and the receipt.</li>
+                            <li>Fill the given form : <a href="https://forms.gle/Z9jAjDcjha463atS8" className="linkanimate text-zinc-700">https://forms.gle/Z9jAjDcjha463atS8</a> </li>
                         </ul>
+                        <p>Congratulation! Now you are an official member of IEEE IES IEM.</p>
                     </div>
                 </div>
                 <div id="Benifits" className="w-full md:scroll-mt-[150px] lg:scroll-mt-[185px]">
                     <p className="heading">Membership Benifits</p>
                     <p className="subheading">Perks of joining the chapter</p>
-                    <div className="paratext mt-3 space-y-2 mb-10">
-                        <ul className="list-disc pl-7">
+                    <div className="paratext mt-3 space-y-2 mb-10 text-left">
+                        <ul className="list-disc pl-4 sm:pl-7">
                             <li>Full access to IEEE IES Magazine</li>
                             <li>Exposure to various IEEE Communities</li>
                             <li>Students can direcrtly collaborate with Indutrial Experts</li>
