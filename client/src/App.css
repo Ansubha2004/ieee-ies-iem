@@ -34,9 +34,16 @@
     {
         @apply font-[400] cursor-pointer focus:underline text-[0.9rem] text-zinc-500 focus:underline-offset-4 hover:scale-[1.02] active:scale-[1.02] focus:font-[500] focus:text-amber-600 transition-all duration-200 ease-in-out;
     }
+    .animatedbutton2
+    {
+        @apply font-[400] cursor-pointer text-[0.8rem] text-zinc-700 focus:underline-offset-4 hover:scale-[1.02] active:scale-[1.02] focus:font-[500] focus:text-blue-600 transition-all duration-200 ease-in-out;
+    }
     .heading
     {
         @apply font-[900] sm:font-[700] text-[1.6rem] sm:text-[2rem] bg-gradient-to-b from-orange-800 to-amber-400 bg-clip-text text-transparent;
+    }
+    .subheading{
+        @apply font-[700] -translate-y-1 text-[0.85rem];
     }
     .paratext
     {
