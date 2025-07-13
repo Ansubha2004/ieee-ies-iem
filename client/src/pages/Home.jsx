@@ -3,6 +3,7 @@ import Homebanner from "../components/homebanner.jsx"
 import Button from "../components/Button.jsx";
 import { useNavigate } from "react-router-dom"
 import iesvideo from "../assets/IESvideo.mp4"
+import Banner1 from "../components/Banner1.jsx"
 
 function Home() {
 
@@ -46,7 +47,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <div></div>
+      <Banner1 />
     </div>
   )
 }
