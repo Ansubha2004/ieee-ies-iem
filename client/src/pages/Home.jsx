@@ -3,11 +3,31 @@ import Homebanner from "../components/homebanner.jsx"
 import Button from "../components/Button.jsx";
 import { useNavigate } from "react-router-dom"
 import iesvideo from "../assets/IESvideo.mp4"
+import { SiTicktick } from "react-icons/si";
 import Banner1 from "../components/Banner1.jsx"
 
 function Home() {
 
   const navigate = useNavigate();
+
+  const Points = [
+    {
+      head: "Global Exposure",
+      body: "Connect with IEEE professionals, researchers, and students worldwide",
+    },
+    {
+      head: "Skill Development",
+      body: "Access workshops, coding contests, hackathons, and technical talks",
+    },
+    {
+      head: "Academic & Research Support",
+      body: " Publish papers, attend conferences, and engage in funded projects",
+    },
+    {
+      head: "Leadership Opportunities",
+      body: "Take up roles in event management, technical teams, and outreach",
+    },
+  ];
 
   return (
     <div className="relative  min-h-[calc(100vh-7.6rem)] flex flex-col items-center z-[1] box-border  ">
@@ -48,6 +68,29 @@ function Home() {
         </div>
       </div>
       <Banner1 />
+      <div className="w-full text-center px-[5%] mb-[40px] sm:mb-[70px]">
+        <p className="heading">Why to Engage?</p>
+        <p className="subheading text-[0.8rem] sm:text-[1rem] sm:text-normal">
+          Grow beyond classrooms. IEEE-IES-IEM awaits!
+        </p>
+        <br />
+        <div className="w-full h-auto flex flex-col sm:grid grid-cols-2 gap-4 sm:gap-6">
+          {Points.map((point, index) => (
+            <div
+              key={index}
+              className="w-full rounded-[10px] bg-gradient-to-br from-white to-yellow-100 h-auto max-h-[100px] flex justify-between p-[3%] items-center hover:scale-[1.01] transition-all"
+            >
+              <SiTicktick size={60} className="text-amber-700" />
+              <div className="w-full pl-3 flex flex-col items-start">
+                <p className="text-[1.2rem] font-[700]">{point.head}</p>
+                <p className="paratext  text-left text-[0.9rem] sm:text-[0.8rem] text-blue-900">
+                  {point.body}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   )
 }
