@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom"
 import iesvideo from "../assets/IESvideo.mp4"
 import { SiTicktick } from "react-icons/si";
 import Banner1 from "../components/Banner1.jsx"
+import Formbanner from "../components/Formbanner.jsx"
+import Homeevents from '../components/Homeevents.jsx';
 
 function Home() {
 
@@ -68,7 +70,7 @@ function Home() {
         </div>
       </div>
       <Banner1 />
-      <div className="w-full text-center px-[5%] mb-[40px] sm:mb-[70px]">
+      <div className="w-full text-center px-[5%] mb-[7%] sm:mb-[3%]">
         <p className="heading">Why to Engage?</p>
         <p className="subheading text-[0.8rem] sm:text-[1rem] sm:text-normal">
           Grow beyond classrooms. IEEE-IES-IEM awaits!
@@ -90,6 +92,19 @@ function Home() {
             </div>
           ))}
         </div>
+      </div>
+      <Formbanner/>
+      <br className="sm:hidden" />
+      <div className="w-full box-border px-[5%] pb-[3%]">
+        <p className="heading  text-center  leading-9">
+          Events & Announcements
+        </p>
+        <p className="subheading mt-1 text-[0.8rem] sm:text-[1rem] text-center ">
+          What’s New, What’s Next – Events at a Glance
+        </p>
+        <br />
+        <Homeevents />
+        <br />
       </div>
     </div>
   )

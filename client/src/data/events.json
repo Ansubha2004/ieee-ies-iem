@@ -1,0 +1,29 @@
+[
+    {
+        "id":"1",
+        "link":"",
+        "name":"AARAMBH 1.0 - IEEE AWARNESS PROGRAM",
+        "Description":"SEMINAR",
+        "venue":"CII Auditorium, IEM , Kolkata",
+        "date":"16th July, 2025"
+    },
+    
+    {
+        "id":"2",
+        "link":"",
+        "name":"EV LOAD MODELLING TECHNIQUES - DISTINGUISHED LECTURE BY PROF. ATIF IQBAL",
+        "Description":"DISTINGUISEH LECTURE",
+        "venue":"Hybrid Mode",
+        "date":"16th July, 2025"
+    },
+    {
+        "id":"3",
+        "link":"",
+        "name":"IEEE IES IEM STUDENTS CHAPTER INSTALLATION CEREMONY",
+        "Description":"SEMINAR",
+        "venue":"CII Auditorium, IEM , Kolkata",
+        "date":"31st July, 2025"
+    }
+    
+
+]
