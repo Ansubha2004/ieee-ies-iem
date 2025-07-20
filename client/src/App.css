@@ -34,6 +34,9 @@
     {
         @apply font-[400] cursor-pointer focus:underline text-[0.9rem] text-zinc-500 focus:underline-offset-4 hover:scale-[1.02] active:scale-[1.02] focus:font-[500] focus:text-amber-600 transition-all duration-200 ease-in-out;
     }
+    .arrowbutton {
+        @apply text-blue-800 active:opacity-[0.8] hover:opacity-[0.8] cursor-pointer active:scale-[0.95] md:active:scale-[0.8] transition-all duration-100 ease-in-out
+     }
     .animatedbutton2
     {
         @apply font-[400] cursor-pointer text-[0.8rem] text-zinc-700 focus:underline-offset-4 hover:scale-[1.02] active:scale-[1.02] focus:font-[500] focus:text-blue-600 transition-all duration-200 ease-in-out;

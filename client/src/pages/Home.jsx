@@ -7,6 +7,7 @@ import { SiTicktick } from "react-icons/si";
 import Banner1 from "../components/Banner1.jsx"
 import Formbanner from "../components/Formbanner.jsx"
 import Homeevents from '../components/Homeevents.jsx';
+import Homegallery from "../components/Homegallery.jsx"
 
 function Home() {
 
@@ -93,7 +94,7 @@ function Home() {
           ))}
         </div>
       </div>
-      <Formbanner/>
+      <Formbanner />
       <br className="sm:hidden" />
       <div className="w-full box-border px-[5%] pb-[3%]">
         <p className="heading  text-center  leading-9">
@@ -105,7 +106,15 @@ function Home() {
         <br />
         <Homeevents />
         <br />
-        
+      </div>
+      <div className="box-border flex flex-col items-center px-[5%] pb-[3%]">
+        <p className="heading text-center  leading-9">
+          Gallery of Experiences
+        </p>
+        <p className="subheading mt-1 text-[0.8rem] sm:text-[1rem] text-center ">
+          Frames of Fellowship, Fun, and Future
+        </p>
+        <Homegallery />
       </div>
     </div>
   )
