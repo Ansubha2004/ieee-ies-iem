@@ -118,6 +118,7 @@ function Home() {
         </p>
         <Homegallery />
       </div>
+      <br className="sm:hidden" />
     </div>
   )
 }
