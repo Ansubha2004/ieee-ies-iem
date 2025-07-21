@@ -8,6 +8,7 @@ import Banner1 from "../components/Banner1.jsx"
 import Formbanner from "../components/Formbanner.jsx"
 import Homeevents from '../components/Homeevents.jsx';
 import Homegallery from "../components/Homegallery.jsx"
+import Banner2 from "../components/Banner2.jsx"
 
 function Home() {
 
@@ -107,6 +108,7 @@ function Home() {
         <Homeevents />
         <br />
       </div>
+      <Banner2/>
       <div className="box-border flex flex-col items-center px-[5%] pb-[3%]">
         <p className="heading text-center  leading-9">
           Gallery of Experiences
