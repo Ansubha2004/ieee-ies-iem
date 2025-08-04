@@ -30,7 +30,7 @@ function Navbaricons({ additionalcss }) {
         src={iemlogo}
         className="hidden sm:block  h-[3.3rem]  lg:h-[3.5rem] my-2"
       />
-      <img src={uemlogo} className="hidden sm:block  h-[3.2rem]  lg:h-[3.5rem] my-2" alt="" />
+      <img src={uemlogo} className="hidden sm:block  h-[3.1rem]  lg:h-[3.4rem] my-2" alt="" />
     </div>
   );
 }

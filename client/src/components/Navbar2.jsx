@@ -27,7 +27,7 @@ function Navbar2() {
     >
       <div className="w-full flex justify-between border-solid border-b-[2px] border-yellow-600">
         <div className="w-auto flex gap-10">
-          <img src={ieeeieslogo} className=" h-[3.3rem] lg:h-[3.5rem] my-2" />
+          <img src={ieeeieslogo} className=" h-[3.3rem] lg:h-[3.6rem] my-2" />
         </div>
         <Navbaricons additionalcss="sm:flex hidden" />
         <div className="sm:hidden flex items-center gap-2">
@@ -37,7 +37,7 @@ function Navbar2() {
           />
           <img
             src={uemlogo}
-            className="h-[3.3rem]  lg:h-[3.5rem] my-2"
+            className="h-[3.2rem]  lg:h-[3.4rem] my-2"
           />
         </div>
       </div>
