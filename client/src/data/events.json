@@ -22,7 +22,15 @@
         "name":"IEEE IES IEM STUDENTS CHAPTER INSTALLATION CEREMONY",
         "Description":"SEMINAR",
         "venue":"CII Auditorium, IEM , Kolkata",
-        "date":"31st July, 2025"
+        "date":"5th August, 2025"
+    },
+    {
+        "id":"4",
+        "link":"",
+        "name":"Brains, Bots and Breakthroughs - An AI APP Making Warzone",
+        "Description":"Hackathon",
+        "venue":"Online Mode",
+        "date":"9th-11th August, 2025"
     }
     
 

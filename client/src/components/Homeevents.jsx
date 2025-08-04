@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import aarambh1 from "../assets/upcomingevents/aarambh1.0.jpg"
-import evmodellinglecture from "../assets/upcomingevents/EVmodellinglecture.jpeg"
+import event1 from "../assets/upcomingevents/installationieeeies.jpeg"
+import event2 from "../assets/upcomingevents/aiappmakingevent.jpeg"
 import Button from "../components/Button.jsx";
 import Events from "../data/events.json";
 
 function Homeevents() {
 
-    const eventposter = [aarambh1, evmodellinglecture];
+    const eventposter = [event2];
 
     const [Index, setIndex] = useState(0);
 
@@ -21,7 +21,7 @@ function Homeevents() {
 
 
     return (
-        <div className="w-full flex sm:flex-row flex-col-reverse justify-around">
+        <div className="w-full flex sm:flex-row flex-col-reverse justify-between gap-3">
             <div
                 id="recents"
                 className="w-full sm:w-4/7 flex flex-col items-center sm:items-start justify-between rounded-[10px] "
@@ -31,7 +31,7 @@ function Homeevents() {
                     Event Schedules
                 </p>
                 <div className="flex flex-col w-full items-start gap-7 ">
-                    {Events.map((event, index) => (
+                    {Events.slice(1).map((event, index) => (
                         <div key={index}>
                             <a className="text-blue-800 font-[700] hover:underline" href={event.link}>{event.name}</a>
                             <div className="paratext  w-full flex text-[0.8rem] gap-1">
