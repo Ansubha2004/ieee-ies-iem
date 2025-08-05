@@ -17,7 +17,7 @@ function CWCmember({ name, position, description, image, linkedin, mail }) {
               </p>
               <div className="font-[700] whitespace-nowrap leading-4 text-[1rem] sm:text-[0.7rem] text-zinc-500 flex gap-1">
                 <p className="text-black   ">Role:-</p>
-                <p>{position}</p>
+                <p className="text-blue-800">{position}</p>
               </div>
             </div>
             <div className="flex items-center gap-1">
