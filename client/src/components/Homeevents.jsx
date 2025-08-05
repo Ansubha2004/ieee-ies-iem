@@ -3,6 +3,7 @@ import event1 from "../assets/upcomingevents/installationieeeies.jpeg"
 import event2 from "../assets/upcomingevents/aiappmakingevent.jpeg"
 import Button from "../components/Button.jsx";
 import Events from "../data/events.json";
+import { useNavigate } from "react-router-dom";
 
 function Homeevents() {
 
@@ -18,7 +19,7 @@ function Homeevents() {
         return () => clearInterval(intervalId); // Cleanup to avoid memory leak
     }, [eventposter.length]);
 
-
+    const navigate=useNavigate();
 
     return (
         <div className="w-full flex sm:flex-row flex-col-reverse justify-between gap-3">
@@ -33,7 +34,7 @@ function Homeevents() {
                 <div className="flex flex-col w-full items-start gap-7 ">
                     {Events.slice(1).map((event, index) => (
                         <div key={index}>
-                            <a className="text-blue-800 font-[700] hover:underline" href={event.link}>{event.name}</a>
+                            <a target="main" className="text-blue-800 font-[700] hover:underline" href={event.link}>{event.name}</a>
                             <div className="paratext  w-full flex text-[0.8rem] gap-1">
                                 <p>{event.date}</p>
                                 <p>|</p>
@@ -44,7 +45,7 @@ function Homeevents() {
                         </div>
                     ))}
                 </div>
-                <Button themecss="btn1 mt-[40px]" Content="Explore More Events" />
+                <Button click={()=>{navigate("/Events#eventbanner")}} themecss="btn1 mt-[40px]" Content="Explore More Events" />
             </div>
             <div
                 id="upcoming"
@@ -54,7 +55,7 @@ function Homeevents() {
                     Upcoming Event
                 </div>
                 <img src={eventposter[Index]} className="w-full aspect-[16/11]  p-[3%]" />
-                <a href="" className="w-full  mb-5 text-center font-bold text-blue-800 linkanimate">View Event</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSexnIc1FB_y8E_TO4w6RLG7IKPiJJhkwHgWHVII8qMUGrZhpg/viewform" target="main" className="w-full  mb-5 text-center font-bold text-blue-800 linkanimate">Registration Portal is Live !</a>
             </div>
         </div>
     );

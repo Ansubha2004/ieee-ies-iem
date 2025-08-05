@@ -3,7 +3,7 @@ import Button from "../components/Button.jsx";
 
 function Eventdetails({name,description,venue,date,image,gallery,details,link}) {
     return (
-        <a href={link} className="w-full  hover:scale-[1.01] transition-all border-box p-1.5 md:w-[45%]  overflow-hidden   bg-gradient-to-r from-amber-500 via-yellow-200 to-amber-500  flex flex-col">
+        <a href={link} className="w-full  hover:scale-[1.01] transition-all border-box p-1.5 md:w-[45%]   overflow-hidden   bg-gradient-to-r from-amber-500 via-yellow-200 to-amber-500  flex flex-col">
             <div className="w-full h-full bg-white">
                 <div className="">
                     <img src={image} className="w-full aspect-[16/11]" />
