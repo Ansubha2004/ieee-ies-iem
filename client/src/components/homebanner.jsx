@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import homebackground from "../assets/images/homebackground.png";
 import ieeeieslogo2 from "../assets/images/ieeeieslogo2.png";
 import iemlogo from "../assets/images/iemlogo.png";
-import ieeelogo2 from "../assets/images/ieeelogo2.png";
 import Button from "./Button.jsx";
 import clsx from "clsx"
 
@@ -38,10 +37,9 @@ function Homebanner() {
         </div>
         <div
           id="logo"
-          className="w-full flex justify-center gap-[1rem] items-center scale-[0.8]"
+          className="w-full flex justify-center items-center scale-[0.8]"
         >
           <img src={ieeeieslogo2} className="h-[2.8rem]" />
-          <img src={ieeelogo2} className="h-[3.2rem]" />
         </div>
         <p className=" text-center text-white textshadow font-700 w-[80%] text-[0.7rem]  sm:text-[0.9rem]  italiana-regular  ">
           {quotes[currentIndex]}
