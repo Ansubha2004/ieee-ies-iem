@@ -32,7 +32,7 @@ function Contact() {
       console.log("Kindly fill up")
     }
     try{
-        const response=await axios.post("https://ieee-ies-iem-backend.onrender.com/postdata",formdata,
+        const response=await axios.post("https://ieee-ies-iem.onrender.com/postdata",formdata,
           {
           headers: {
             "Content-Type": "application/json",
