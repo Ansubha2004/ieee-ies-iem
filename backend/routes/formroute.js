@@ -4,6 +4,6 @@ import {formdatasubmission} from "../controllers/formcontroller.js"
 
 const router=express.Router();
 
-router.post("/postdata",FormValidation,formdatasubmission);//posting data route
+router.post("/submitdata",FormValidation,formdatasubmission);//posting data route
 
 export default router;

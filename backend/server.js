@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
     return res.json({ success: true, message: "IEEE IES backend running successfully" })
 })
 
-app.use('/',formroute);
+app.use('/formapi',formroute);
 
 app.all("*", (req, res) => {
     return res.json({ success: false, message: "invalid route" })
