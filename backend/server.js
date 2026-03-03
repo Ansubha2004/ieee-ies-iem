@@ -1,10 +1,12 @@
 import express from "express";
+import connectDB from "./config/db.js";
 import cors from "cors";
 import formroute from "./routes/formroute.js";
-
+import cwcroute from "./routes/cwcroute.js";
 import dotenv from "dotenv";
 dotenv.config();
 
+connectDB();
 
 
 const app = express();
@@ -13,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
     cors({
         origin:['http://localhost:5173',"https://ieee-ies-iem-sbc.vercel.app"],
-        methods:['POST'],
+        methods:['POST','GET','PUT','DELETE'],
         credentials:true
     })
 );
@@ -24,6 +26,8 @@ app.get("/", (req, res) => {
 })
 
 app.use('/formapi',formroute);
+app.use('/cwcapi',cwcroute);
+
 
 app.all("*", (req, res) => {
     return res.json({ success: false, message: "invalid route" })
