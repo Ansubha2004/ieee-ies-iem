@@ -46,3 +46,23 @@ export const addcwc=async(req,res)=>{
         })
     }
 }
+
+
+export const getallcwcs=async (req,res)=>{
+    try{
+        const allcwcs=await cwcmodel.find().sort({id:1});
+        return res.json({
+            success:true,
+            message:"All CWC data fetched successfully",
+            data:allcwcs
+        })
+    }
+    catch(error)
+    {
+        return res.json({
+            success:false,
+            message:"Error fetching all cwc details",
+            error:error.message
+        })
+    }
+}
