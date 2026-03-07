@@ -1,13 +1,30 @@
-import React from "react";
-import cwc from "../data/cwc.json";
+import React,{useState,useEffect} from "react";
 import CWCcontent from "../components/CWCcontent.jsx";
 import CWCintro from "../components/CWCintro.jsx";
 import CWCadvisor from "../components/CWCadvisor.jsx";
 import CWCmember from "../components/CWCmember.jsx";
-import { cwcimage } from "../assets/cwc/cwc.js";
 import orangebg from "../assets/designs/orangebg.png";
+import axios from "axios";
 
 function CWC() {
+
+  const [cwcdata,setcwcdata]=useState([]);
+  useEffect(()=>{
+    const fetchcwc=async ()=>{
+      try
+    {
+      const result=await axios.get("https://ieee-ies-iem.onrender.com/cwcapi/getallcwc");
+      setcwcdata(result.data.data); 
+    }
+    catch(error)
+    {
+      console.error("Error Fetching data",error);
+    }
+    }
+    fetchcwc();
+
+  },[])
+
   return (
     <div className="relative  min-h-[calc(100vh-7.6rem)] flex flex-col items-center z-[1] box-border  ">
       <div className="absolute w-full   h-auto">
@@ -18,7 +35,7 @@ function CWC() {
           <CWCcontent />
           <CWCintro />
         </div>
-        <CWCadvisor />
+        {cwcdata.length > 0 && <CWCadvisor advisor={cwcdata[0]} />}
         <div
           id="cwcmembers"
           className="profilecard shadow-none bg-gradient-to-br from-white to-white py-0 sm:flex-wrap sm:flex-row justify-around gap-y-7  flex-col"
@@ -29,12 +46,12 @@ function CWC() {
               Core Student members of IEEE-IES
             </p>
           </div>
-          {cwc.slice(1).map((member, index) => (
+          {cwcdata.slice(1).map((member, index) => (
             <CWCmember
               key={index}
               name={member.name}
               position={member.role}
-              image={cwcimage[index]}
+              image={member.image}
               linkedin={member.socialmedia[0].link}
               mail={member.socialmedia[1].link}
               description={member.description}
