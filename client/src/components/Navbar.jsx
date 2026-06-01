@@ -8,7 +8,7 @@ function Navbar() {
       <nav id="nav1" className="Navbar relative  bg-[#0A192F] text-[white]  ">
         <div className="flex justify-between outline-none  items-center text-[0.55rem] gap-1 sm:gap-[1vw] sm:text-[0.7rem] sm:font-normal font-bold">
           <a href="https://www.ieee.org/">ieee.org</a>
-          <p>|</p>
+          <p>|</p> 
           <a href="https://ieeexplore.ieee.org/Xplore/home.jsp">
             IEEE Xplore Digital Library{" "}
           </a>

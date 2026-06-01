@@ -3,11 +3,13 @@ import orangebg2 from "../assets/designs/orangebg2.png"
 import Joinbanner from "../components/Joinbanner.jsx";
 import Button from "../components/Button.jsx";
 import Socialcontactbanner from "../components/SocialContactbanner.jsx";
+import contactData from "../data/contact.json";
 import axios from "axios";
 import { ToastContainer } from "react-toastify";
 import { successmessage, errormessage } from "../utils/notification.jsx";
 
 function Contact() {
+  const { form: formCopy } = contactData;
 
   const [formdata,setformdata]=useState({
     name:"",
@@ -32,7 +34,8 @@ function Contact() {
       console.log("Kindly fill up")
     }
     try{
-        const response=await axios.post("https://ieee-ies-iem.onrender.com/postdata",formdata,
+        const apiUrl = import.meta.env.VITE_API_URL || "https://ieee-ies-iem.onrender.com";
+        const response=await axios.post(`${apiUrl}/formapi/submitdata`,formdata,
           {
           headers: {
             "Content-Type": "application/json",
@@ -74,18 +77,18 @@ function Contact() {
         <div className="w-full sm:w-[50%]  relative flex flex-col justify-center relative">
           <form onSubmit={handlesubmission}>
             <div className="flex flex-col mb-3">
-              <label htmlFor="name" className="font-[600] text-amber-700 mx-1">Enter Name</label>
-              <input id="name" type="text" placeholder="Ex: Raj Sen" name="name" onChange={handlechange} value={formdata.name} className="inputbox" />
+              <label htmlFor="name" className="font-[600] text-amber-700 mx-1">{formCopy.nameLabel}</label>
+              <input id="name" type="text" placeholder={formCopy.namePlaceholder} name="name" onChange={handlechange} value={formdata.name} className="inputbox" />
             </div>
             <div className="flex flex-col mb-3">
-              <label htmlFor="email" className="font-[600] text-amber-700 mx-1">Enter Email Address</label>
-              <input id="email" type="text" onChange={handlechange} value={formdata.email} placeholder="Ex: name@gmail.com" name="email" className="inputbox" />
+              <label htmlFor="email" className="font-[600] text-amber-700 mx-1">{formCopy.emailLabel}</label>
+              <input id="email" type="text" onChange={handlechange} value={formdata.email} placeholder={formCopy.emailPlaceholder} name="email" className="inputbox" />
             </div>
             <div className="flex flex-col mb-5">
-              <label htmlFor="message" className="font-[600] text-amber-700 mx-1">Enter Message</label>
-              <textarea id="message" type="text" onChange={handlechange} value={formdata.message} placeholder="Type your query..." name="message" className="inputbox h-[130px]" ></textarea>
+              <label htmlFor="message" className="font-[600] text-amber-700 mx-1">{formCopy.messageLabel}</label>
+              <textarea id="message" type="text" onChange={handlechange} value={formdata.message} placeholder={formCopy.messagePlaceholder} name="message" className="inputbox h-[130px]" ></textarea>
             </div>
-            <Button type="submit" themecss="btn1 sm:w-auto w-full px-[7%] justify-center py-2" Content="Submit" />
+            <Button type="submit" themecss="btn1 sm:w-auto w-full px-[7%] justify-center py-2" Content={formCopy.submitText} />
           </form>
         </div>
       </div>

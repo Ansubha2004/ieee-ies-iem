@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+@layer components{
+    .Navbar{
+        @apply w-full box-border px-[4%] sm:px-[8%] flex justify-between items-center h-auto;
+    }
+    .Navbar2{
+        @apply w-full box-border px-[4%] sm:px-[8%] flex flex-col h-auto;
+    }
+    .navbaricons{
+        @apply h-[2rem] object-contain ;
+    }
+    .linkanimate
+    {
+        @apply transition-all  duration-100 ease-in-out sm:scale-[1]  font-[600] text-amber-600 ;
+    }
+    .dotcomponent{
+        @apply aspect-square w-[8px] rounded-full bg-amber-600;
+    }
+    .btn1{
+        @apply bg-gradient-to-r from-amber-700 to-amber-500 rounded-[5px] py-[2%] hover:opacity-[0.9] px-[3.5%] sm:px-[2%] text-white cursor-pointer active:scale-[0.95] transition-all  ;
+     }
+     .btn2{
+        @apply  rounded-l-full border-solid border-white sm:border-[4px] border-[2px] rounded-r-full py-[1.5%] hover:opacity-[0.9] sm:font-bold  px-[3.5%] sm:px-[2%] text-white cursor-pointer active:scale-[0.95] transition-all  ;
+     }
+     .btn3{
+        @apply  w-[45%] border-solid border-blue-900 sm:border-[2px] border-[1px] rounded-[10px] py-[1.5%] bg-gradient-to-r from-blue-300 via-white to-blue-300 flex justify-center  hover:opacity-[0.9] sm:font-bold  px-[3.5%] sm:px-[2%] text-black cursor-pointer active:scale-[0.95] transition-all  ;
+     }
+     .iconanimate{
+        @apply hover:scale-[0.95] active:scale-[0.95] hover:opacity-[0.8] cursor-pointer;
+       }
+    .mobilenavbar
+    {
+        @apply w-full py-4 px-4 text-center
+    }
+    .animatedbutton1
+    {
+        @apply font-[400] cursor-pointer focus:underline text-[0.9rem] text-zinc-500 focus:underline-offset-4 hover:scale-[1.02] active:scale-[1.02] focus:font-[500] focus:text-amber-600 transition-all duration-200 ease-in-out;
+    }
+    .arrowbutton {
+        @apply text-blue-800 active:opacity-[0.8] hover:opacity-[0.8] cursor-pointer active:scale-[0.95] md:active:scale-[0.8] transition-all duration-100 ease-in-out
+     }
+    .animatedbutton2
+    {
+        @apply font-[400] cursor-pointer text-[0.8rem] text-zinc-700 focus:underline-offset-4 hover:scale-[1.02] active:scale-[1.02] focus:font-[500] focus:text-blue-600 transition-all duration-200 ease-in-out;
+    }
+    .heading
+    {
+        @apply font-[900] sm:font-[700] text-[1.6rem] sm:text-[2rem] bg-gradient-to-b from-orange-800 to-amber-400 bg-clip-text text-transparent;
+    }
+    .subheading{
+        @apply font-[700] -translate-y-1 text-[0.85rem];
+    }
+    .paratext
+    {
+        @apply text-justify sm:text-left text-zinc-500 font-[400];
+    }
+    .profilecard
+    {
+        @apply w-full h-fit p-7 bg-gradient-to-br from-white to-amber-100 scroll-mt-[170px] rounded-[5px] relative shadow-[0px_0px_15px_0px_rgba(0,0,0,0.2)] flex;
+    }
+    .inputbox{
+        @apply w-full h-[50px] box-border p-2 bg-zinc-100 outline-none mt-2 rounded-[5px] ;
+    }
+    .contacticondesign
+    {
+        @apply bg-zinc-100 min-w-[30px] h-[30px] sm:min-w-[60px] sm:h-[60px] flex justify-center items-center rounded-[5px] bg-gradient-to-br from-orange-800 to-amber-600 text-amber-50 ;
+    }
+    .animation2{
+        @apply transition-all ease-in-out duration-100 hover:scale-[1.01] hover:bg-amber-50 active:scale-[1.01] active:bg-amber-50;
+    }
+    .admin-shell {
+        @apply relative bg-zinc-100 w-full overflow-hidden;
+        height: 100%;
+        height: 100dvh;
+        max-height: 100dvh;
+    }
+    .admin-sidebar-wrap {
+        @apply fixed top-0 left-0 bottom-0 z-50 w-64;
+        @apply transition-transform duration-200 ease-out;
+    }
+    .admin-sidebar-closed {
+        @apply -translate-x-full lg:translate-x-0;
+    }
+    .admin-sidebar-open {
+        @apply translate-x-0;
+    }
+    .admin-sidebar {
+        @apply w-full h-full bg-[#0A192F] text-white flex flex-col overflow-y-auto overscroll-contain shadow-xl;
+    }
+    .admin-content {
+        @apply fixed top-0 right-0 bottom-0 left-0 flex flex-col min-w-0 overflow-hidden;
+        @apply lg:left-64;
+    }
+    .admin-header {
+        @apply shrink-0 z-20 bg-[#0A192F] border-b border-amber-600/30 px-3 sm:px-5 py-2.5 sm:py-3;
+    }
+    .admin-main {
+        @apply flex-1 min-h-0 overflow-y-auto overflow-x-hidden overscroll-contain;
+        @apply p-3 sm:p-5 md:p-6;
+    }
+    .admin-page {
+        @apply w-full max-w-6xl mx-auto space-y-4 sm:space-y-5 pb-2;
+    }
+    .admin-page-header {
+        @apply shrink-0 space-y-1;
+    }
+    .admin-shell .heading {
+        @apply text-lg sm:text-xl font-bold text-zinc-900 leading-tight;
+        background: none;
+        background-clip: unset;
+        -webkit-background-clip: unset;
+        -webkit-text-fill-color: unset;
+        color: #18181b;
+    }
+    .admin-shell .subheading {
+        @apply text-sm font-semibold text-zinc-700 translate-y-0;
+    }
+    .admin-shell .paratext {
+        @apply text-sm text-zinc-500 leading-snug;
+    }
+    .admin-shell .btn1 {
+        @apply w-auto min-w-0 rounded-md px-4 py-2 text-sm font-medium from-amber-700 to-amber-600;
+    }
+    .admin-shell .btn3 {
+        @apply w-auto min-w-0 max-w-full rounded-md border border-zinc-300 bg-white text-zinc-800 from-white via-white to-white px-4 py-2 text-sm;
+    }
+    .admin-shell .inputbox {
+        @apply mt-1 h-10 sm:h-11 rounded-md border border-zinc-200 bg-white text-sm max-w-full;
+    }
+    .admin-shell .profilecard {
+        @apply rounded-lg border border-zinc-200 bg-white shadow-sm from-white to-white p-0 min-w-0 scroll-mt-0;
+    }
+    .admin-toolbar {
+        @apply flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:justify-end;
+    }
+    .admin-toolbar .btn1,
+    .admin-toolbar .btn3 {
+        @apply w-full sm:w-auto justify-center;
+    }
+    .admin-nav-link {
+        @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-white/80 hover:bg-white/10 hover:text-white transition-colors text-sm font-medium;
+    }
+    .admin-nav-link-active {
+        @apply bg-gradient-to-r from-amber-700/90 to-amber-600/80 text-white shadow-md;
+    }
+    .admin-card {
+        @apply bg-white rounded-lg border border-zinc-200 p-4 sm:p-5 shadow-sm min-w-0;
+    }
+    .admin-label {
+        @apply block text-sm font-medium text-zinc-700;
+    }
+    .admin-icon-btn {
+        @apply p-2 rounded-md bg-amber-50 text-amber-800 border border-amber-100 hover:bg-amber-100;
+    }
+    .admin-icon-btn-danger {
+        @apply p-2 rounded-md bg-red-50 text-red-700 border border-red-100 hover:bg-red-100;
+    }
+}

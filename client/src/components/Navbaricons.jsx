@@ -6,19 +6,22 @@ import facebook from "../assets/icons/facebook.png";
 import linkedin from "../assets/icons/linkedin.png";
 import iemlogo from "../assets/images/iemlogo.png";
 import uemlogo from "../assets/images/uemlogo.png";
+import contactData from "../data/contact.json";
 
 
 function Navbaricons({ additionalcss }) {
+  const { socialLinks } = contactData;
+
   return (
     <div className={clsx("sm:w-auto justify-end flex gap-2 items-center py-1",additionalcss)}>
-      <a target="main" href="https://www.instagram.com/ieee_ies_official?igsh=MTB0djBzdWdoOXFncA==">
-        <img src={instagram} className="navbaricons iconanimate" alt="" />
+      <a target="main" rel="noreferrer" href={socialLinks.instagram}>
+        <img src={instagram} className="navbaricons iconanimate" alt="Instagram" />
       </a>
-      <a target="main" href="https://www.linkedin.com/company/ieee-ies-iem/">
-        <img src={linkedin} className="navbaricons iconanimate" alt="" />
+      <a target="main" rel="noreferrer" href={socialLinks.linkedin}>
+        <img src={linkedin} className="navbaricons iconanimate" alt="LinkedIn" />
       </a>
-      <a target="main" href="https://www.facebook.com/profile.php?id=61577417579820&mibextid=ZbWKwL">
-        <img src={facebook} className="navbaricons iconanimate" alt="" />
+      <a target="main" rel="noreferrer" href={socialLinks.facebook}>
+        <img src={facebook} className="navbaricons iconanimate" alt="Facebook" />
       </a>
 
       <Button

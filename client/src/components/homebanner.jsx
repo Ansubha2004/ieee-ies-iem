@@ -6,6 +6,7 @@ import Button from "./Button.jsx";
 import clsx from "clsx"
 
 function Homebanner() {
+  
   const quotes = [
     "IEEE is the world's largest technical professional organization dedicated to advancing technology",
     "At IEEE IES SBC, we turn knowledge into action and technology into impact.",
