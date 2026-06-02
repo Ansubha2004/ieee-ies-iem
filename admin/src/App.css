@@ -16,7 +16,7 @@
     }
     .buttonanimation1
     {
-        @apply hover:border-yellow-500 hover:text-yellow-300 active:scale-[0.99] hover:scale-[1.01] transition-all ;
+        @apply hover:cursor-pointer active:scale-[0.99] hover:scale-[1.01] transition-all ;
     }
     .dotcomponent{
         @apply aspect-square w-[8px] rounded-full bg-amber-600;
@@ -57,7 +57,7 @@
     }
     .paratext
     {
-        @apply text-justify sm:text-left text-zinc-500 font-[400];
+        @apply text-justify text-[0.8rem] sm:text-left text-zinc-500 font-[400];
     }
     .profilecard
     {

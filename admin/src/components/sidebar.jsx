@@ -42,7 +42,7 @@ function sidebar() {
         <a
           href="https://ieee-ies-iem-sbc.vercel.app/"
           target="main"
-          className="w-full rounded-[5px] border-[1px] box-border py-1 flex justify-center gap-2 items-center opacity-[0.6] buttonanimation1"
+          className="w-full rounded-[5px] hover:border-yellow-500 hover:text-yellow-300 border-[1px] box-border py-1 flex justify-center gap-2 items-center opacity-[0.6] buttonanimation1"
         >
           Live Preview
           <HiArrowTopRightOnSquare />
