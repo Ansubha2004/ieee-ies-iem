@@ -3,7 +3,8 @@ import mongoose from "mongoose";
 const cwcSchema=new mongoose.Schema({
     id:{
         type:Number,
-        required:true
+        required:true,
+        unique:true
     },
     name:{
         type:String,

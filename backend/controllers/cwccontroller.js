@@ -113,8 +113,8 @@ export const updatecwc = async (req, res) => {
 
 export const deletecwc = async (req, res) => {
   try {
-    const { id: mongoId } = req.params;
-    const deleted = await cwcmodel.findByIdAndDelete(mongoId);
+    const { id,name } = req.params;
+    const deleted = await cwcmodel.findOneAndDelete({id,name});
     if (!deleted) {
       return res.json({ success: false, message: "Member not found" });
     }
