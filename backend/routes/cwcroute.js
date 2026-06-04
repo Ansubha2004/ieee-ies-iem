@@ -7,6 +7,6 @@ const router = express.Router();
 router.post("/addcwc", upload.single("image"), addcwc);
 router.get("/getallcwc", getallcwcs);
 router.put("/updatecwc/:id", upload.single("image"), updatecwc);
-router.delete("/deletecwc/:id/:name", deletecwc);
+router.delete("/deletecwc/:id", deletecwc);
 
 export default router;
