@@ -17,8 +17,32 @@ function Addmemberform() {
 
   const handlechange = (e) => {
     const { name, value, type, files } = e.target;
+    if(type==="file")
+    {
+      const file=files[0];
+      if(!file)
+        return;
+      const img=new Image();
+
+      img.onload=()=>{
+        const ratio=img.width/img.height;
+        if(ratio!=1.3333)
+        {
+          alert("Select 4:3 ratio image");
+          e.target.value="";
+          return;
+        }
+
+        const shallowcopy={...formdata};
+        shallowcopy[name]=file;
+        setformdata(shallowcopy)
+      }
+      img.src=URL.createObjectURL(file);
+      return;
+
+    }
     const shallowcopy = { ...formdata };
-    shallowcopy[name] = type === "file" ? files[0] : value;
+    shallowcopy[name] = value;
     setformdata(shallowcopy);
   };
 
