@@ -21,6 +21,7 @@ app.use(
             "http://localhost:5174",
             "http://localhost:4173",
             "https://ieee-ies-iem-sbc.vercel.app",
+            "https://admin-ieeeiesiem.vercel.app"
         ],
         methods: ["POST", "GET", "PUT", "DELETE"],
         credentials: true,
