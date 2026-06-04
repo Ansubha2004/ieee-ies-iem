@@ -26,7 +26,7 @@ function Addmemberform() {
     e.preventDefault();
     const { id, name, role, image, linkedin, email, description } = formdata;
     if (
-      !id.trim() ||
+      !String(id).trim() ||
       !name.trim() ||
       !role.trim() ||
       !image ||
@@ -35,35 +35,43 @@ function Addmemberform() {
       !description.trim()
     ) {
       console.log("Kindly fill the credentials...");
+      return;
     }
     try {
       const newdata = new FormData();
+      const socialmedia = JSON.stringify([
+        { platform: "LinkedIn", link: linkedin.trim() },
+        { platform: "Email", link: email.trim() },
+      ]);
 
       newdata.append("id", id);
-      newdata.append("name", name);
-      newdata.append("role", role);
+      newdata.append("name", name.trim());
+      newdata.append("role", role.trim());
       newdata.append("image", image);
-      newdata.append("linkedin", linkedin);
-      newdata.append("email", email);
-      newdata.append("description", description);
-      const url = "https://ieee-ies-iem.onrender.com";
+      newdata.append("description", description.trim());
+      newdata.append("socialmedia", socialmedia);
+
+      const url =
+        import.meta.env.VITE_API_URL || "https://ieee-ies-iem.onrender.com";
       const response = await axios.post(`${url}/cwcapi/addcwc`, newdata);
-      const { success, error, data } = response.data;
+      const { success, message } = response.data;
       if (success) {
         console.log("Data posted successfully");
-
-        //✅ Reset form data here
         setformdata({
+          id: "",
           name: "",
+          role: "",
+          image: "",
+          linkedin: "",
           email: "",
-          message: "",
+          description: "",
         });
-      }
-      if (error) {
-        console.log("Error occured while data posting");
+      } else {
+        console.log("Error:", message || "Failed to save member");
       }
     } catch (err) {
-      console.log("API Error posting new member .... : ", err);
+      const msg = err.response?.data?.message || err.message;
+      console.log("API Error posting new member:", msg);
     }
   };
 
