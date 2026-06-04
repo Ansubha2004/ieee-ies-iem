@@ -17,37 +17,13 @@ function Addmemberform() {
 
   const handlechange = (e) => {
     const { name, value, type, files } = e.target;
-    if(type==="file")
-    {
-      const file=files[0];
-      if(!file)
-        return;
-      const img=new Image();
-
-      img.onload=()=>{
-        const ratio=img.width/img.height;
-        if(ratio!=1.3333)
-        {
-          alert("Select 4:3 ratio image");
-          e.target.value="";
-          return;
-        }
-
-        const shallowcopy={...formdata};
-        shallowcopy[name]=file;
-        setformdata(shallowcopy)
-      }
-      img.src=URL.createObjectURL(file);
-      return;
-
-    }
     const shallowcopy = { ...formdata };
-    shallowcopy[name] = value;
+    shallowcopy[name] = type === "file" ? files[0] : value;
     setformdata(shallowcopy);
   };
 
   const handlesubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     const { id, name, role, image, linkedin, email, description } = formdata;
     if (
       !String(id).trim() ||
@@ -78,9 +54,10 @@ function Addmemberform() {
       const url =
         import.meta.env.VITE_API_URL || "https://ieee-ies-iem.onrender.com";
       const response = await axios.post(`${url}/cwcapi/addcwc`, newdata);
-      const { success, message } = response.data;
+      const { success, message,data } = response.data;
       if (success) {
         console.log("Data posted successfully");
+        
         setformdata({
           id: "",
           name: "",
@@ -171,8 +148,8 @@ function Addmemberform() {
             htmlFor="image"
             className="text-[0.8rem] font-[600] text-amber-700 mx-1"
           >
-            Profile photo
-          </label>
+            Profile photo <a href="https://imagy.app/image-aspect-ratio-changer/" target="main">(4:3 aspect ratio, Click Here)</a>
+            </label>
           <input
             required
             id="image"
