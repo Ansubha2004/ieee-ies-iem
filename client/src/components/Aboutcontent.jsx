@@ -11,7 +11,7 @@ function Aboutcontent() {
 
     return (
         <div className="hidden border-solid border-[2px] border-amber-600 h-fit md:flex flex-col min-w-[20%] box-border bg-white sticky md:top-[150px] lg:top-[190px]">
-            <div id="heading" className="bg-amber-600 p-2 text-white font-bold text-[1.3rem]">Content</div>
+            <div id="heading" className="bg-amber-600 px-3 py-2.5 text-white section-label">Content</div>
             <div className="p-2">
                 <ol className="flex flex-col gap-1">
                     <li>

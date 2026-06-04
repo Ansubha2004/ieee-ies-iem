@@ -17,10 +17,10 @@ function Joinbanner() {
 
   return (
     <div className="relative z-[2] bg-black/20 h-[400px] flex flex-col items-center justify-evenly w-full sm:w-[80%] lg:w-[50%]">
-      <p className="font-[500] text-[1.7rem] sm:text-[2rem] text-white/90 text-center px-4">
+      <p className="font-display font-bold text-2xl sm:text-3xl lg:text-4xl tracking-tight text-white/95 text-center px-4">
         {joinBanner.title}
       </p>
-      <p className="w-[90%] text-[1rem] md:text-[0.8rem] text-center text-white/80">
+      <p className="w-[90%] max-w-2xl text-sm sm:text-base text-center text-white/85 leading-relaxed">
         {joinBanner.description}
       </p>
       <Button

@@ -12,7 +12,7 @@ import Contact from "./pages/Contact.jsx"
 
 function App() {
   return (
-    <div className="relative w-screen h-screen min-h-screen overflow-x-hidden">
+    <div className="relative w-screen h-screen min-h-screen overflow-x-hidden font-sans text-slate-800 antialiased">
       <Navbar />
       <Navbar2 />
       <Routes>

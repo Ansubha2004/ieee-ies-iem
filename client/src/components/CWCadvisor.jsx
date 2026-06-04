@@ -13,7 +13,7 @@ function CWCadvisor({advisor}) {
           </div>
           <div className="w-full flex flex-col items-center sm:block sm:w-[70%] h-auto sm:pl-[5%]">
             <p className="heading">{advisor.name}</p>
-            <p className="font-bold text-center sm:text-left ">{advisor.role}</p>
+            <p className="role-text text-center sm:text-left">{advisor.role}</p>
             <br />
             <div className="sm:hidden  w-[90%] border-double border-[10px] border-yellow-600 rounded-full aspect-square flex justify-center overflow-hidden object-fit ">
               <img src={advisor.image} className=" h-full scale-[1.2] " />
@@ -28,7 +28,7 @@ function CWCadvisor({advisor}) {
             </div>
             <p className="paratext">{advisor.description}</p>
 
-            <div className="w-full mt-[48px] text-yellow-700 hidden sm:flex flex-col gap-1 font-[200] ">
+            <div className="w-full mt-12 text-amber-800 hidden sm:flex flex-col gap-2 text-sm font-medium">
               <div className="flex gap-2 items-center">
                 <FaLinkedin size={30} />
                 <a href={advisor.socialmedia[0].link}>

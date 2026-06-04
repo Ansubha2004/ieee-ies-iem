@@ -29,7 +29,7 @@ function About() {
                         <p>Serving as a vibrant hub for students interested in industrial electronics, automation, control systems, and intelligent technologies, the chapter is guided by its esteemed advisor, Dr. Sourav Das.
                         </p>
                         <p>As part of the globally connected <a href="https://www.ieee-ies.org/" className="linkanimate text-zinc-700">IEEE IES</a> community, this student chapter is committed to:</p>
-                        <ul className="list-disc pl-7">
+                        <ul className="list-disc pl-7 space-y-1.5 marker:text-amber-600">
                             <li>Hosting technical workshops, seminars, and webinars</li>
                             <li>Facilitating industrial visits and field-based learning</li>
                             <li>Encouraging innovation, research, and technical publications</li>
@@ -56,7 +56,7 @@ function About() {
                     <p className="heading">Membership Details</p>
                     <p className="subheading">Guidance to apply for membership</p>
                     <div className="paratext mt-3 space-y-2 text-left">
-                        <ul className="list-disc pl-4 sm:pl-7">
+                        <ul className="list-disc pl-4 sm:pl-7 space-y-1.5 marker:text-amber-600">
                             <li>Visit the <a href="https://www.ieee.org/membership/join" className="linkanimate text-zinc-700">registration page</a> of IEEE and apply for membership.</li>
                             <li>Visit the <a href="https://www.ieee.org/membership-catalog/productdetail/showProductDetailPage.html?product=MEMIE013" className="linkanimate text-zinc-700">registration page</a> of IEEE Industrial Electronics Society and apply for membership.</li>
                             <li>On successful registration of membership, kindly download the membership card and the receipt.</li>
@@ -69,7 +69,7 @@ function About() {
                     <p className="heading">Membership Benifits</p>
                     <p className="subheading">Perks of joining the chapter</p>
                     <div className="paratext mt-3 space-y-2 mb-10 text-left">
-                        <ul className="list-disc pl-4 sm:pl-7">
+                        <ul className="list-disc pl-4 sm:pl-7 space-y-1.5 marker:text-amber-600">
                             <li>Full access to IEEE IES Magazine</li>
                             <li>Exposure to various IEEE Communities</li>
                             <li>Students can direcrtly collaborate with Indutrial Experts</li>

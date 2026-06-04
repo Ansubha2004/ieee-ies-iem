@@ -28,11 +28,11 @@ function Homebanner() {
         src={homebackground}
         className="absolute h-full w-full z-[0] object-cover  "
       />
-      <div className="relative oswald-text z-[1]  w-full h-full bg-black/50  flex flex-col justify-evenly items-center box-border px-[3%] py-[3%]">
-        <div className=" whitespace-nowrap  text-orange-100 text-[1.3rem] sm:text-[1.5rem] md:text-[1.9rem] lg:text-[2.5rem] text-center  font-bold">
-          <p className="text-[0.9rem] textshadow sm:text-[1.1rem]  ">Welcome to IEEE</p>
+      <div className="relative z-[1] w-full h-full bg-black/50 flex flex-col justify-evenly items-center box-border px-[3%] py-[3%]">
+        <div className="hero-title whitespace-nowrap text-xl sm:text-2xl md:text-3xl lg:text-5xl">
+          <p className="textshadow text-sm sm:text-lg md:text-xl font-medium text-orange-100/90">Welcome to IEEE</p>
           <p className="textshadow">Industrial Electronics Society</p>
-          <p className=" textshadow text-[0.7rem] sm:text-[0.9rem] font-900 text-yellow-50">
+          <p className="textshadow text-xs sm:text-sm md:text-base font-semibold text-yellow-50/95 mt-1">
             Student's Branch Chapter | EE & EEE | IEM, Kolkata
           </p>
         </div>
@@ -42,7 +42,7 @@ function Homebanner() {
         >
           <img src={ieeeieslogo2} className="h-[2.8rem]" />
         </div>
-        <p className=" text-center text-white textshadow font-700 w-[80%] text-[0.7rem]  sm:text-[0.9rem]  italiana-regular  ">
+        <p className="hero-quote w-[85%] sm:w-[75%] max-w-2xl text-sm sm:text-base">
           {quotes[currentIndex]}
         </p>
         <Button

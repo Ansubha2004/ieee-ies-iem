@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="relative  bg-[#0A192F] w-full h-auto box-border py-2 px-[4%] sm:px-[8%] text-[white] text-[0.6rem] ">
+    <footer className="relative  bg-[#0A192F] w-full h-auto box-border py-2 px-[4%] sm:px-[4%] text-[white] text-[0.6rem] ">
       <div className="gap-[1rem] hidden sm:flex mb-2">
         <a href="https://www.ieee.org/">IEEE Home</a>
         <p>|</p>

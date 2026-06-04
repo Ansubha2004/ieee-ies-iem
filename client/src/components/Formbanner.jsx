@@ -11,7 +11,7 @@ function Formbanner() {
         }
         Content="Register Now"
       />
-      <p className="text-white text-right sm:text-[1rem] lg:text-[1.3rem] text-[0.8rem] textshadow1 font-bold">
+      <p className="banner-text text-right">
         Haven't joined IEEE IES yet? <br className="sm:hidden" /> Just a click away from membership{" "}
       </p>
       

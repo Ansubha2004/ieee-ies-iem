@@ -19,7 +19,7 @@ function Socialbanner() {
     <div className="w-full sm:w-[50%] flex flex-col justify-between gap-4">
       <div>
         <p className="heading sm:text-left text-center">{social.heading}</p>
-        <p className="paratext text-[0.8rem] sm:text-left text-center">{social.subheading}</p>
+        <p className="paratext sm:text-left text-center">{social.subheading}</p>
         <br className="sm:hidden" />
       </div>
       <div className="w-full flex flex-col gap-4">
@@ -28,8 +28,8 @@ function Socialbanner() {
             <SiGmail size={iconSize} />
           </div>
           <div className="flex flex-col justify-center">
-            <p className="text-amber-700 font-bold">{social.emailLabel}</p>
-            <p className="paratext text-[0.8rem]">{social.email}</p>
+            <p className="text-amber-800 font-semibold text-sm tracking-wide">{social.emailLabel}</p>
+            <p className="paratext">{social.email}</p>
           </div>
         </a>
         <a
@@ -42,8 +42,8 @@ function Socialbanner() {
             <FaLocationDot size={iconSize} />
           </div>
           <div className="flex flex-col justify-center">
-            <p className="text-amber-700 font-bold">{social.locationTitle}</p>
-            <p className="paratext text-[0.7rem]">{social.address}</p>
+            <p className="text-amber-800 font-semibold text-sm tracking-wide">{social.locationTitle}</p>
+            <p className="paratext text-sm">{social.address}</p>
           </div>
         </a>
       </div>

@@ -56,7 +56,7 @@ function Home() {
               IEEE IES Students Chapter - IEM, Kolkata
             </p>
             <br />
-            <p className="paratext text-[0.85rem]">
+            <p className="paratext">
               This is the official page of the IEEE Industrial Electronics Society (IES) Student Branch Chapter at IEM.
               Rooted in the academic excellence of the Electrical Engineering Department at the Institute of Engineering & Management, Kolkata, this chapter embodies the spirit of innovation, technical growth, and industry-ready learning.
               <br />
@@ -74,7 +74,7 @@ function Home() {
       <Banner1 />
       <div className="w-full text-center px-[5%] mb-[7%] sm:mb-[3%]">
         <p className="heading">Why to Engage?</p>
-        <p className="subheading text-[0.8rem] sm:text-[1rem] sm:text-normal">
+        <p className="subheading">
           Grow beyond classrooms. IEEE-IES-IEM awaits!
         </p>
         <br />
@@ -82,12 +82,12 @@ function Home() {
           {Points.map((point, index) => (
             <div
               key={index}
-              className="w-full rounded-[10px] bg-gradient-to-br from-white to-yellow-100 h-auto max-h-[100px] flex justify-between p-[3%] items-center hover:scale-[1.01] transition-all"
+              className="w-full rounded-xl bg-gradient-to-br from-white to-amber-50 h-auto min-h-[88px] flex justify-between p-4 items-center hover:scale-[1.01] transition-all shadow-sm border border-amber-100/80"
             >
-              <SiTicktick size={60} className="text-amber-700" />
-              <div className="w-full pl-3 flex flex-col items-start">
-                <p className="text-[1.2rem] font-[700]">{point.head}</p>
-                <p className="paratext  text-left text-[0.9rem] sm:text-[0.8rem] text-blue-900">
+              <SiTicktick size={52} className="text-amber-600 shrink-0" />
+              <div className="w-full pl-3 flex flex-col items-start gap-0.5">
+                <p className="card-title">{point.head}</p>
+                <p className="paratext text-left text-blue-900/90">
                   {point.body}
                 </p>
               </div>
@@ -98,10 +98,10 @@ function Home() {
       <Formbanner />
       <br className="sm:hidden" />
       <div className="w-full box-border px-[5%] pb-[3%]">
-        <p className="heading  text-center  leading-9">
+        <p className="heading text-center">
           Events & Announcements
         </p>
-        <p className="subheading mt-1 text-[0.8rem] sm:text-[1rem] text-center ">
+        <p className="subheading mt-2 text-center">
           What’s New, What’s Next – Events at a Glance
         </p>
         <br />
@@ -110,10 +110,10 @@ function Home() {
       </div>
       <Banner2/>
       <div className="box-border flex flex-col items-center px-[5%] pb-[3%]">
-        <p className="heading text-center  leading-9">
+        <p className="heading text-center">
           Gallery of Experiences
         </p>
-        <p className="subheading mt-1 text-[0.8rem] sm:text-[1rem] text-center ">
+        <p className="subheading mt-2 text-center">
           Frames of Fellowship, Fun, and Future
         </p>
         <Homegallery />

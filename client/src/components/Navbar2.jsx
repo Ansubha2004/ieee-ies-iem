@@ -23,7 +23,7 @@ function Navbar2() {
   return (
     <nav
       id="nav2"
-      className="sticky top-0 bg-white  Navbar2 z-[2] border-solid  border-black/20 border-b-[2px]"
+      className="sticky top-0 bg-white Navbar2 z-[2] border-solid border-slate-200/80 border-b shadow-sm"
     >
       <div className="w-full flex justify-between border-solid border-b-[2px] border-yellow-600">
         <div className="w-auto flex gap-10">
@@ -53,7 +53,7 @@ function Navbar2() {
         </button>
         <Navbaricons />
       </div>
-      <div className="sm:flex w-full justify-center  items-center py-1  hidden sm:gap-[1.2rem] lg:text-[1rem]  lg:gap-[1.6rem] font-[300] ">
+      <div className="sm:flex w-full justify-center items-center py-2 hidden sm:gap-5 lg:gap-7 text-sm lg:text-base font-medium tracking-wide text-slate-700">
         <NavLink
           to="/"
           className={({ isActive }) => (isActive ? "linkanimate" : "")}
@@ -92,7 +92,7 @@ function Navbar2() {
 
       <div
         className={clsx(
-          "sm:hidden absolute top-[7.6rem] left-0   w-3/5 bg-zinc-100 flex flex-col items-center box-border text-[1.1rem] font-bold   transition-transform ease-in-out duration-400",
+          "sm:hidden absolute top-[7.6rem] left-0 w-3/5 bg-zinc-50 flex flex-col items-center box-border text-base font-semibold tracking-wide transition-transform ease-in-out duration-400 shadow-lg",
           active ? "translate-x-0" : "-translate-x-full"
         )}
       >

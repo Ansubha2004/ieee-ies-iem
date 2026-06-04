@@ -1,72 +1,90 @@
 @import "tailwindcss";
 
-@layer components{
-    .Navbar{
-        @apply w-full box-border px-[4%] sm:px-[8%] flex justify-between items-center h-auto;
-    }
-    .Navbar2{
-        @apply w-full box-border px-[4%] sm:px-[8%] flex flex-col h-auto;
-    }
-    .navbaricons{
-        @apply h-[2rem] object-contain ;
-    }
-    .linkanimate
-    {
-        @apply transition-all  duration-100 ease-in-out sm:scale-[1]  font-[600] text-amber-600 ;
-    }
-    .dotcomponent{
-        @apply aspect-square w-[8px] rounded-full bg-amber-600;
-    }
-    .btn1{
-        @apply bg-gradient-to-r from-amber-700 to-amber-500 rounded-[5px] py-[2%] hover:opacity-[0.9] px-[3.5%] sm:px-[2%] text-white cursor-pointer active:scale-[0.95] transition-all  ;
-     }
-     .btn2{
-        @apply  rounded-l-full border-solid border-white sm:border-[4px] border-[2px] rounded-r-full py-[1.5%] hover:opacity-[0.9] sm:font-bold  px-[3.5%] sm:px-[2%] text-white cursor-pointer active:scale-[0.95] transition-all  ;
-     }
-     .btn3{
-        @apply  w-[45%] border-solid border-blue-900 sm:border-[2px] border-[1px] rounded-[10px] py-[1.5%] bg-gradient-to-r from-blue-300 via-white to-blue-300 flex justify-center  hover:opacity-[0.9] sm:font-bold  px-[3.5%] sm:px-[2%] text-black cursor-pointer active:scale-[0.95] transition-all  ;
-     }
-     .iconanimate{
-        @apply hover:scale-[0.95] active:scale-[0.95] hover:opacity-[0.8] cursor-pointer;
-       }
-    .mobilenavbar
-    {
-        @apply w-full py-4 px-4 text-center
-    }
-    .animatedbutton1
-    {
-        @apply font-[400] cursor-pointer focus:underline text-[0.9rem] text-zinc-500 focus:underline-offset-4 hover:scale-[1.02] active:scale-[1.02] focus:font-[500] focus:text-amber-600 transition-all duration-200 ease-in-out;
-    }
-    .arrowbutton {
-        @apply text-blue-800 active:opacity-[0.8] hover:opacity-[0.8] cursor-pointer active:scale-[0.95] md:active:scale-[0.8] transition-all duration-100 ease-in-out
-     }
-    .animatedbutton2
-    {
-        @apply font-[400] cursor-pointer text-[0.8rem] text-zinc-700 focus:underline-offset-4 hover:scale-[1.02] active:scale-[1.02] focus:font-[500] focus:text-blue-600 transition-all duration-200 ease-in-out;
-    }
-    .heading
-    {
-        @apply font-[900] sm:font-[700] text-[1.6rem] sm:text-[2rem] bg-gradient-to-b from-orange-800 to-amber-400 bg-clip-text text-transparent;
-    }
-    .subheading{
-        @apply font-[700] -translate-y-1 text-[0.85rem];
-    }
-    .paratext
-    {
-        @apply text-justify sm:text-left text-zinc-500 font-[400];
-    }
-    .profilecard
-    {
-        @apply w-full h-fit p-7 bg-gradient-to-br from-white to-amber-100 scroll-mt-[170px] rounded-[5px] relative shadow-[0px_0px_15px_0px_rgba(0,0,0,0.2)] flex;
-    }
-    .inputbox{
-        @apply w-full h-[50px] box-border p-2 bg-zinc-100 outline-none mt-2 rounded-[5px] ;
-    }
-    .contacticondesign
-    {
-        @apply bg-zinc-100 min-w-[30px] h-[30px] sm:min-w-[60px] sm:h-[60px] flex justify-center items-center rounded-[5px] bg-gradient-to-br from-orange-800 to-amber-600 text-amber-50 ;
-    }
-    .animation2{
-        @apply transition-all ease-in-out duration-100 hover:scale-[1.01] hover:bg-amber-50 active:scale-[1.01] active:bg-amber-50;
-    }
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer components {
+  .Navbar {
+    @apply w-full box-border px-[4%] sm:px-[8%] flex justify-between items-center h-auto;
+  }
+  .Navbar2 {
+    @apply w-full box-border px-[4%] sm:px-[8%] flex flex-col h-auto;
+  }
+  .navbaricons {
+    @apply h-[2rem] object-contain;
+  }
+  .linkanimate {
+    @apply transition-all duration-200 ease-in-out sm:scale-[1] font-semibold text-amber-600 tracking-wide;
+  }
+  .dotcomponent {
+    @apply aspect-square w-[6px] rounded-full bg-amber-500;
+  }
+  .btn1 {
+    @apply bg-gradient-to-r from-amber-700 to-amber-500 rounded-lg py-2.5 hover:opacity-90 px-4 sm:px-5 text-sm sm:text-base font-semibold tracking-wide text-white cursor-pointer active:scale-[0.98] transition-all shadow-sm;
+  }
+  .btn2 {
+    @apply rounded-l-full border-solid border-white sm:border-[3px] border-2 rounded-r-full py-2 hover:opacity-90 font-semibold text-sm sm:text-base tracking-wide px-4 sm:px-5 text-white cursor-pointer active:scale-[0.98] transition-all;
+  }
+  .btn3 {
+    @apply w-[45%] border-solid border-slate-800 sm:border-2 border rounded-xl py-2 bg-gradient-to-r from-sky-100 via-white to-sky-100 flex justify-center hover:opacity-90 font-semibold text-sm tracking-wide px-4 text-slate-900 cursor-pointer active:scale-[0.98] transition-all;
+  }
+  .iconanimate {
+    @apply hover:scale-[0.95] active:scale-[0.95] hover:opacity-80 cursor-pointer;
+  }
+  .mobilenavbar {
+    @apply w-full py-4 px-4 text-center text-base font-medium tracking-wide;
+  }
+  .animatedbutton1 {
+    @apply font-medium cursor-pointer text-sm text-slate-500 focus:underline focus:underline-offset-4 hover:text-amber-600 focus:text-amber-600 transition-all duration-200 ease-in-out;
+  }
+  .arrowbutton {
+    @apply text-blue-800 active:opacity-80 hover:opacity-80 cursor-pointer active:scale-[0.95] md:active:scale-[0.9] transition-all duration-200 ease-in-out;
+  }
+  .animatedbutton2 {
+    @apply font-medium cursor-pointer text-sm text-slate-600 focus:underline focus:underline-offset-4 hover:text-blue-700 focus:text-blue-700 transition-all duration-200 ease-in-out;
+  }
+  .heading {
+    @apply font-display font-bold tracking-tight text-2xl sm:text-3xl lg:text-4xl leading-tight bg-gradient-to-br from-orange-800 via-amber-700 to-amber-400 bg-clip-text text-transparent;
+  }
+  .subheading {
+    @apply text-slate-600 font-semibold text-sm sm:text-base tracking-tight leading-snug;
+  }
+  .paratext {
+    @apply text-justify sm:text-left text-slate-600 text-sm sm:text-[0.95rem] leading-relaxed font-normal;
+  }
+  .banner-text {
+    @apply text-white text-sm sm:text-base lg:text-lg font-semibold tracking-tight leading-snug drop-shadow-md;
+  }
+  .hero-title {
+    @apply font-display text-orange-50 text-center font-bold tracking-tight leading-tight drop-shadow-md;
+  }
+  .hero-quote {
+    @apply text-center text-white/95 font-medium leading-relaxed tracking-normal drop-shadow-sm;
+  }
+  .card-title {
+    @apply font-display font-semibold text-lg sm:text-xl text-slate-900 tracking-tight;
+  }
+  .section-label {
+    @apply font-display font-semibold text-lg text-white tracking-wide;
+  }
+  .role-text {
+    @apply font-medium text-sm sm:text-base text-slate-600 tracking-tight;
+  }
+  .member-name {
+    @apply font-display font-semibold whitespace-nowrap bg-gradient-to-br from-orange-700 to-amber-500 text-transparent bg-clip-text text-xl sm:text-2xl tracking-tight;
+  }
+  .profilecard {
+    @apply w-full h-fit p-6 sm:p-7 bg-gradient-to-br from-white to-amber-50 scroll-mt-[170px] rounded-xl relative shadow-lg shadow-slate-200/80 flex;
+  }
+  .inputbox {
+    @apply w-full h-12 box-border px-3 text-sm sm:text-base bg-zinc-50 border border-zinc-200 outline-none mt-2 rounded-lg text-slate-800 placeholder:text-slate-400 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 transition-colors;
+  }
+  .contacticondesign {
+    @apply bg-zinc-50 min-w-[36px] h-9 sm:min-w-[56px] sm:h-14 flex justify-center items-center rounded-lg bg-gradient-to-br from-orange-800 to-amber-600 text-amber-50;
+  }
+  .animation2 {
+    @apply transition-all ease-in-out duration-200 hover:scale-[1.01] hover:bg-amber-50/80 active:scale-[1.01] active:bg-amber-50/80 rounded-lg;
+  }
 }

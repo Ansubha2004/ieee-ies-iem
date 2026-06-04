@@ -31,7 +31,7 @@ function Events() {
       
       <div id="view" className="scroll-mt-[108px] lg:scroll-mt-[140px] px-[5%] py-[20px] sm:py-[40px]">
         <p className="heading text-center">Events & Activity Highlights</p>
-        <p className="subheading text-center">Explore our diverse range of events and activities</p>
+        <p className="subheading text-center mt-2">Explore our diverse range of events and activities</p>
         <br className="hidden sm:block"/>
         <div className="w-full  flex flex-wrap justify-evenly space-y-10 mt-5">
           {events.slice(0,events.length-1).reverse().map((event, index) => (

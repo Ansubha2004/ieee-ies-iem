@@ -77,15 +77,15 @@ function Contact() {
         <div className="w-full sm:w-[50%]  relative flex flex-col justify-center relative">
           <form onSubmit={handlesubmission}>
             <div className="flex flex-col mb-3">
-              <label htmlFor="name" className="font-[600] text-amber-700 mx-1">{formCopy.nameLabel}</label>
+              <label htmlFor="name" className="text-sm font-semibold text-amber-800 tracking-wide mx-1">{formCopy.nameLabel}</label>
               <input id="name" type="text" placeholder={formCopy.namePlaceholder} name="name" onChange={handlechange} value={formdata.name} className="inputbox" />
             </div>
             <div className="flex flex-col mb-3">
-              <label htmlFor="email" className="font-[600] text-amber-700 mx-1">{formCopy.emailLabel}</label>
+              <label htmlFor="email" className="text-sm font-semibold text-amber-800 tracking-wide mx-1">{formCopy.emailLabel}</label>
               <input id="email" type="text" onChange={handlechange} value={formdata.email} placeholder={formCopy.emailPlaceholder} name="email" className="inputbox" />
             </div>
             <div className="flex flex-col mb-5">
-              <label htmlFor="message" className="font-[600] text-amber-700 mx-1">{formCopy.messageLabel}</label>
+              <label htmlFor="message" className="text-sm font-semibold text-amber-800 tracking-wide mx-1">{formCopy.messageLabel}</label>
               <textarea id="message" type="text" onChange={handlechange} value={formdata.message} placeholder={formCopy.messagePlaceholder} name="message" className="inputbox h-[130px]" ></textarea>
             </div>
             <Button type="submit" themecss="btn1 sm:w-auto w-full px-[7%] justify-center py-2" Content={formCopy.submitText} />

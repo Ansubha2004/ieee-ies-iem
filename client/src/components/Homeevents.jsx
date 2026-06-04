@@ -28,14 +28,14 @@ function Homeevents() {
                 className="w-full sm:w-4/7 flex flex-col items-center sm:items-start justify-between rounded-[10px] "
             >
                 <br className="sm:hidden" />
-                <p className="subheading  text-[1.5rem] mb-[24px]">
+                <p className="card-title mb-6">
                     Event Schedules
                 </p>
                 <div className="flex flex-col w-full items-start gap-7 ">
                     {Events.slice(1).map((event, index) => (
                         <div key={index}>
-                            <a target="main" className="text-blue-800 font-[700] hover:underline" href={event.link}>{event.name}</a>
-                            <div className="paratext  w-full flex text-[0.8rem] gap-1">
+                            <a target="main" className="text-blue-800 font-semibold text-base hover:underline tracking-tight" href={event.link}>{event.name}</a>
+                            <div className="paratext w-full flex flex-wrap gap-1 mt-0.5">
                                 <p>{event.date}</p>
                                 <p>|</p>
                                 <p>{event.venue}</p>
@@ -51,7 +51,7 @@ function Homeevents() {
                 id="upcoming"
                 className="w-full sm:w-3/7 flex flex-col items-center border-solid border-[2px] border-amber-600 h-fit"
             >
-                <div className="w-full text-center bg-amber-600 p-2 text-white font-bold text-[1.3rem]">
+                <div className="w-full text-center bg-amber-600 px-3 py-2.5 text-white section-label">
                     Upcoming Event
                 </div>
                 <img src={eventposter[Index]} className="w-full aspect-[16/11]  p-[3%]" />

@@ -23,7 +23,7 @@ function Homegallery() {
     <div className="w-full flex flex-wrap gap-2 justify-center items-center mt-[30px]">
       {
         images.map((image, index) => (
-          <div key={index} className="w-full md:w-[45%] lg:w-[30%] relative border-solid border-[7px] border-amber-700 p-[7px] bg-yellow-500 aspect-[16/10]  ">
+          <div key={index} className="w-full md:w-[45%] lg:w-[30%] relative border-4 border-amber-600 rounded-xl p-2 bg-amber-500 aspect-[16/10] shadow-md overflow-hidden">
             <div className="h-full  min-w-full whitespace-nowrap overflow-hidden flex gap-5 bg-transparent">
               <img
                 id={index}

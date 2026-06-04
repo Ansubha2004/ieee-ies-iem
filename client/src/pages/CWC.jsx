@@ -42,7 +42,7 @@ function CWC() {
         >
           <div className="w-full mb-2">
             <p className="heading text-center ">CWC Members</p>
-            <p className="font-bold text-center ">
+            <p className="role-text text-center">
               Core Student members of IEEE-IES
             </p>
           </div>
