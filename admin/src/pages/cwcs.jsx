@@ -13,7 +13,7 @@ function cwcs() {
   };
 
   return (
-    <section id="cwc" className="mt-15 p-5">
+    <section id="cwc" className="mt-15 p-5 pb-10 min-h-0">
       <div className="w-full flex gap-10 justify-between items-start">
         <div className="flex-1">
           <p className="heading  oswald">CWC Member Management</p>
@@ -40,22 +40,22 @@ function cwcs() {
       <div
         id="form"
         className={clsx(
-          "w-full h-auto py-2 px-3 bg-gray-200",
+          "w-full h-auto py-2 px-3 bg-gray-100",
           formview ? "" : "hidden",
         )}
       >
         <div id="addmemberform" className="flex justify-between items-start">
           <p className="text-[1.1rem] font-[500] ">
             Add New Member
-            <span className="font-normal italic"> - Fill all credentials</span>
+            <span className="font-normal italic text-[0.8rem]"> - Fill all credentials</span>
           </p>
           <Button
-            themecss="px-2 rounded-[3px] translate-y-1 buttonanimation1 border-red-700 text-red-700  text-[0.9rem] border-[2px] "
+            themecss="px-2 rounded-[7px] translate-y-1 buttonanimation1 border-red-700 text-red-700  text-[0.9rem] border-[2px] "
             click={handleaddform}
             Content="Close"
           />
         </div>
-        <AddMemberform />
+        <Addmemberform />
       </div>
     </section>
   );

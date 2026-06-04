@@ -73,4 +73,7 @@
     .animation2{
         @apply transition-all ease-in-out duration-100 hover:scale-[1.01] hover:bg-amber-50 active:scale-[1.01] active:bg-amber-50;
     }
+    .inputbox{
+        @apply rounded-[4px] bg-white focus:outline-none border-[2px] border-white focus:border-orange-700/30 text-[01rem]; 
+    }
 }

@@ -7,13 +7,15 @@ import CWCs from "./pages/cwcs.jsx"
 
 function App() {
   return (
-    <div className="relative w-screen h-screen overflow-hidden flex ">
+    <div className="relative w-screen h-screen overflow-hidden flex">
       <Sidebar/>
-      <div className=" h-full relative flex-1 ">
+      <div className="h-full relative flex-1 flex flex-col min-h-0 overflow-hidden">
         <Navbar/>
-        <Routes>
-          <Route path="cwcs" element={<CWCs />}/>
-        </Routes>
+        <main className="flex-1 overflow-y-auto hide-scrollbar min-h-0 w-full">
+          <Routes>
+            <Route path="cwcs" element={<CWCs />}/>
+          </Routes>
+        </main>
       </div>
       
     </div>
