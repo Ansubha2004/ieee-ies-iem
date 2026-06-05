@@ -26,6 +26,7 @@ export const addcwc = async (req, res) => {
       name,
       role,
       image: result.secure_url,
+      imageid:result.public_id,
       description,
       socialmedia: JSON.parse(socialmedia),
     });

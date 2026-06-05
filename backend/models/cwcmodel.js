@@ -18,6 +18,10 @@ const cwcSchema=new mongoose.Schema({
         type:String,
         required:true
     },
+    imageid:{
+        type:String,
+        required:true
+    },
     description:{
         type:String,
         required:true
