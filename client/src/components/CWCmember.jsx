@@ -4,7 +4,7 @@ import { IoMdMailUnread } from "react-icons/io";
 
 function CWCmember({ name, position, description, image, linkedin, mail }) {
   return (
-    <div className="w-full sm:w-[45%] hover:scale-[1.01] transition-all lg:w-[30%] shadow-md shadow-slate-200/80 rounded-2xl overflow-hidden bg-gradient-to-br from-amber-50 via-white to-amber-100 flex flex-col border border-amber-100/60">
+    <div className="w-full hover:scale-[1.01] transition-all  shadow-md shadow-slate-200/80 rounded-2xl overflow-hidden bg-gradient-to-br from-amber-50 via-white to-amber-100 flex flex-col border border-amber-100/60">
       <div className="">
         <img src={image} className="w-full " />
       </div>

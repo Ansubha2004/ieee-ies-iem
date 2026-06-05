@@ -14,6 +14,7 @@ function CWC() {
       try
     {
       const result=await axios.get("https://ieee-ies-iem.onrender.com/cwcapi/getallcwc");
+      console.log(result.data.data)
       setcwcdata(result.data.data); 
     }
     catch(error)
@@ -38,9 +39,9 @@ function CWC() {
         {cwcdata.length > 0 && <CWCadvisor advisor={cwcdata[0]} />}
         <div
           id="cwcmembers"
-          className="profilecard shadow-none bg-gradient-to-br from-white to-white py-0 sm:flex-wrap sm:flex-row justify-around gap-y-7  flex-col"
+          className="profilecard shadow-none bg-gradient-to-br from-white to-white py-0 sm:grid sm:grid-cols-3 gap-7  flex-col"
         >
-          <div className="w-full mb-2">
+          <div className="w-full col-span-3 mb-2">
             <p className="heading text-center ">CWC Members</p>
             <p className="role-text text-center">
               Core Student members of IEEE-IES

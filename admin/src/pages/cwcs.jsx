@@ -59,7 +59,7 @@ function cwcs() {
             Content="Close"
           />
         </div>
-        <Addmemberform />
+        <Addmemberform setformview={setformview} />
       </div>
       <div id="memberdata">
         <p className="subheading text-[1rem] text-blue-800">

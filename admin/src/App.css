@@ -76,4 +76,7 @@
     .inputbox{
         @apply rounded-[4px] bg-white focus:outline-none border-[2px] border-white focus:border-orange-700/30 text-[01rem]; 
     }
+    .inputbox2{
+        @apply px-2 rounded-[4px] focus:outline-none border-[1px] rounded-md ; 
+    }
 }

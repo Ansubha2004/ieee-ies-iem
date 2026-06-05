@@ -4,7 +4,7 @@ import { IoMdAdd } from "react-icons/io";
 import axios from "axios";
 import { FilesIcon } from "lucide-react";
 
-function Addmemberform() {
+function Addmemberform({setformview}) {
   const [formdata, setformdata] = useState({
     id: "",
     name: "",
@@ -57,7 +57,7 @@ function Addmemberform() {
       const { success, message,data } = response.data;
       if (success) {
         console.log("Data posted successfully");
-        
+        setformview(false);
         setformdata({
           id: "",
           name: "",
