@@ -115,6 +115,24 @@ export const updatecwc = async (req, res) => {
 export const deletecwc = async (req, res) => {
   try {
     const { id: mongoId } = req.params;
+
+    const deleteimage=await cwcmodel.findById(mongoId);
+
+    if(!deleteimage)
+    {
+      return res.jsnon({
+        success:false,
+        message:"Member not found"
+      })
+    }
+
+    if (deleteimage.imageId) {
+      await cloudinary.uploader.destroy(
+        deleteimage.imageId
+      );
+    }
+
+
     const deleted = await cwcmodel.findByIdAndDelete(mongoId);
     if (!deleted) {
       return res.json({ success: false, message: "Member not found" });
