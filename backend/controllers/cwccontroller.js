@@ -120,15 +120,15 @@ export const deletecwc = async (req, res) => {
 
     if(!deleteimage)
     {
-      return res.jsnon({
+      return res.json({
         success:false,
         message:"Member not found"
       })
     }
 
-    if (deleteimage.imageId) {
+    if (deleteimage.imageid) {
       await cloudinary.uploader.destroy(
-        deleteimage.imageId
+        deleteimage.imageid
       );
     }
 
