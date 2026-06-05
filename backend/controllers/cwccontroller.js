@@ -26,7 +26,7 @@ export const addcwc = async (req, res) => {
       name,
       role,
       image: result.secure_url,
-      imageid:result.public_id,
+      imageid: result.public_id,
       description,
       socialmedia: JSON.parse(socialmedia),
     });
@@ -82,11 +82,21 @@ export const updatecwc = async (req, res) => {
     };
 
     if (req.file) {
+
+      const existingMember = await cwcmodel.findById(mongoId);
+
+      if (existingMember?.imageid) {
+        await cloudinary.uploader.destroy(
+          existingMember.imageid
+        );
+      }
+
       const base64Image = `data:${req.file.mimetype};base64,${req.file.buffer.toString("base64")}`;
       const result = await cloudinary.uploader.upload(base64Image, {
         folder: "cwc_member",
       });
       update.image = result.secure_url;
+      update.imageid = result.public_id;
     }
 
     const updated = await cwcmodel.findByIdAndUpdate(mongoId, update, {
@@ -116,13 +126,12 @@ export const deletecwc = async (req, res) => {
   try {
     const { id: mongoId } = req.params;
 
-    const deleteimage=await cwcmodel.findById(mongoId);
+    const deleteimage = await cwcmodel.findById(mongoId);
 
-    if(!deleteimage)
-    {
+    if (!deleteimage) {
       return res.json({
-        success:false,
-        message:"Member not found"
+        success: false,
+        message: "Member not found"
       })
     }
 
