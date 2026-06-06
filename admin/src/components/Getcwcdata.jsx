@@ -33,6 +33,7 @@ function Getcwcdata() {
       linkedin: cwc.socialmedia[0].link,
       email: cwc.socialmedia[1].link,
       description: cwc.description,
+      membertype: cwc.membertype,
     });
     if (preview) {
       URL.revokeObjectURL(preview);
@@ -45,11 +46,12 @@ function Getcwcdata() {
     const shallowcopy = { ...editformdata };
     shallowcopy[name] = type === "file" ? files[0] : value;
     seteditformdata(shallowcopy);
-    if (files?.[0] && type==="file") setpreview(URL.createObjectURL(files[0]));
+    if (files?.[0] && type === "file")
+      setpreview(URL.createObjectURL(files[0]));
   };
 
   const submitchange = async () => {
-    const { id, name, role, image, linkedin, email, description } =
+    const { id, name, role, image, linkedin, email, description, membertype } =
       editformdata;
     if (
       !String(id).trim() ||
@@ -58,7 +60,8 @@ function Getcwcdata() {
       !image ||
       !linkedin.trim() ||
       !email.trim() ||
-      !description.trim()
+      !description.trim() ||
+      !membertype
     ) {
       console.log("Dont leave the credentials blank...");
       return;
@@ -74,10 +77,10 @@ function Getcwcdata() {
       newdata.append("id", id);
       newdata.append("name", name.trim());
       newdata.append("role", role.trim());
-      if(image instanceof File)
-      newdata.append("image", image);
+      if (image instanceof File) newdata.append("image", image);
       newdata.append("description", description.trim());
       newdata.append("socialmedia", socialmedia);
+      newdata.append("membertype", membertype);
 
       const response = await axios.put(
         `${url}/cwcapi/updatecwc/${editId}`,
@@ -99,13 +102,13 @@ function Getcwcdata() {
                     { platform: "LinkedIn", link: linkedin },
                     { platform: "Email", link: email },
                   ],
-                  image:
-                    preview || member.image,
+                  membertype,
+                  image: preview || member.image,
                 }
-              : member
-          )
+              : member,
+          ),
         );
-      
+
         seteditId("");
         setpreview("");
       } else {
@@ -191,21 +194,40 @@ function Getcwcdata() {
                         <p className="text-sm text-gray-600">{cwc.role}</p>
                       )}
 
-                      {editId === cwc._id && editformdata ? (
-                        <input
-                          onChange={handlechange}
-                          type="number"
-                          min="0"
-                          max="20"
-                          className="w-15 text-center mt-2 px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700 inputbox2"
-                          name="id"
-                          value={editformdata.id}
-                        />
-                      ) : (
-                        <span className="w-fit mt-2 px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700">
-                          {cwc.id}
-                        </span>
-                      )}
+                      <div className="flex gap-3">
+                        {editId === cwc._id && editformdata ? (
+                          <input
+                            onChange={handlechange}
+                            type="number"
+                            min="0"
+                            max="20"
+                            className="w-15 text-center mt-2 px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700 inputbox2"
+                            name="id"
+                            value={editformdata.id}
+                          />
+                        ) : (
+                          <span className="w-fit mt-2 px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700">
+                            {cwc.id}
+                          </span>
+                        )}
+                        {editId === cwc._id && editformdata ? (
+                          <select
+                            onChange={handlechange}
+                            className=" text-center mt-2  rounded-full text-xs font-medium bg-blue-100 bg-white border-green-500  text-green-700 inputbox2 border-[2px]"
+                            name="membertype"
+                            value={editformdata.membertype}
+                          >
+                            <option value="">Select Type</option>
+                            <option value="Founder">Founder</option>
+                            <option value="CWC">CWC member</option>
+                            <option value="Executives">Executive member</option>
+                          </select>
+                        ) : (
+                          <span className="text-center mt-2 py-1 px-3 rounded-full text-xs font-medium bg-blue-100 bg-white border-green-500  text-green-700  border-[2px]">
+                            {cwc.membertype}
+                          </span>
+                        )}
+                      </div>
                     </div>
                   </div>
 
