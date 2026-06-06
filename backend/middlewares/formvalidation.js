@@ -14,3 +14,19 @@ export const FormValidation=(req,res,next)=>{
     }
     next();
 }
+
+export const updatecontactformValidation=(req,res,next)=>{
+    const schema=joi.object({
+        email:joi.string().email().required(),
+        institute:joi.string().min(2).max(100).required(),
+        address:joi.string().min(3).max(500).required(),
+        mapurl:joi.string().url().required()
+    })
+
+    const {error}=schema.validate(req.body);
+    if(error)
+    {
+        return res.status(400).json({success:false,message:error.details[0].message});
+    }
+    next();
+}
