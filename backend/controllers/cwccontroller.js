@@ -3,8 +3,8 @@ import cloudinary from "../config/cloudinary.js";
 
 export const addcwc = async (req, res) => {
   try {
-    const { id, name, role, description, socialmedia } = req.body;
-    if (!name || !id || !role || !description || !socialmedia) {
+    const { id, name, role, description, socialmedia,membertype } = req.body;
+    if (!name || !id || !role || !description || !socialmedia || !membertype) {
       return res.json({
         success: false,
         message: "Fill the cwc details",
@@ -29,6 +29,7 @@ export const addcwc = async (req, res) => {
       imageid: result.public_id,
       description,
       socialmedia: JSON.parse(socialmedia),
+      membertype
     });
     return res.json({
       success: true,
@@ -64,9 +65,9 @@ export const getallcwcs = async (req, res) => {
 export const updatecwc = async (req, res) => {
   try {
     const { id: mongoId } = req.params;
-    const { id, name, role, description, socialmedia } = req.body;
+    const { id, name, role, description, socialmedia,membertype } = req.body;
 
-    if (!name || !role || !description || !socialmedia) {
+    if (!name || !role || !description || !socialmedia || !membertype) {
       return res.json({
         success: false,
         message: "Name, role, description, and social links are required",
@@ -79,6 +80,7 @@ export const updatecwc = async (req, res) => {
       role,
       description,
       socialmedia: JSON.parse(socialmedia),
+      membertype
     };
 
     if (req.file) {

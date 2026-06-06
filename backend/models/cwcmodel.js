@@ -1,42 +1,47 @@
 import mongoose from "mongoose";
 
-const cwcSchema=new mongoose.Schema({
-    id:{
-        type:Number,
-        required:true,
-        unique:true
+const cwcSchema = new mongoose.Schema({
+    id: {
+        type: Number,
+        required: true,
+        unique: true
     },
-    name:{
-        type:String,
-        required:true
+    name: {
+        type: String,
+        required: true
     },
-    role:{
-        type:String,
-        required:true
+    role: {
+        type: String,
+        required: true
     },
-    image:{
-        type:String,
-        required:true
+    image: {
+        type: String,
+        required: true
     },
-    imageid:{
-        type:String,
-        required:true
+    imageid: {
+        type: String,
+        required: true
     },
-    description:{
-        type:String,
-        required:true
+    description: {
+        type: String,
+        required: true
     },
-    socialmedia:[{
-        platform:{
-            type:String,
-            required:true
+    socialmedia: [{
+        platform: {
+            type: String,
+            required: true
         },
-        link:{
-            type:String,
-            required:true
+        link: {
+            type: String,
+            required: true
         }
-    }]
-},{timestamps:true});
+    }],
+    membertype: {
+        type: String,
+        enum: ["Founder", "CWC", "Executives"],
+        required:true
+    }
+}, { timestamps: true });
 
 
-export default mongoose.model("CWC",cwcSchema);
+export default mongoose.model("CWC", cwcSchema);
