@@ -20,7 +20,7 @@ export const updatecontactformValidation=(req,res,next)=>{
         email:joi.string().email().required(),
         institute:joi.string().min(2).max(100).required(),
         address:joi.string().min(3).max(500).required(),
-        mapurl:joi.string().url().required()
+        mapurl:joi.string().uri().required()
     })
 
     const {error}=schema.validate(req.body);

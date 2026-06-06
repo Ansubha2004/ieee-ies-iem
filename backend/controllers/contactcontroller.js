@@ -30,8 +30,6 @@ export const updatecontact = async (req, res) => {
                 message: "Fill the contact details and address",
               });
         }
-
-
         const existing = await contactmodel.findOne({})
         if (existing) {
             const update = await contactmodel.findOneAndUpdate({},
