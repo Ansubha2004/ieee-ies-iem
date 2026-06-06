@@ -4,7 +4,7 @@ import { IoMdAdd } from "react-icons/io";
 import axios from "axios";
 import { FilesIcon } from "lucide-react";
 
-function Addmemberform({setformview}) {
+function Addmemberform({ setformview }) {
   const [formdata, setformdata] = useState({
     id: "",
     name: "",
@@ -13,6 +13,7 @@ function Addmemberform({setformview}) {
     linkedin: "",
     email: "",
     description: "",
+    membertype:""
   });
 
   const handlechange = (e) => {
@@ -23,8 +24,8 @@ function Addmemberform({setformview}) {
   };
 
   const handlesubmit = async (e) => {
-    e.preventDefault()
-    const { id, name, role, image, linkedin, email, description } = formdata;
+    e.preventDefault();
+    const { id, name, role, image, linkedin, email, description ,membertype} = formdata;
     if (
       !String(id).trim() ||
       !name.trim() ||
@@ -32,7 +33,8 @@ function Addmemberform({setformview}) {
       !image ||
       !linkedin.trim() ||
       !email.trim() ||
-      !description.trim()
+      !description.trim() ||
+      !membertype
     ) {
       console.log("Kindly fill the credentials...");
       return;
@@ -50,11 +52,12 @@ function Addmemberform({setformview}) {
       newdata.append("image", image);
       newdata.append("description", description.trim());
       newdata.append("socialmedia", socialmedia);
+      newdata.append("membertype",membertype)
 
       const url =
         import.meta.env.VITE_API_URL || "https://ieee-ies-iem.onrender.com";
       const response = await axios.post(`${url}/cwcapi/addcwc`, newdata);
-      const { success, message,data } = response.data;
+      const { success, message, data } = response.data;
       if (success) {
         console.log("Data posted successfully");
         setformview(false);
@@ -66,6 +69,7 @@ function Addmemberform({setformview}) {
           linkedin: "",
           email: "",
           description: "",
+          membertype:""
         });
       } else {
         console.log("Error:", message || "Failed to save member");
@@ -148,8 +152,14 @@ function Addmemberform({setformview}) {
             htmlFor="image"
             className="text-[0.8rem] font-[600] text-amber-700 mx-1"
           >
-            Profile photo <a href="https://imagy.app/image-aspect-ratio-changer/" target="main">(4:3 aspect ratio, Click Here)</a>
-            </label>
+            Profile photo{" "}
+            <a
+              href="https://imagy.app/image-aspect-ratio-changer/"
+              target="main"
+            >
+              (4:3 aspect ratio, Click Here)
+            </a>
+          </label>
           <input
             required
             id="image"
@@ -219,7 +229,28 @@ function Addmemberform({setformview}) {
         </div>
       </div>
 
-      <div className="flex flex-wrap gap-3 mt-5 mb-3 justify-end">
+      <div className="flex flex-wrap gap-3  mt-3 mb-3 justify-between items-end">
+        <div className="flex flex-col">
+          <label
+            htmlFor="membertype"
+            className="text-[0.8rem] font-[600] text-amber-700 mx-1"
+          >
+            Member Type
+          </label>
+          <select
+            required
+            id="membertype"
+            name="membertype"
+            className="inputbox"
+            onChange={handlechange}
+            value={formdata.membertype}
+          >
+            <option value="">Select Type</option>
+            <option value="Founder">Founder</option>
+            <option value="CWC">CWC member</option>
+            <option value="Executives">Executive member</option>
+          </select>
+        </div>
         <Button
           type="submit"
           themecss="btn1 flex items-center justify-center gap-2 px-6 py-2 text-[0.9rem]"
