@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { TbPhotoEdit } from "react-icons/tb";
 import Button from "../components/Button.jsx";
 
-function Getcwcdata() {
+function Getcwcdata({setcount}) {
   const [cwcdata, setcwcdata] = useState([]);
   const [editId, seteditId] = useState("");
   const [editformdata, seteditformdata] = useState();
@@ -16,6 +16,9 @@ function Getcwcdata() {
       try {
         const getcwcdata = await axios.get(`${url}/cwcapi/getallcwc`);
         setcwcdata(getcwcdata.data.data);
+        const cwc=getcwcdata.data.data.filter(member=>member.membertype==="CWC").length;
+        const executives=getcwcdata.data.data.filter(member=>member.membertype==="Executives").length;
+        setcount([cwc,executives]);
       } catch (err) {
         console.log("API error fetching data....", err);
       }

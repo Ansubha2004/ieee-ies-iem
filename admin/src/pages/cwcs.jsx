@@ -8,6 +8,7 @@ import Getcwcdata from "../components/Getcwcdata.jsx";
 
 function cwcs() {
   const [formview, setformview] = useState(false);
+  const [count,setcount]=useState([null,null])
   const handleaddform = (e) => {
     if (e.target.innerText == "Close") setformview(false);
     else setformview(true);
@@ -62,10 +63,16 @@ function cwcs() {
         <Addmemberform setformview={setformview} />
       </div>
       <div id="memberdata">
-        <p className="subheading text-[1rem] text-blue-800">
-          MEMBER INFORMATION
-        </p>
-        <Getcwcdata />
+        <div className="flex justify-between items-center ">
+          <p className="subheading text-[1rem] text-blue-800">
+            MEMBER INFORMATION
+          </p>
+          <div className="flex paratext gap-3 text-[0.7rem] manrope">
+          <p className="text-green-700">Active CWC Members: <b className="text-[0.9rem]">{count[0]}</b></p>
+          <p className="text-red-600">Active Executives: <b className="text-[0.9rem]">{count[1]}</b></p>
+          </div>
+        </div>
+        <Getcwcdata setcount={setcount} />
       </div>
     </section>
   );
