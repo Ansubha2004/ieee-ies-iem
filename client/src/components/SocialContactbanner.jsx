@@ -1,11 +1,20 @@
 import { useState, useEffect } from "react";
 import { SiGmail } from "react-icons/si";
 import { FaLocationDot } from "react-icons/fa6";
-import contactData from "../data/contact.json";
+
 
 function Socialbanner() {
   const [width, setwidth] = useState(window.innerWidth);
-  const { social } = contactData;
+  const social={
+    "heading": "Need Help? Ping Us!",
+    "subheading": "Whether it's about membership, events, or collaboration, we're here to help.",
+    "emailLabel": "Official Email Address",
+    "email": "ieeeies.iem@gmail.com",
+    "locationTitle": "Institute Of Engineering and Management",
+    "address": "Iem Management Building, EP Block, Sector V, Bidhannagar, Kolkata, West Bengal 700091, India",
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.1713840319635!2d88.43737349999999!3d22.572692500000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027514cd20d659%3A0x4b66eefc1cb3ed78!2sIEM%20Kolkata!5e0!3m2!1sen!2sin!4v1751603697812!5m2!1sen!2sin"
+
+  }
 
   useEffect(() => {
     const onResize = () => setwidth(window.innerWidth);

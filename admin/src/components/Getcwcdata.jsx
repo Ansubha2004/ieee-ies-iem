@@ -268,7 +268,7 @@ function Getcwcdata({setcount}) {
                       />
                     ) : (
                       <span className="break-all">
-                        {cwc.socialmedia?.[0]?.link}
+                        <a href={cwc.socialmedia[0]?.link} target="main">{cwc.socialmedia?.[0]?.link}</a>
                       </span>
                     )}
                   </div>
@@ -286,7 +286,7 @@ function Getcwcdata({setcount}) {
                       />
                     ) : (
                       <span className="break-all">
-                        {cwc.socialmedia?.[1]?.link}
+                        <a href={`mailto:${cwc.socialmedia?.[1]?.link}`}>{cwc.socialmedia?.[1]?.link}</a>
                       </span>
                     )}
                   </div>

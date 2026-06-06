@@ -4,6 +4,7 @@ import "./App.css";
 import Sidebar from "../src/components/sidebar.jsx"
 import Navbar from "../src/components/navbar.jsx"
 import CWCs from "./pages/cwcs.jsx"
+import Contact from "./pages/contactpage.jsx"
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <main className="flex-1 overflow-y-auto hide-scrollbar min-h-0 w-full">
           <Routes>
             <Route path="cwcs" element={<CWCs />}/>
+            <Route path="contact" element={<Contact />}/>
           </Routes>
         </main>
       </div>
