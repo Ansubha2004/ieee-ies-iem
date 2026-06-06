@@ -14,7 +14,6 @@ function CWC() {
       try
     {
       const result=await axios.get("https://ieee-ies-iem.onrender.com/cwcapi/getallcwc");
-      console.log(result.data.data)
       setcwcdata(result.data.data); 
     }
     catch(error)
@@ -47,7 +46,24 @@ function CWC() {
               Core Student members of IEEE-IES
             </p>
           </div>
-          {cwcdata.slice(1).map((member, index) => (
+          {cwcdata.filter(member=>member.membertype==="CWC").map((member, index) => (
+            <CWCmember
+              key={index}
+              name={member.name}
+              position={member.role}
+              image={member.image}
+              linkedin={member.socialmedia[0].link}
+              mail={member.socialmedia[1].link}
+              description={member.description}
+            />
+          ))}
+          <div className="w-full col-span-3 mt-3  mb-2">
+            <p className="heading text-center ">Executive Members</p>
+            <p className="role-text text-center">
+            Empowering Ideas and Managing Execution of IEEE-IEM
+            </p>
+          </div>
+          {cwcdata.filter(member=>member.membertype==="Executives").map((member, index) => (
             <CWCmember
               key={index}
               name={member.name}
