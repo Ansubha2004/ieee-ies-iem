@@ -53,7 +53,7 @@
         @apply font-[900] sm:font-[700] text-[1.6rem] sm:text-[2rem] bg-gradient-to-b from-orange-800 to-amber-400 bg-clip-text text-transparent;
     }
     .subheading{
-        @apply font-[700] -translate-y-1 text-[0.85rem];
+        @apply font-[700] text-[0.85rem];
     }
     .paratext
     {
@@ -78,5 +78,12 @@
     }
     .inputbox2{
         @apply px-2 rounded-[4px] focus:outline-none border-[1px] rounded-md ; 
+    }
+    .inputbox3{
+        @apply px-2 rounded-[4px] focus:outline-none border-[1px] border-black/10 focus:border-blue-600/70 rounded-md py-1 text-[0.8rem] bg-white; 
+    }
+    .contactboxes
+    {
+        @apply flex-1 p-4 rounded-[15px] border-[2px] border-blue-600/30 bg-blue-50/40;
     }
 }
