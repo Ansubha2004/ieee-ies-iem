@@ -73,7 +73,7 @@
     @apply font-medium text-sm sm:text-base text-slate-600 tracking-tight;
   }
   .member-name {
-    @apply font-display font-semibold whitespace-nowrap bg-gradient-to-br from-orange-700 to-amber-500 text-transparent bg-clip-text text-xl sm:text-2xl tracking-tight;
+    @apply font-display font-semibold whitespace-nowrap bg-gradient-to-br from-orange-700 to-amber-500 text-transparent bg-clip-text text-xl sm:text-[1.5rem] tracking-tight;
   }
   .profilecard {
     @apply w-full h-fit p-6 sm:p-7 bg-gradient-to-br from-white to-amber-50 scroll-mt-[170px] rounded-xl relative shadow-lg shadow-slate-200/80 flex;

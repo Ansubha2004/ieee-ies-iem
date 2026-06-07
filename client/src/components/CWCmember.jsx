@@ -36,7 +36,7 @@ function CWCmember({ name, position, description, image, linkedin, mail }) {
             </div>
           </div>
 
-          <p className="my-4 paratext text-left">
+          <p className="my-4 paratext leading-[1.5] text-left">
             {description}
           </p>
         </div>
