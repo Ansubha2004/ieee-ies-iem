@@ -1,9 +1,16 @@
 import React, { useState, useEffect } from "react";
 import Button from "./Button.jsx";
 import axios from "axios";
+import Linkedin from "../assets/icons/linkedin.png";
+import Instagram from "../assets/icons/instagram.png";
+import Facebook from "../assets/icons/facebook.png";
+import Youtube from "../assets/icons/youtube.png";
+import X from "../assets/icons/x.png";
 import { CiSaveUp2 } from "react-icons/ci";
 
-function Contactform() {
+
+
+function socialmediaform() {
   const [formdata, setformdata] = useState({
     email: "",
     institute: "",
@@ -47,13 +54,12 @@ function Contactform() {
     }
 
     try {
-      
-      const response = await axios.put(
-        `${url}/contactapi/updatecontact`,
-        {
-          email,institute,address,mapurl
-        }
-      );
+      const response = await axios.put(`${url}/contactapi/updatecontact`, {
+        email,
+        institute,
+        address,
+        mapurl,
+      });
       const { success, message, data } = response.data;
       if (success) {
         console.log("Contact Data posted successfully");
@@ -69,16 +75,16 @@ function Contactform() {
       console.log("API error updating contact details:", error);
     }
   };
-
   return (
-    <form method="put" onSubmit={submitchanges} className="mt-2 w-full">
-      <div className="flex flex-col gap-3 manrope">
-        <div className="flex flex-col gap-1">
-          <label
-            htmlFor="email"
-            className="text-[0.8rem] font-[600] text-blue-700 "
-          >
-            Email
+    <form method="put" onSubmit={submitchanges} className=" w-full">
+      <div className="flex flex-col gap-6 manrope">
+        <div className="flex gap-3">
+          <label htmlFor="email">
+            <img
+              src={Linkedin}
+              className="navbaricons iconanimate"
+              alt="Linkedin"
+            />
           </label>
           <input
             required
@@ -92,12 +98,9 @@ function Contactform() {
           />
         </div>
 
-        <div className="flex flex-col gap-1">
-          <label
-            htmlFor="institute"
-            className="text-[0.8rem] font-[600] text-blue-700 "
-          >
-            Institute Name
+        <div className="flex gap-3">
+          <label htmlFor="institute">
+            <img src={Instagram} className="navbaricons iconanimate" alt="" />
           </label>
           <input
             required
@@ -111,31 +114,45 @@ function Contactform() {
           />
         </div>
 
-        <div className="flex flex-col gap-1">
-          <label
-            htmlFor="address"
-            className="text-[0.8rem] font-[600] text-blue-700 "
-          >
-            Address
+        <div className="flex gap-3">
+          <label htmlFor="mapurl">
+            <img src={Facebook} className="navbaricons iconanimate" alt="" />
           </label>
-          <textarea
+          <input
             required
-            id="address"
-            name="address"
-            rows="3"
-            placeholder="Full institute address"
-            className="inputbox3 h-auto py-2 resize-none"
+            id="mapurl"
+            name="mapurl"
+            type="url"
+            placeholder="https://maps.google.com/..."
+            className="inputbox3"
             onChange={handlechange}
-            value={formdata.address}
+            value={formdata.mapurl}
           />
         </div>
 
-        <div className="flex flex-col gap-1">
-          <label
-            htmlFor="mapurl"
-            className="text-[0.8rem] font-[600] text-blue-700 "
-          >
-            Google Map URL
+        <div className="flex gap-3">
+          <label htmlFor="mapurl">
+            <img src={Youtube} className="navbaricons iconanimate" alt="" />
+          </label>
+          <input
+            required
+            id="mapurl"
+            name="mapurl"
+            type="url"
+            placeholder="https://maps.google.com/..."
+            className="inputbox3"
+            onChange={handlechange}
+            value={formdata.mapurl}
+          />
+        </div>
+
+        <div className="flex gap-3">
+          <label htmlFor="mapurl">
+            <img
+              src={X}
+              className="navbaricons iconanimate"
+              alt=""
+            />
           </label>
           <input
             required
@@ -149,18 +166,17 @@ function Contactform() {
           />
         </div>
       </div>
-      <br />
-      <div className=" flex justify-start">
+
+      <div className=" flex mt-10 justify-start">
         <Button
           type="submit"
           themecss="bg-blue-700 rounded-[5px] buttonanimation1 text-white text-[0.8rem] px-4 py-2 manrope"
-          Content="Save Changes"
+          Content="Save Links"
           icon={<CiSaveUp2 className="scale-[1.3]" />}
-          
         />
       </div>
     </form>
   );
 }
 
-export default Contactform;
+export default socialmediaform;

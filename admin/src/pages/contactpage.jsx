@@ -3,7 +3,8 @@ import { IoMdAdd } from "react-icons/io";
 import { AiOutlineExport } from "react-icons/ai";
 import Button from "../components/Button.jsx";
 import clsx from "clsx";
-import Contactform from "../components/contactform.jsx"
+import Contactform from "../components/contactform.jsx";
+import Socialmediaform from "../components/socialmediaform.jsx";
 
 function contactpage() {
   const enquirystats = [
@@ -35,16 +36,7 @@ function contactpage() {
           </p>
         </div>
         <div className="grid grid-cols-2 translate-y-3  gap-3 ">
-          <Button
-            themecss="px-3 py-1 text-[0.9rem] bg-gradient-to-br from-blue-800 to-black text-white rounded-[4px]  buttonanimation1"
-            icon={<IoMdAdd />}
-            Content="Add Social Links"
-          />
-          <Button
-            themecss="px-3 py-1 text-[0.9rem] bg-gradient-to-br from-blue-800 to-black text-white rounded-[4px] buttonanimation1"
-            icon={<AiOutlineExport />}
-            Content="Export Enquiries"
-          />
+          
           <div className=" col-span-2 flex gap-2 justify-end">
             {enquirystats.map((stat, index) => (
               <div
@@ -64,7 +56,7 @@ function contactpage() {
         </div>
       </div>
       <br />
-      <br />
+ 
       <div className="w-full flex gap-4">
         <div className="contactboxes">
           <p className="subheading text-[1rem] text-blue-800">
@@ -73,10 +65,11 @@ function contactpage() {
           
           <Contactform />
         </div>
-        <div className="contactboxes">
+        <div className="contactboxes flex flex-col justify-between">
           <p className="subheading text-[1rem] text-blue-800">
             SOCIAL MEDIA LINKS
           </p>
+          <Socialmediaform/>
         </div>
       </div>
     </section>

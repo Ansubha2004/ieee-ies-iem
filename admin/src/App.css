@@ -80,7 +80,7 @@
         @apply px-2 rounded-[4px] focus:outline-none border-[1px] rounded-md ; 
     }
     .inputbox3{
-        @apply px-2 rounded-[4px] focus:outline-none border-[1px] border-black/10 focus:border-blue-600/70 rounded-md py-1 text-[0.8rem] bg-white; 
+        @apply px-2 rounded-[4px] w-full focus:outline-none border-[1px] border-black/10 focus:border-blue-600/70 rounded-md py-1 text-[0.8rem] bg-white; 
     }
     .contactboxes
     {
