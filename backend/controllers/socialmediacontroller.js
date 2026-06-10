@@ -19,6 +19,24 @@ export const getsocials = async (req, res) => {
     }
 }
 
+export const getallsocials = async (req, res) => {
+    try {
+        const socials=await socialmediamodel.findOne();
+        return res.json({
+            success:true,
+            message:"Fetched all urls ",
+            data:socials
+        })
+    }
+    catch (error) {
+        return res.json({
+            success: true,
+            message: "Error fetching social media data from API",
+            error
+        })
+    }
+}
+
 
 export const updatesocials = async (req, res) => {
     try {
