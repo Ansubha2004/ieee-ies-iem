@@ -44,6 +44,7 @@ function Contactform() {
     const { email, institute, address, mapurl } = formdata;
     if (!email || !institute || !address || !mapurl) {
       console.log("Kindly fill all the credentials");
+      return ;
     }
 
     try {
