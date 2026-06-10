@@ -42,24 +42,49 @@ export const updatesocials = async (req, res) => {
     try {
         const socials = req.body;
 
-        const updatedSocials = await Socialmedia.findOneAndUpdate(
-            {},              // find first document
-            socials,         // new data
-            {
-                new: true,     // return updated document
-                upsert: true,  // create if not exists
-            }
-        );
+        for(const [platform,data] of Object.entries(socials))
+        {
+            if(data.enabled===true && (!data.url || data.url.trim()===""))
+                {
+                    return res.status(400).json({
+                      success: false,
+                      message: `${platform} URL cannot be blank when enabled`
+                    });
+                }
+        }
 
+       const existing=await socialmediamodel.findOne({});
+       if(existing)
+       {
+        const update = await socialmediamodel.findOneAndUpdate({},
+            socials, {
+            new: true,
+            runValidators: true
+        }
+        );
+        if (!update) {
+            return res.json({
+                success: false,
+                message: "Update socials backend failed"
+            })
+        }
+        return res.json({
+            success: true,
+            message: "Socialmedia details updated",
+            data: update
+
+        })
+       }
+       const create = await socialmediamodel.create(socials);
         return res.status(200).json({
             success: true,
             message: "Updated successfully the social media",
-            data: updatedSocials,
+            data: socials,
         });
     }
     catch (error) {
         return res.json({
-            success: true,
+            success: false,
             message: "Error updating social media data from API",
             error
         })
