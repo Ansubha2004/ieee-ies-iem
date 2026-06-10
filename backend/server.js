@@ -4,6 +4,7 @@ import cors from "cors";
 import formroute from "./routes/formroute.js";
 import cwcroute from "./routes/cwcroute.js";
 import contactroute from "./routes/contactroute.js";
+import socialmediaroute from "./routes/socialmediaroute.js";
 import { FormValidation } from "./middlewares/formvalidation.js";
 import { formdatasubmission } from "./controllers/formcontroller.js";
 import dotenv from "dotenv";
@@ -37,7 +38,9 @@ app.get("/", (req, res) => {
 app.use("/formapi", formroute);
 app.use("/cwcapi", cwcroute);
 app.use("/contactapi",contactroute);
+app.use("/socialmediaapi",socialmediaroute);
 app.post("/postdata", FormValidation, formdatasubmission);
+
 
 
 app.all("*", (req, res) => {
