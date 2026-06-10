@@ -81,7 +81,7 @@ function socialmediaform() {
     e.preventDefault();
     const socialmedia = Object.entries(formdata);
     for (const [platform, data] of socialmedia) {
-      if (data.enabled && !data.url.trim()) {
+      if (data.enabled && (data.url === "" || !data.url.trim())) {
         console.log("If enabled , fill up...");
         return;
       }
@@ -92,8 +92,13 @@ function socialmediaform() {
         `${url}/socialmediaapi/updatesocials`,
         formdata,
       );
+      const { success, message, data } = response.data;
+      if (success) {
+        console.log("Successfully update all social media");
+        console.log(data);
+      }
     } catch (error) {
-      console.log("API error updating social media details");
+      console.log("API error updating social media details:", error);
     }
   };
 
@@ -109,7 +114,7 @@ function socialmediaform() {
             />
           </label>
           <input
-            required
+            disabled={!formdata.linkedin.enabled}
             id="linkedin"
             name="linkedin"
             type="url"
@@ -141,7 +146,8 @@ function socialmediaform() {
             <img src={Instagram} className="navbaricons iconanimate" alt="" />
           </label>
           <input
-            required
+            disabled={!formdata.instagram.enabled}
+            id="linkedin"
             id="instagram"
             name="instagram"
             type="type"
@@ -173,7 +179,8 @@ function socialmediaform() {
             <img src={Facebook} className="navbaricons iconanimate" alt="" />
           </label>
           <input
-            required
+            disabled={!formdata.facebook.enabled}
+            id="linkedin"
             id="facebook"
             name="facebook"
             type="url"
@@ -205,7 +212,8 @@ function socialmediaform() {
             <img src={Youtube} className="navbaricons iconanimate" alt="" />
           </label>
           <input
-            required
+            disabled={!formdata.youtube.enabled}
+            id="linkedin"
             id="youtube"
             name="youtube"
             type="url"
@@ -237,7 +245,8 @@ function socialmediaform() {
             <img src={X} className="navbaricons iconanimate" alt="" />
           </label>
           <input
-            required
+            disabled={!formdata.x.enabled}
+            id="linkedin"
             id="x"
             name="x"
             type="url"
