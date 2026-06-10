@@ -2,11 +2,11 @@ import socialmediamodel from "../models/socialmediamodel.js";
 
 export const getsocials = async (req, res) => {
     try {
-        const socials=await socialmediamodel.findOne();
-        const enableddata=Object.entries(socials.toObject()).filter(([key,value])=>value?.enabled) //enabled social data links
+        const socials = await socialmediamodel.findOne();
+        const enableddata = Object.entries(socials.toObject()).filter(([key, value]) => value?.enabled) //enabled social data links
         return res.json({
-            success:true,
-            message:"Fetched all enabled urls ",
+            success: true,
+            message: "Fetched all enabled urls ",
             enableddata
         })
     }
@@ -21,11 +21,11 @@ export const getsocials = async (req, res) => {
 
 export const getallsocials = async (req, res) => {
     try {
-        const socials=await socialmediamodel.findOne();
+        const socials = await socialmediamodel.findOne();
         return res.json({
-            success:true,
-            message:"Fetched all urls ",
-            data:socials
+            success: true,
+            message: "Fetched all urls ",
+            data: socials
         })
     }
     catch (error) {
@@ -40,8 +40,22 @@ export const getallsocials = async (req, res) => {
 
 export const updatesocials = async (req, res) => {
     try {
-        const {linkedin,instagram,facebook,youtube,x}=req.body;
-        return res.json({message:[linkedin,instagram,facebook,youtube,x]})
+        const socials = req.body;
+
+        const updatedSocials = await Socialmedia.findOneAndUpdate(
+            {},              // find first document
+            socials,         // new data
+            {
+                new: true,     // return updated document
+                upsert: true,  // create if not exists
+            }
+        );
+
+        return res.status(200).json({
+            success: true,
+            message: "Updated successfully the social media",
+            data: updatedSocials,
+        });
     }
     catch (error) {
         return res.json({

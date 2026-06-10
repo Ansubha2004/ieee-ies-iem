@@ -40,7 +40,7 @@ function socialmediaform() {
     };
     setformdata(shallowcopy);
   };
-
+  console.log(formdata);
   const url =
     import.meta.env.VITE_API_URL || "https://ieee-ies-iem.onrender.com";
   useEffect(() => {
@@ -87,13 +87,12 @@ function socialmediaform() {
       }
     }
 
-    try
-    {
-      const response=await axios.put(`${url}/socialmediaapi/updatesocials`,formdata);
-      
-    }
-    catch(error)
-    {
+    try {
+      const response = await axios.put(
+        `${url}/socialmediaapi/updatesocials`,
+        formdata,
+      );
+    } catch (error) {
       console.log("API error updating social media details");
     }
   };
@@ -126,6 +125,7 @@ function socialmediaform() {
             value={formdata.linkedin.url}
           />
           <Switchslider
+            checked={formdata.linkedin.enabled}
             click={() =>
               handlechange({
                 name: "linkedin",
@@ -157,11 +157,12 @@ function socialmediaform() {
             value={formdata.instagram.url}
           />
           <Switchslider
+            checked={formdata.instagram.enabled}
             click={() =>
               handlechange({
                 name: "instagram",
                 field: "enabled",
-                value: formdata.linkedin.enabled ? false : true,
+                value: formdata.instagram.enabled ? false : true,
               })
             }
           />
@@ -188,11 +189,12 @@ function socialmediaform() {
             value={formdata.facebook.url}
           />
           <Switchslider
+            checked={formdata.facebook.enabled}
             click={() =>
               handlechange({
                 name: "facebook",
                 field: "enabled",
-                value: formdata.linkedin.enabled ? false : true,
+                value: formdata.facebook.enabled ? false : true,
               })
             }
           />
@@ -219,11 +221,12 @@ function socialmediaform() {
             value={formdata.youtube.url}
           />
           <Switchslider
+            checked={formdata.youtube.enabled}
             click={() =>
               handlechange({
                 name: "youtube",
                 field: "enabled",
-                value: formdata.linkedin.enabled ? false : true,
+                value: formdata.youtube.enabled ? false : true,
               })
             }
           />
@@ -250,11 +253,12 @@ function socialmediaform() {
             value={formdata.x.url}
           />
           <Switchslider
+            checked={formdata.x.enabled}
             click={() =>
               handlechange({
                 name: "x",
                 field: "enabled",
-                value: formdata.linkedin.enabled ? false : true,
+                value: formdata.x.enabled ? false : true,
               })
             }
           />

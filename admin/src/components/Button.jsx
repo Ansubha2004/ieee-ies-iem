@@ -1,6 +1,6 @@
 import React from 'react'
 import clsx from "clsx"
-import * as Switch from "@radix-ui/react-switch";
+
 
 function Button({themecss,click,submit,icon,iconcss,Content,type}) {
   return (
@@ -12,19 +12,25 @@ function Button({themecss,click,submit,icon,iconcss,Content,type}) {
   )
 }
 
-export const Switchslider = ({click}) => (
-	<form onClick={click} >
-		<div className="flex items-center">
-			<Switch.Root
-				className="relative h-[25px] w-[42px] cursor-default rounded-full bg-blue-50 border-black/10 border-[2px]  outline-none data-[state=checked]:bg-blue-600"
-				
-			>
-				<Switch.Thumb className="block size-[21px] translate-x-0.5 rounded-full bg-white shadow-[0_2px_2px] shadow-blackA4 transition-transform duration-100 will-change-transform data-[state=checked]:translate-x-[19px]" />
-			</Switch.Root>
-		</div>
-	</form>
-);
-
+export const Switchslider = ({ checked, click }) => (
+	<button
+      type="button"
+      onClick={click}
+      className={clsx(
+        "relative h-[25px] w-[42px] rounded-full transition-all duration-200 cursor-pointer border-[2px]",
+        checked
+          ? "bg-blue-600 border-blue-600"
+          : "bg-blue-50 border-black/10"
+      )}
+    >
+      <span
+        className={clsx(
+          "absolute top-0.5 h-[17px] w-[17px] rounded-full bg-white transition-all duration-200",
+          checked ? "left-[20px]" : "left-[2px]"
+        )}
+      />
+    </button>
+  );
 
 
 export default Button
