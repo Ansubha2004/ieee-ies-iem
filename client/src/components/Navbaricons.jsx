@@ -13,6 +13,8 @@ import axios from "axios";
 function Navbaricons({ additionalcss }) {
   const [socialLinks, setsociallinks] = useState([]);
   const icons = [linkedin, instagram, facebook, youtube, x];
+
+  console.log(icons[0].split('/').pop().split(".")[0].split("-")[0])
   const url =
     import.meta.env.VITE_API_URL || "https://ieee-ies-iem.onrender.com";
   useEffect(() => {
@@ -44,7 +46,7 @@ function Navbaricons({ additionalcss }) {
         <a key={index} target="main" rel="noreferrer" href={links?.[1].url}>
           <img
             src={icons.filter((icon)=>{
-              return links[0]===icon.split('/').pop().split(".")[0].split("-")?.[0];
+              return links[0]===icon.split('/').pop().split(".")[0].split("-")[0];
             })}
             className="navbaricons iconanimate"
             alt="LinkedIn"
