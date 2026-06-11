@@ -44,7 +44,7 @@ function Navbaricons({ additionalcss }) {
         <a key={index} target="main" rel="noreferrer" href={links?.[1].url}>
           <img
             src={icons.filter((icon)=>{
-              return links[0]===icon.split('/').pop().split(".")[0]
+              return links[0]===icon.split('/').pop().split(".")[0].split("-")?.[0];
             })}
             className="navbaricons iconanimate"
             alt="LinkedIn"
