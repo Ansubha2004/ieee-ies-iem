@@ -30,7 +30,7 @@ export const getallsocials = async (req, res) => {
     }
     catch (error) {
         return res.json({
-            success: true,
+            success: false,
             message: "Error fetching social media data from API",
             error
         })
