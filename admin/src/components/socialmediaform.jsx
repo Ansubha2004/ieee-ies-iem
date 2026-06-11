@@ -147,7 +147,6 @@ function socialmediaform() {
           </label>
           <input
             disabled={!formdata.instagram.enabled}
-            id="linkedin"
             id="instagram"
             name="instagram"
             type="type"
@@ -180,7 +179,6 @@ function socialmediaform() {
           </label>
           <input
             disabled={!formdata.facebook.enabled}
-            id="linkedin"
             id="facebook"
             name="facebook"
             type="url"
@@ -213,7 +211,6 @@ function socialmediaform() {
           </label>
           <input
             disabled={!formdata.youtube.enabled}
-            id="linkedin"
             id="youtube"
             name="youtube"
             type="url"
@@ -246,7 +243,6 @@ function socialmediaform() {
           </label>
           <input
             disabled={!formdata.x.enabled}
-            id="linkedin"
             id="x"
             name="x"
             type="url"
