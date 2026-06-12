@@ -1,12 +1,9 @@
 import express from "express";
 import connectDB from "./config/db.js";
 import cors from "cors";
-import formroute from "./routes/formroute.js";
 import cwcroute from "./routes/cwcroute.js";
 import contactroute from "./routes/contactroute.js";
 import socialmediaroute from "./routes/socialmediaroute.js";
-import { FormValidation } from "./middlewares/formvalidation.js";
-import { formdatasubmission } from "./controllers/formcontroller.js";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -35,11 +32,11 @@ app.get("/", (req, res) => {
     return res.json({ success: true, message: "IEEE IES backend running successfully" })
 })
 
-app.use("/formapi", formroute);
+
 app.use("/cwcapi", cwcroute);
 app.use("/contactapi",contactroute);
 app.use("/socialmediaapi",socialmediaroute);
-app.post("/postdata", FormValidation, formdatasubmission);
+
 
 
 
