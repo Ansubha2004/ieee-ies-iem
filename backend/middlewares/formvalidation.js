@@ -4,6 +4,7 @@ export const FormValidation=(req,res,next)=>{
     const schema=joi.object({
         name:joi.string().min(2).max(100).required(),
         email:joi.string().email().required(),
+        subject:joi.string().min(3).max(60).required(),
         message:joi.string().min(3).max(500).required()
     })
 

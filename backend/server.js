@@ -4,6 +4,7 @@ import cors from "cors";
 import cwcroute from "./routes/cwcroute.js";
 import contactroute from "./routes/contactroute.js";
 import socialmediaroute from "./routes/socialmediaroute.js";
+import enquiryroute from "./routes/enquiryroute.js";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -36,6 +37,7 @@ app.get("/", (req, res) => {
 app.use("/cwcapi", cwcroute);
 app.use("/contactapi",contactroute);
 app.use("/socialmediaapi",socialmediaroute);
+app.use('/enquiryapi',enquiryroute);
 
 
 

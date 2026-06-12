@@ -13,14 +13,15 @@ const createTransporter = () =>
     },
   });
 
-export const SendMail = async (name, email, message) => {
+export const SendMail = async (name, email,subject, message) => {
   const transporter = createTransporter();
 
   const mail1 = {
     from: process.env.HOST_EMAIL,
     to: process.env.HOST_EMAIL,
-    subject: `Notification from ${name} - ${email}`,
-    text: `You have received a new message via the contact form on your website. Below are the details provided by the sender:\n\n-Name:- ${name}\n-Email id:- ${email}\n\nMessage:-\n"${message}"\n\nPlease review the message and respond at your earliest convenience.\n\nWarm regards,\nWebsite Notification System\nIEEE Industrial Electronics Society Student Branch Chapter\nInstitute of Engineering & Management, Kolkata`,
+    replyTo:email,
+    subject: `${subject} - ${email}`,
+    text: `You have received a new message via the contact form on your website. Below are the details provided by the sender:\n\nName:- ${name}\nEmail id:- ${email}\nSubject:- "${subject}"\nMessage:-\n"${message}"\n\nPlease review the message and respond at your earliest convenience.\n\nWarm regards,\nWebsite Notification System\nIEEE Industrial Electronics Society Student Branch Chapter\nInstitute of Engineering & Management, Kolkata`,
   };
 
   const mail2 = {
@@ -31,24 +32,37 @@ export const SendMail = async (name, email, message) => {
   };
 
   try {
-    await transporter.sendMail(mail1);
-    await transporter.sendMail(mail2);
+    const info1=await transporter.sendMail(mail1);
+    console.log("Running mail 1...")
+    const info2=await transporter.sendMail(mail2);
+    console.log("Running mail 2.....")
+    return info1;
   } catch (error) {
     console.log("Error sending mails: ", error);
   }
 };
 
-export const SendReplyMail = async (name, email, replyMessage, originalMessage) => {
+export const SendReplyMail = async (name, email, replyMessage, originalMessage,messageId) => {
   const transporter = createTransporter();
 
   const mail = {
     from: process.env.HOST_EMAIL,
     to: email,
     subject: `Re: Your enquiry — IEEE IES IEM Student Chapter`,
-    text: `Dear ${name},\n\nThank you for contacting IEEE IES IEM Student Chapter. Here is our response:\n\n${replyMessage}\n\n—\nYour original message:\n"${originalMessage}"\n\nWarm regards,\nIEEE IES IEM Student Branch Chapter\nInstitute of Engineering & Management, Kolkata\n📧 ieeeies.iem@gmail.com\n🌐 https://ieee-ies-iem-sbc.vercel.app`,
+    inReplyTo: messageId,
+    references: messageId,
+    text: `Dear ${name},\n\n${replyMessage}\n\nWarm regards,\nIEEE IES IEM Student Branch Chapter\nInstitute of Engineering & Management, Kolkata\n📧 ieeeies.iem@gmail.com\n🌐 https://ieee-ies-iem-sbc.vercel.app`,
   };
 
-  await transporter.sendMail(mail);
+  try
+  {
+    console.log("Running reply mail.....")
+    await transporter.sendMail(mail);
+  }
+  catch(error)
+  {
+    console.log("Error sending reply mail: ",error)
+  }
 };
 
 export default SendMail;
