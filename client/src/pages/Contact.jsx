@@ -3,17 +3,28 @@ import orangebg2 from "../assets/designs/orangebg2.png"
 import Joinbanner from "../components/Joinbanner.jsx";
 import Button from "../components/Button.jsx";
 import Socialcontactbanner from "../components/SocialContactbanner.jsx";
-import contactData from "../data/contact.json";
 import axios from "axios";
 import { ToastContainer } from "react-toastify";
 import { successmessage, errormessage } from "../utils/notification.jsx";
 
 function Contact() {
-  const { form: formCopy } = contactData;
+  const formCopy={
+    "nameLabel": "Enter Name",
+    "namePlaceholder": "Ex: Raj Sen",
+    "emailLabel": "Enter Email Address",
+    "emailPlaceholder": "Ex: name@gmail.com",
+    "subjectLabel":"Enter Subject",
+    "subjectPlaceholder":"Type Subject",
+    "messageLabel": "Enter Message",
+    "messagePlaceholder": "Type your query...",
+    "submitText": "Submit"
+  }
+  
 
   const [formdata,setformdata]=useState({
     name:"",
     email:"",
+    subject:"",
     message:""
   })
 
@@ -27,8 +38,8 @@ function Contact() {
 
   const handlesubmission=async (e)=>{
     e.preventDefault();
-    const {name,email,message}=formdata;
-    if(!name.trim() || !email.trim() || !message.trim())
+    const {name,email,subject,message}=formdata;
+    if(!name.trim() || !email.trim() || !subject.trim() || !message.trim())
     {
       errormessage("Kindly fill all the credentials");
       console.log("Kindly fill up")
@@ -50,6 +61,7 @@ function Contact() {
         setformdata({
           name: "",
           email: "",
+          subject:"",
           message: "",
         });
       }
@@ -75,20 +87,25 @@ function Contact() {
       <div className="px-[5%] py-[30px] w-full relative flex sm:flex-row flex-col justify-between gap-5">
         <Socialcontactbanner />
         <div className="w-full sm:w-[50%]  relative flex flex-col justify-center relative">
-          <form onSubmit={handlesubmission}>
-            <div className="flex flex-col mb-3">
+          <form onSubmit={handlesubmission} className="w-full grid grid-cols-2 gap-2">
+            <div className="flex flex-col mb-3 sm:col-span-1 col-span-2">
               <label htmlFor="name" className="text-sm font-semibold text-amber-800 tracking-wide mx-1">{formCopy.nameLabel}</label>
               <input id="name" type="text" placeholder={formCopy.namePlaceholder} name="name" onChange={handlechange} value={formdata.name} className="inputbox" />
             </div>
-            <div className="flex flex-col mb-3">
+            
+            <div className="flex flex-col mb-3 sm:col-span-1 col-span-2">
               <label htmlFor="email" className="text-sm font-semibold text-amber-800 tracking-wide mx-1">{formCopy.emailLabel}</label>
               <input id="email" type="text" onChange={handlechange} value={formdata.email} placeholder={formCopy.emailPlaceholder} name="email" className="inputbox" />
             </div>
-            <div className="flex flex-col mb-5">
-              <label htmlFor="message" className="text-sm font-semibold text-amber-800 tracking-wide mx-1">{formCopy.messageLabel}</label>
-              <textarea id="message" type="text" onChange={handlechange} value={formdata.message} placeholder={formCopy.messagePlaceholder} name="message" className="inputbox h-[130px]" ></textarea>
+            <div className="flex flex-col mb-3 col-span-2">
+              <label htmlFor="subject" className="text-sm font-semibold text-amber-800 tracking-wide mx-1">{formCopy.subjectLabel}</label>
+              <input id="subject" type="text" placeholder={formCopy.subjectPlaceholder} name="subject" onChange={handlechange} value={formdata.subject} className="inputbox" />
             </div>
-            <Button type="submit" themecss="btn1 sm:w-auto w-full px-[7%] justify-center py-2" Content={formCopy.submitText} />
+            <div className="flex flex-col mb-5 col-span-2">
+              <label htmlFor="message" className="text-sm font-semibold text-amber-800 tracking-wide mx-1">{formCopy.messageLabel}</label>
+              <textarea id="message" type="text" onChange={handlechange} value={formdata.message} placeholder={formCopy.messagePlaceholder} name="message" className="inputbox py-2 h-[130px]" ></textarea>
+            </div>
+            <Button type="submit" themecss="btn1 sm:w-fit sm:col-span-1 col-span-2  px-[27%] justify-center py-2" Content={formCopy.submitText} />
           </form>
         </div>
       </div>
