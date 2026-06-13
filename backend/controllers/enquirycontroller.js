@@ -97,7 +97,7 @@ export const deleteenquiryspecific = async (req, res) => {
       }
       const deletespecific = await enquirymodel.deleteOne({ _id: id });
       return res.json({
-        sucess: true,
+        success: true,
         message: "Sucessfully deleted this one ",
         id,
         data:deletespecific
@@ -123,7 +123,7 @@ export const deleteenquiryspecific = async (req, res) => {
       }
       const deletespecificstatus = await enquirymodel.deleteMany({ status });
       return res.json({
-        sucess: true,
+        success: true,
         message: `Sucessfully deleted this ${status} status based enquiries`  ,
         count:deletespecificstatus.length,
         data:deletespecific
