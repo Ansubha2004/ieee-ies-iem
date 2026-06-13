@@ -7,6 +7,7 @@ const createTransporter = () =>
     host: "smtp.gmail.com",
     port: 587,
     secure: false,
+    requireTLS: true,
     auth: {
       user: process.env.HOST_EMAIL,
       pass: process.env.HOST_PASSKEY,
