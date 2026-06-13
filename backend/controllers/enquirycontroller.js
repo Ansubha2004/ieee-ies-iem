@@ -49,7 +49,7 @@ export const getallenquiry=async (req,res)=>{
         return res.json({
             success: true,
             message: "Fetched all enquiries",
-            count: displayenquiries.length,
+            count: getdata.length,
             data: getdata
         })
     }
