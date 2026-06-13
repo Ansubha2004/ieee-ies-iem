@@ -33,7 +33,6 @@ const enquirySchema = new mongoose.Schema({
     },
     messageId:{
         type:String,
-        required:true,
     },
     reply:{
         type:String,

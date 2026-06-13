@@ -10,13 +10,11 @@ export const postenquiry = async (req, res) => {
                 success: false,
                 message: "Not all credentials filled"
             });
-        const info = await SendMail(name, email, subject, message);
         const newenquiry = await enquirymodel.create({
             name,
             email,
             subject,
-            message,
-            messageId: info.messageId
+            message
         })
 
         return res.json({
