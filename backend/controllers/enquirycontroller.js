@@ -37,7 +37,28 @@ export const postenquiry = async (req, res) => {
 
 export const getallenquiry=async (req,res)=>{
     try{
-        const getdata=await enquirymodel.find()
+        const getdata= await enquirymodel.aggregate([
+          {
+            $addFields: {
+              statusOrder: {
+                $switch: {
+                  branches: [
+                    { case: { $eq: ["$status", "new"] }, then: 1 },
+                    { case: { $eq: ["$status", "in-progress"] }, then: 2 },
+                    { case: { $eq: ["$status", "responded"] }, then: 3 },
+                  ],
+                  default: 4,
+                },
+              },
+            },
+          },
+          {
+            $sort: {
+              statusOrder: 1,
+              date: -1,
+            },
+          },
+        ]);
         if(!getdata)
         {
             return res.json({
