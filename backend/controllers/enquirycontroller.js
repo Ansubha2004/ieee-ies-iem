@@ -41,7 +41,8 @@ export const getallenquiry=async (req,res)=>{
         if(!getdata)
         {
             return res.json({
-                sucess:false,
+                success:false,
+                count:"0",
                 message:"No enquiries yet"
             })
         }
