@@ -1,10 +1,11 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
 import "./App.css";
 import Sidebar from "../src/components/sidebar.jsx"
 import Navbar from "../src/components/navbar.jsx"
 import CWCs from "./pages/cwcs.jsx"
 import Contact from "./pages/contactpage.jsx"
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
           </Routes>
         </main>
       </div>
-      
+      <ToastContainer/>
     </div>
   );
 }

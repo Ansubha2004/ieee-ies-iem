@@ -8,6 +8,7 @@ import Contactform from "../components/contactform.jsx";
 import Socialmediaform from "../components/socialmediaform.jsx";
 import Enquirycard from "../components/enquirycard.jsx";
 import {MessageSquare} from "lucide-react";
+import { successmessage, errormessage } from "../util/notification.js";
 
 function contactpage() {
   const [count, setcount] = useState({
@@ -72,7 +73,7 @@ function contactpage() {
           }
         } else return;
       } catch (error) {
-        console.log("API error fetching enquiries", error);
+        errormessage("API error fetching enquiries", error);
         return;
       }
     };
@@ -91,7 +92,6 @@ function contactpage() {
       });
       const { success, message } = response.data;
       if (success) {
-        console.log(message);
         setenquiries((prev) =>
           prev.map((enquiry) =>
             enquiry._id === id
@@ -112,11 +112,11 @@ function contactpage() {
       );
       const { success, message, data } = response.data;
       if (success) {
-        console.log(message);
+        successmessage(message);
         setenquiries((prev) => prev.filter((enquiry) => enquiry._id !== id));
       }
     } catch (error) {
-      console.log("Error deleteig the specific message:", error);
+      errormessage("Error deleteing the specific message:", error);
       return;
     }
   };
@@ -138,7 +138,7 @@ function contactpage() {
         setenquiries(data);
       }
     } catch (error) {
-      console.log("Search error:", error);
+      errormessage("Search error:", error);
     }
   };
 
@@ -174,7 +174,7 @@ function contactpage() {
       });
       const { success, message } = response.data;
       if (success) {
-        console.log(message);
+        successmessage(message);
         setenquiries((prev) =>
           prev.map((enquiry) =>
             enquiry._id === id ? { ...enquiry, reply } : enquiry,
@@ -187,7 +187,7 @@ function contactpage() {
       }
       return false;
     } catch (error) {
-      console.log("Error replying to message");
+      errormessage("Error replying to message");
       return false;
     }
   };

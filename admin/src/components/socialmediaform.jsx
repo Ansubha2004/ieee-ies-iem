@@ -7,6 +7,7 @@ import Facebook from "../assets/icons/facebook.png";
 import Youtube from "../assets/icons/youtube.png";
 import X from "../assets/icons/x.png";
 import { CiSaveUp2 } from "react-icons/ci";
+import { successmessage, errormessage } from "../util/notification.js";
 
 function socialmediaform() {
   const [formdata, setformdata] = useState({
@@ -71,7 +72,7 @@ function socialmediaform() {
           },
         });
       } catch (error) {
-        console.log("API error while fetching socialmedia data: ", error);
+        errormessage("API error while fetching socialmedia data: ", error);
       }
     };
     fetchdata();
@@ -82,7 +83,7 @@ function socialmediaform() {
     const socialmedia = Object.entries(formdata);
     for (const [platform, data] of socialmedia) {
       if (data.enabled && (data.url === "" || !data.url.trim())) {
-        console.log("If enabled , fill up...");
+        errormessage("If enabled , fill up...");
         return;
       }
     }
@@ -94,11 +95,11 @@ function socialmediaform() {
       );
       const { success, message, data } = response.data;
       if (success) {
-        console.log("Successfully update all social media");
-        console.log(data);
+        successmessage("Successfully update all social media");
+       
       }
     } catch (error) {
-      console.log("API error updating social media details:", error);
+      errormessage("API error updating social media details:", error);
     }
   };
 

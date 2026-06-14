@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Button from "./Button.jsx";
 import axios from "axios";
 import { CiSaveUp2 } from "react-icons/ci";
+import { successmessage, errormessage } from "../util/notification.js";
 
 function Contactform() {
   const [formdata, setformdata] = useState({
@@ -25,7 +26,7 @@ function Contactform() {
             mapurl: thedata.mapurl,
           });
       } catch (err) {
-        console.log("Error retrieving contact data and address:", err);
+        errormessage("Error retrieving contact data and address:", err);
       }
     };
 
@@ -43,7 +44,7 @@ function Contactform() {
     e.preventDefault();
     const { email, institute, address, mapurl } = formdata;
     if (!email || !institute || !address || !mapurl) {
-      console.log("Kindly fill all the credentials");
+      errormessage("Kindly fill all the credentials");
       return ;
     }
 
@@ -57,7 +58,7 @@ function Contactform() {
       );
       const { success, message, data } = response.data;
       if (success) {
-        console.log("Contact Data posted successfully");
+        successmessage("Contact Data posted successfully");
         setformdata((prev) => ({
           ...prev,
           email: data.email,
@@ -67,7 +68,7 @@ function Contactform() {
         }));
       }
     } catch (error) {
-      console.log("API error updating contact details:", error);
+      errormessage("API error updating contact details:", error);
     }
   };
 

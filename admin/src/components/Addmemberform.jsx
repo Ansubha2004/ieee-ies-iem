@@ -3,6 +3,7 @@ import Button from "./Button.jsx";
 import { IoMdAdd } from "react-icons/io";
 import axios from "axios";
 import { FilesIcon } from "lucide-react";
+import { successmessage, errormessage } from "../util/notification.js";
 
 function Addmemberform({ setformview }) {
   const [formdata, setformdata] = useState({
@@ -36,7 +37,7 @@ function Addmemberform({ setformview }) {
       !description.trim() ||
       !membertype
     ) {
-      console.log("Kindly fill the credentials...");
+      errormessage("Kindly fill the credentials...");
       return;
     }
     try {
@@ -59,7 +60,7 @@ function Addmemberform({ setformview }) {
       const response = await axios.post(`${url}/cwcapi/addcwc`, newdata);
       const { success, message, data } = response.data;
       if (success) {
-        console.log("Data posted successfully");
+        successmessage("Data posted successfully");
         setformview(false);
         setformdata({
           id: "",
@@ -72,11 +73,11 @@ function Addmemberform({ setformview }) {
           membertype:""
         });
       } else {
-        console.log("Error:", message || "Failed to save member");
+        errormessage("Error:", message || "Failed to save member");
       }
     } catch (err) {
       const msg = err.response?.data?.message || err.message;
-      console.log("API Error posting new member:", msg);
+      errormessage("API Error posting new member:", msg);
     }
   };
 

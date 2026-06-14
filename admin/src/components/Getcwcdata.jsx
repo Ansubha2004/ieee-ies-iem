@@ -3,6 +3,7 @@ import axios from "axios";
 import clsx from "clsx";
 import { TbPhotoEdit } from "react-icons/tb";
 import Button from "../components/Button.jsx";
+import { successmessage, errormessage } from "../util/notification.js";
 
 function Getcwcdata({setcount}) {
   const [cwcdata, setcwcdata] = useState([]);
@@ -20,7 +21,7 @@ function Getcwcdata({setcount}) {
         const executives=getcwcdata.data.data.filter(member=>member.membertype==="Executives").length;
         setcount([cwc,executives]);
       } catch (err) {
-        console.log("API error fetching data....", err);
+        errormessage("API error fetching data....", err);
       }
     };
     fetchcwcdata();
@@ -66,7 +67,7 @@ function Getcwcdata({setcount}) {
       !description.trim() ||
       !membertype
     ) {
-      console.log("Dont leave the credentials blank...");
+      errormessage("Dont leave the credentials blank...");
       return;
     }
     try {
@@ -91,7 +92,7 @@ function Getcwcdata({setcount}) {
       );
       const { success, message, data } = response.data;
       if (success) {
-        console.log("Data posted successfully");
+        successmessage("Data posted successfully");
         setcwcdata((prev) =>
           prev.map((member) =>
             member._id === editId
@@ -115,10 +116,10 @@ function Getcwcdata({setcount}) {
         seteditId("");
         setpreview("");
       } else {
-        console.log("Error:", message || "Failed to save member");
+        errormessage("Error:", message || "Failed to save member");
       }
     } catch (err) {
-      console.log("API error updating members...:", err);
+      errormessage("API error updating members...:", err);
     }
   };
 
@@ -127,10 +128,10 @@ function Getcwcdata({setcount}) {
       const response = await axios.delete(`${url}/cwcapi/deletecwc/${cwc}`);
       const { success, message, error } = response.data;
       if (!success) {
-        console.log("Delete unsuccessful: ", error);
+        errormessage("Delete unsuccessful: ", error);
         return;
       }
-      console.log("Deletion successful:", message);
+      successmessage("Deletion successful:", message);
       setcwcdata((prev) => prev.filter((member) => member._id !== cwc));
     } catch (err) {
       console.log("API error deleting cwc member data: ", err);
