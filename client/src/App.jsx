@@ -9,6 +9,8 @@ import CWC from "./pages/CWC.jsx"
 import Footer from "./components/Footer.jsx"
 import { Routes, Route } from "react-router-dom"
 import Contact from "./pages/Contact.jsx"
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
         <Route path="/Contact" element={<Contact />} />
       </Routes>
       <Footer />
+      <ToastContainer/>
     </div>
   );
 }

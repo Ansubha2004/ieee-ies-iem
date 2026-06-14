@@ -7,6 +7,7 @@ import axios from "axios";
 import { ToastContainer } from "react-toastify";
 import { successmessage, errormessage } from "../utils/notification.jsx";
 
+
 function Contact() {
   const formCopy={
     "nameLabel": "Enter Name",
@@ -42,7 +43,7 @@ function Contact() {
     if(!name.trim() || !email.trim() || !subject.trim() || !message.trim())
     {
       errormessage("Kindly fill all the credentials");
-      console.log("Kindly fill up")
+      
       return ;
     }
     try{
@@ -56,7 +57,7 @@ function Contact() {
         )
         const {success,message}=response.data;
         if (success) {
-        console.log("Data posted successfully");
+    
         successmessage("Thanks for contacting! Will reach out to you soon ");
         //✅ Reset form data here
         setformdata({
@@ -71,6 +72,8 @@ function Contact() {
     catch(err)
     {
       console.log("Form api handling error");
+      errormessage("Unable to post your enquiry....")
+      return ;
     }
   }
 
