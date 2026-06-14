@@ -152,6 +152,10 @@ export const updatestatus = async (req, res) => {
       });
     }
 
+    
+
+    
+
     return res.json({
       success: true,
       message: "Status updated successfully",
@@ -205,3 +209,32 @@ export const searchenquiry = async (req, res) => {
   }
 }
 
+
+export const replyenquiry=async (req,res)=>{
+  try{
+    const {id}=req.params;
+    const {reply}=req.body;
+    const checkenquiry=await enquirymodel.findById(id);
+    if(!checkenquiry)
+    {
+      return res.json({
+        success:false,
+        message:"Enquiry not found to reply"
+      })
+    }
+
+    const replyenquiry=await enquirymodel.findByIdAndUpdate(id,{reply,replyDate:new Date()},{new:true});
+    return res.json({
+      success: true,
+      message: "Reply sent successfully",
+      data: replyenquiry})
+  }
+  catch(error)
+  {
+    return res.json({
+      success:false,
+      message:"API error replying to enquiry",
+      error
+    })
+  }
+}

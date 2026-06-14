@@ -49,4 +49,10 @@ const enquirySchema = new mongoose.Schema({
     }
 })
 
+enquirySchema.index(
+    { replyDate: 1 },
+    { expireAfterSeconds: 7 * 24 * 60 * 60 }
+  );
+  
+
 export default mongoose.model("Enquiry",enquirySchema)
