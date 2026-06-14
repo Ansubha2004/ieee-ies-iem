@@ -31,7 +31,7 @@ function Contactform() {
 
     getcontact();
   }, []);
-  console.log(formdata);
+ 
   const handlechange = (e) => {
     const { name, value } = e.target;
     const shallowcopy = { ...formdata };

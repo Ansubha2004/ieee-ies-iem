@@ -11,7 +11,16 @@ import {
 } from "lucide-react";
 import clsx from "clsx";
 
-function enquirycard({ enquiry, deleteenquiry, handlereply, replymode }) {
+function enquirycard({
+  enquiry,
+  deleteenquiry,
+  handlereply,
+  replymode,
+  clickreply,
+  reply,
+  setreply,
+  replysubmission,
+}) {
   const statusStyles = {
     new: {
       bg: "bg-blue-50",
@@ -85,11 +94,21 @@ function enquirycard({ enquiry, deleteenquiry, handlereply, replymode }) {
               {enquiry.message}
             </p>
             {replymode && (
-              <form className="mt-5 w-full flex gap-3">
+              <form
+                onSubmit={async (e) => {
+                  e.preventDefault();
+                  if(replysubmission())
+                    clickreply();
+                }}
+                className="mt-5 w-full flex gap-3"
+              >
                 <input
                   type="text"
                   name="reply"
-                  value=""
+                  value={reply}
+                  onChange={(e) => {
+                    setreply(e.target.value);
+                  }}
                   placeholder="Type reply..."
                   className="flex-1 bg-white rounded-full box-border px-5 text-[0.8rem] focus:outline-none border-[2px] border-black/10 focus:border-blue-600/40"
                 />
@@ -103,11 +122,27 @@ function enquirycard({ enquiry, deleteenquiry, handlereply, replymode }) {
             )}
           </div>
         </div>
+        {enquiry.status==="responded" && <div>
+          <p className="mb-1 mx-1 text-xs font-semibold uppercase tracking-wider text-gray-400">
+            Reply
+          </p>
+
+          <div className="rounded-[4px] bg-gray-100 p-3">
+            <p
+              className={clsx(
+                "mx-1 text-[0.7rem] leading-tight text-gray-600",
+                replymode ? "" : "line-clamp-2",
+              )}
+            >
+              {enquiry.reply}
+            </p>
+          </div>
+        </div>}
       </div>
 
       {/* Footer */}
       <div className="mt-3 flex items-center justify-between border-t border-gray-100 pt-4">
-        <button
+        {enquiry.status==="responded"?<p className=" flex items-center gap-2 text-[0.7rem] text-gray-500">Replied at {new Date(enquiry.replyDate).toLocaleString()}</p>:<button
           type="button"
           onClick={handlereply}
           className={clsx(
@@ -123,7 +158,7 @@ function enquirycard({ enquiry, deleteenquiry, handlereply, replymode }) {
             <Reply size={16} />
           )}
           {replymode ? "Cancel" : "Reply"}
-        </button>
+        </button>}
 
         <div className="flex gap-2">
           <button

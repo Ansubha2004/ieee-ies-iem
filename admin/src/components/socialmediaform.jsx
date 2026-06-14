@@ -40,7 +40,7 @@ function socialmediaform() {
     };
     setformdata(shallowcopy);
   };
-  console.log(formdata);
+  
   const url =
     import.meta.env.VITE_API_URL || "https://ieee-ies-iem.onrender.com";
   useEffect(() => {
