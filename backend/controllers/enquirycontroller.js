@@ -175,13 +175,13 @@ export const searchenquiry = async (req, res) => {
       $or: [
         {
           name: {
-            $regex: "rah",
+            $regex: "query",
             $options: "i"
           }
         },
         {
           email: {
-            $regex: "rah",
+            $regex: "query",
             $options: "i"
           }
         }
