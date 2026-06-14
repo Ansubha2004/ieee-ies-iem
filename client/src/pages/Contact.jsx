@@ -43,17 +43,18 @@ function Contact() {
     {
       errormessage("Kindly fill all the credentials");
       console.log("Kindly fill up")
+      return ;
     }
     try{
-        const apiUrl = import.meta.env.VITE_API_URL || "https://ieee-ies-iem.onrender.com";
-        const response=await axios.post(`${apiUrl}/formapi/submitdata`,formdata,
+        const apiUrl = "https://ieee-ies-iem.onrender.com";
+        const response=await axios.post(`${apiUrl}/enquiryapi/submitenquiry`,formdata,
           {
           headers: {
             "Content-Type": "application/json",
           }
         }
         )
-        const {success,error,message}=response.data;
+        const {success,message}=response.data;
         if (success) {
         console.log("Data posted successfully");
         successmessage("Thanks for contacting! Will reach out to you soon ");
@@ -65,10 +66,7 @@ function Contact() {
           message: "",
         });
       }
-      if (error) {
-        errormessage("Glitch occured");
-        console.log("Error occured while data posting");
-      }
+      
     }
     catch(err)
     {
@@ -95,7 +93,7 @@ function Contact() {
             
             <div className="flex flex-col mb-3 sm:col-span-1 col-span-2">
               <label htmlFor="email" className="text-sm font-semibold text-amber-800 tracking-wide mx-1">{formCopy.emailLabel}</label>
-              <input id="email" type="text" onChange={handlechange} value={formdata.email} placeholder={formCopy.emailPlaceholder} name="email" className="inputbox" />
+              <input id="email" type="email" onChange={handlechange} value={formdata.email} placeholder={formCopy.emailPlaceholder} name="email" className="inputbox" />
             </div>
             <div className="flex flex-col mb-3 col-span-2">
               <label htmlFor="subject" className="text-sm font-semibold text-amber-800 tracking-wide mx-1">{formCopy.subjectLabel}</label>
