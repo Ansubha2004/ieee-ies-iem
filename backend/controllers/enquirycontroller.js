@@ -171,22 +171,25 @@ export const updatestatus = async (req, res) => {
 export const searchenquiry = async (req, res) => {
   try {
     const { query } = req.query;
-    const search = await enquirymodel.find({
+    const searchquery={
       $or: [
         {
           name: {
-            $regex: "query",
+            $regex: query,
             $options: "i"
           }
         },
         {
           email: {
-            $regex: "query",
+            $regex: query,
             $options: "i"
           }
         }
       ]
-    })
+    }
+   
+    const search = await enquirymodel.find(searchquery)
+
     return res.status(200).json({
       success: true,
       message:"Fetched based on search",
