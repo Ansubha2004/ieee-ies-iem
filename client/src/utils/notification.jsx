@@ -2,12 +2,14 @@ import {toast} from "react-toastify"
 
 export const successmessage=(message)=>{
     toast.success(message,{
-        postion:"top-center"
+        position:"bottom-right",
+        autoClose: 3000,
     })
 }
 
 export const errormessage=(message)=>{
     toast.error(message,{
-        postion:"top-center"
+        position:"bottom-right",
+        autoClose: 3000,
     })
 }

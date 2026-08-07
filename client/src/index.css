@@ -10,7 +10,6 @@ html {
   background-color: white;
   width: 100vw;
   height: auto;
-  user-select: none;
   position: relative;
 }
 .hide-scrollbar::-webkit-scrollbar {
