@@ -1,0 +1,52 @@
+import mongoose from "mongoose";
+
+const eventSchema=new mongoose.Schema({
+    id: {
+        type: Number,
+        required: true,
+        unique: true
+    },
+    link: {
+        type: String,
+        required: true
+    },
+    poster:{
+        type: String,
+        required: true
+    },
+    name: {
+        type: String,
+        required: true
+    },
+    description: {
+        type: String,
+        required: true
+    },
+    venue: {
+        type: String,
+        required: true
+    },
+    eventdate: {
+        type: String,
+        required: true
+    },
+    gallery: {
+        type: String,
+        required: true
+    },
+    details: {
+        type: String,
+        required: true
+    },
+    status:{
+        type: String,
+        default:["upcoming","completed","cancelled"],
+        required: true
+    },
+    date: {
+        type: Date,
+        required: true
+    },
+})
+
+export default mongoose.model("Event", eventSchema);

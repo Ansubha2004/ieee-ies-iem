@@ -4,6 +4,7 @@ import Sidebar from "../src/components/sidebar.jsx"
 import Navbar from "../src/components/navbar.jsx"
 import CWCs from "./pages/cwcs.jsx"
 import Contact from "./pages/contactpage.jsx"
+import Events from "./pages/eventpage.jsx"
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -17,6 +18,7 @@ function App() {
           <Routes>
             <Route path="cwcs" element={<CWCs />}/>
             <Route path="contact" element={<Contact />}/>
+            <Route path="events" element={<Events/>} />
           </Routes>
         </main>
       </div>
