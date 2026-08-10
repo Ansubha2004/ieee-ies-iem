@@ -14,6 +14,11 @@ const eventSchema=new mongoose.Schema({
         type: String,
         required: true
     },
+    posterid: {
+        type: String,
+        required: true,
+        unique: true
+    },
     name: {
         type: String,
         required: true
@@ -40,7 +45,7 @@ const eventSchema=new mongoose.Schema({
     },
     status:{
         type: String,
-        default:["upcoming","completed","cancelled"],
+        enum:["upcoming","completed","cancelled","ongoing"],
         required: true
     },
     date: {
