@@ -2,7 +2,7 @@ import React from 'react'
 import Button from "../components/Button.jsx";
 import { HiOutlineCalendar, HiOutlineLocationMarker, HiOutlineTag } from "react-icons/hi";
 
-function Eventdetails({ name, description, venue, date, image, gallery, details, link }) {
+function Eventdetails({poster, name, description, venue, eventdate, gallery, details, link }) {
     const handleGalleryClick = (e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -14,7 +14,7 @@ function Eventdetails({ name, description, venue, date, image, gallery, details,
             <a href={link} target="_blank" rel="noopener noreferrer" className="flex flex-col flex-1">
                 <div className="relative overflow-hidden">
                     <img
-                        src={image}
+                        src={poster}
                         alt={name}
                         className="w-full aspect-[16/9] object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                     />
@@ -32,7 +32,7 @@ function Eventdetails({ name, description, venue, date, image, gallery, details,
                     <div className="flex flex-col gap-1">
                         <div className="flex items-center gap-1.5 text-slate-500 text-[11px] sm:text-xs">
                             <HiOutlineCalendar className="text-amber-600 shrink-0 text-sm" />
-                            <span className="font-medium truncate">{date}</span>
+                            <span className="font-medium truncate">{eventdate}</span>
                         </div>
                         <div className="flex items-center gap-1.5 text-slate-500 text-[11px] sm:text-xs">
                             <HiOutlineLocationMarker className="text-amber-600 shrink-0 text-sm" />

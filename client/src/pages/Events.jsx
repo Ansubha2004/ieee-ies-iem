@@ -1,31 +1,50 @@
-import React, { useEffect } from 'react'
-import orangebg3 from "../assets/designs/orangebg3.png"
-import EventBanner from '../components/EventBanner.jsx';
-import Eventdetails from '../components/Eventdetails.jsx';
+import React, { useEffect, useState } from "react";
+import orangebg3 from "../assets/designs/orangebg3.png";
+import EventBanner from "../components/EventBanner.jsx";
+import Eventdetails from "../components/Eventdetails.jsx";
 import events from "../data/events.json";
-import eventimages from '../utils/eventposter.jsx';
-import { useLocation } from 'react-router-dom';
+import eventimages from "../utils/eventposter.jsx";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
 
 function Events() {
-
   const location = useLocation();
-  const eventList = events.slice(0, events.length - 1).reverse();
+  const [eventList, seteventList] = useState([]);
 
   useEffect(() => {
     if (location.hash) {
       const element = document.querySelector(location.hash);
       if (element) {
         setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
         }, 100);
       }
     }
+
+    const fetchevents = async () => {
+      try {
+        const result = await axios.get(
+          "https://ieee-ies-iem.onrender.com/eventapi/getallevents",
+        );
+        seteventList(result.data.data);
+      } catch (error) {
+        console.error("Error Fetching data", error);
+      }
+    };
+    fetchevents();
   }, [location]);
 
   return (
-    <div id="eventbanner" className="relative min-h-[calc(100vh-7.6rem)] flex flex-col items-center scroll-mt-[100px] lg:scroll-mt-[140px] z-[1] box-border">
+    <div
+      id="eventbanner"
+      className="relative min-h-[calc(100vh-7.6rem)] flex flex-col items-center scroll-mt-[100px] lg:scroll-mt-[140px] z-[1] box-border"
+    >
       <div className="relative w-full flex justify-center h-auto">
-        <img src={orangebg3} className="absolute w-full h-[400px] z-[0] object-cover" alt="" />
+        <img
+          src={orangebg3}
+          className="absolute w-full h-[400px] z-[0] object-cover"
+          alt=""
+        />
         <EventBanner />
       </div>
 
@@ -49,11 +68,11 @@ function Events() {
             {eventList.map((event, index) => (
               <Eventdetails
                 key={index}
-                image={eventimages[index + 1]}
+                poster={event.poster}
                 name={event.name}
-                description={event.Description}
+                description={event.description}
                 venue={event.venue}
-                date={event.date}
+                eventdate={event.eventdate}
                 gallery={event.gallery}
                 details={event.details}
                 link={event.link}
@@ -63,7 +82,7 @@ function Events() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Events
+export default Events;
