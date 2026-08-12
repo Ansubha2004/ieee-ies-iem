@@ -4,7 +4,7 @@ import cloudinary from "../config/cloudinary.js";
 export const addevent=async(req,res)=>{
     try {
         const {id,link,name,description,venue,eventdate,gallery,details,status}=req.body;
-        if (!name || !id || !link || !description || !venue || !date || !gallery || !details || !status) {
+        if (!name || !id || !link || !description || !venue || !eventdate || !gallery || !details || !status) {
             return res.json({
               success: false,
               message: "Fill the event details",
@@ -24,7 +24,6 @@ export const addevent=async(req,res)=>{
           const createevent = await eventmodel.create({
             id,
             link,
-            role,
             poster: result.secure_url,
             posterid: result.public_id,
             name,

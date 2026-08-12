@@ -48,10 +48,7 @@ const eventSchema=new mongoose.Schema({
         enum:["upcoming","completed","cancelled","ongoing"],
         required: true
     },
-    date: {
-        type: Date,
-        required: true
-    },
-})
+    
+},{ timestamps: true })
 
 export default mongoose.model("Event", eventSchema);
