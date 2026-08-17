@@ -25,6 +25,7 @@ const eventSchema=new mongoose.Schema({
     },
     description: {
         type: String,
+        enum:["SEMINAR","WORKSHOP","INDUSTRY VISIT","AWARNESS PROGRAM","FLAGSHIP CELEBRATION","CHARITY EVENT","TECHNICAL WEEK","OTHERS"],
         required: true
     },
     venue: {
@@ -49,6 +50,6 @@ const eventSchema=new mongoose.Schema({
         required: true
     },
     
-},{ timestamps: true })
+},{ timestamps: true });
 
 export default mongoose.model("Event", eventSchema);
