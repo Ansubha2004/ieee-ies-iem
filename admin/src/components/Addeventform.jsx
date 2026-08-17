@@ -283,6 +283,8 @@ function Addeventform({ setformview }) {
             <option value="FLAGSHIP CELEBRATION">FLAGSHIP CELEBRATION</option>
             <option value="CHARITY EVENT">CHARITY EVENT</option>
             <option value="TECHNICAL WEEK">TECHNICAL WEEK</option>
+            <option value="DISTINGUISHED LECTURE">DISTINGUISHED LECTURE</option>
+            <option value="HACKATHON/COMPETITION">HACKATHON/COMPETITION</option>
             <option value="OTHERS">OTHERS</option>
           </select>
         </div>

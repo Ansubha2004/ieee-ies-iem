@@ -25,7 +25,7 @@ const eventSchema=new mongoose.Schema({
     },
     description: {
         type: String,
-        enum:["SEMINAR","WORKSHOP","INDUSTRY VISIT","AWARNESS PROGRAM","FLAGSHIP CELEBRATION","CHARITY EVENT","TECHNICAL WEEK","OTHERS"],
+        enum:["SEMINAR","WORKSHOP","INDUSTRY VISIT","AWARNESS PROGRAM","FLAGSHIP CELEBRATION","CHARITY EVENT","TECHNICAL WEEK","HACKATHON/COMPETITION","DISTINGUISHED LECTURE","OTHERS"],
         required: true
     },
     venue: {
