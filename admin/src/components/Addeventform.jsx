@@ -267,13 +267,13 @@ function Addeventform({ setformview }) {
 
           <select
             required
-            id="link"
-            name="link"
+            id="description"
+            name="description"
             type="url"
             placeholder="https://example.com/event"
             className="inputbox"
             onChange={handlechange}
-            value={formdata.link}
+            value={formdata.description}
           >
             <option value="">Select type of event</option>
             <option value="SEMINAR">SEMINAR</option>
