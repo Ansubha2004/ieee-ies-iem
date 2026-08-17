@@ -269,7 +269,7 @@ function Addeventform({ setformview }) {
             required
             id="description"
             name="description"
-            type="url"
+            type="text"
             placeholder="https://example.com/event"
             className="inputbox"
             onChange={handlechange}
