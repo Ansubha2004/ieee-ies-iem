@@ -4,6 +4,7 @@ import { IoMdAdd } from "react-icons/io";
 import { AiOutlineExport } from "react-icons/ai";
 import axios from "axios"
 import Addeventform from "../components/Addeventform";
+import Geteventdata from "../components/Geteventdata";
 import clsx from "clsx";
 
 function eventpage() {
@@ -68,11 +69,11 @@ function eventpage() {
             CHAPTER'S EVENT INFORMATION
           </p>
           <div className="flex paratext gap-3 text-[0.7rem] manrope">
-          <p className="text-green-700">Upcoming Events: <b className="text-[0.9rem]">0</b></p>
-          <p className="text-red-600">Events Completed: <b className="text-[0.9rem]">0</b></p>
+          <p className="text-green-700">Upcoming Events: <b className="text-[0.9rem]">{count[0]}</b></p>
+          <p className="text-red-600">Events Completed: <b className="text-[0.9rem]">{count[1]}</b></p>
           </div>
         </div>
-        
+        <Geteventdata setcount={setcount} />
       </div>
   </section>;
 }
