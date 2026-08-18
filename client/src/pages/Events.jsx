@@ -25,7 +25,7 @@ function Events() {
         const result = await axios.get(
           "https://ieee-ies-iem.onrender.com/eventapi/getallevents",
         );
-        seteventList(result.data.data);
+        seteventList(result.data.data.reverse());
       } catch (error) {
         console.error("Error Fetching data", error);
       }

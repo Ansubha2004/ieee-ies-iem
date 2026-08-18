@@ -73,7 +73,7 @@ function Geteventdata({ setcount }) {
             ? response.data
             : [];
 
-        seteventdata(events);
+        seteventdata(events.reverse());
 
         const upcoming = events.filter(
           (event) => event.status === "upcoming",
@@ -422,7 +422,7 @@ function Geteventdata({ setcount }) {
                   </div>
 
                   {/* Actions */}
-                  <div className="flex gap-2 mt-3 md:mt-0">
+                  <div className="ml-5 flex gap-2 mt-3 md:mt-0">
                     <Button
                       themecss={`px-4 py-2 buttonanimation1 rounded-md ${
                         editId === event._id
