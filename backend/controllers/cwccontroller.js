@@ -88,11 +88,14 @@ export const updatecwc = async (req, res) => {
       const existingMember = await cwcmodel.findById(mongoId);
 
       if (existingMember?.imageid) {
-        await cloudinary.uploader.destroy(
+        console.log("Deleting:", existingMember.imageid);
+      
+        const deleteResult = await cloudinary.uploader.destroy(
           existingMember.imageid
         );
+      
+        console.log("Cloudinary delete result:", deleteResult);
       }
-
       const base64Image = `data:${req.file.mimetype};base64,${req.file.buffer.toString("base64")}`;
       const result = await cloudinary.uploader.upload(base64Image, {
         folder: "cwc_member",

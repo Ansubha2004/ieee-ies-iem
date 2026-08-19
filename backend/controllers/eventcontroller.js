@@ -65,11 +65,79 @@ export const getallevents = async (req, res) => {
   }
 };
 
+export const updateevent = async (req, res) => {
+  try {
+    const { id: mongoId } = req.params;
+    const { id,link, name, description, venue,eventdate,gallery,details,status } = req.body;
+
+    if (!name || !link || !description || !venue || !eventdate || !gallery || !details || !status) {
+      return res.json({
+        success: false,
+        message: "Credentials of the event are required",
+      });
+    }
+
+    const update = {
+      id: Number(id),
+      link,
+      name,
+      description,
+      venue,
+      eventdate,
+      gallery,
+      details,
+      status
+    };
+
+    if (req.file) {
+
+      const existingEvent = await eventmodel.findById(mongoId);
+
+      if (existingEvent?.posterid) {
+        console.log("Deleting:", existingEvent.posterid);
+      
+        const deleteResult = await cloudinary.uploader.destroy(
+          existingEvent.posterid
+        );
+      
+        console.log("Cloudinary delete result:", deleteResult);
+      }
+      const base64Image = `data:${req.file.mimetype};base64,${req.file.buffer.toString("base64")}`;
+      const result = await cloudinary.uploader.upload(base64Image, {
+        folder: "events_folder",
+      });
+      update.poster = result.secure_url;
+      update.posterid = result.public_id;
+    }
+
+    const updated = await eventmodel.findByIdAndUpdate(mongoId, update, {
+      new: true,
+      runValidators: true,
+    });
+
+    if (!updated) {
+      return res.json({ success: false, message: "Event not located" });
+    }
+
+    return res.json({
+      success: true,
+      message: "Event data updated successfully",
+      data: updated,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: "Error updating Event Data",
+      error: error.message,
+    });
+  }
+};
+
+
 export const deleteevent = async (req, res) => {
   try {
     const { id: mongoId } = req.params;
     const deleteimage = await eventmodel.findById(mongoId);
-
     if (!deleteimage) {
       return res.json({
         success: false,
