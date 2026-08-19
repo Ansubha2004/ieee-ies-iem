@@ -79,7 +79,7 @@ export const deleteevent = async (req, res) => {
 
     if (deleteimage.posterid) {
       await cloudinary.uploader.destroy(
-        deleteimage.posterId
+        deleteimage.posterid
       )
     }
 
@@ -97,7 +97,7 @@ export const deleteevent = async (req, res) => {
     return res.status(500).json({
       success: false,
       message: "Error deleting this event data",
-      error: error.message,
+      error: err.message,
     });
   }
 } 
