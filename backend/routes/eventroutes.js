@@ -7,6 +7,6 @@ const router = express.Router();
 router.post("/addevent",upload.single("poster"),addevent);
 router.get("/getallevents",getallevents);
 router.delete("/deleteevent/:id",deleteevent);
-router.put("/updateevent/:id",updateevent);
+router.put("/updateevent/:id",upload.single("poster"),updateevent);
 
 export default router;
