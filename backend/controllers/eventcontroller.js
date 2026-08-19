@@ -83,7 +83,7 @@ export const deleteevent = async (req, res) => {
       )
     }
 
-    const deleteevent = await eventmodel.findByIdAndDelete(mondoId);
+    const deleteevent = await eventmodel.findByIdAndDelete(mongoId);
     if (!deleteevent) {
       return res.json({ success: false, message: "Cant delete event as it doesnt exists" });
     }
