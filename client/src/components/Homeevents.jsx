@@ -28,7 +28,7 @@ function Homeevents() {
                 className="w-full sm:w-4/7 flex flex-col items-center sm:items-start justify-between rounded-[10px] "
             >
                 <br className="sm:hidden" />
-                <p className="card-title mb-6">
+                <p className="card-title text-[2rem] sm:text-[2.5rem] mb-6">
                     Event Schedules
                 </p>
                 <div className="flex flex-col w-full items-start gap-7 ">
