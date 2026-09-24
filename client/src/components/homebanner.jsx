@@ -3,10 +3,9 @@ import homebackground from "../assets/images/homebackground.png";
 import ieeeieslogo2 from "../assets/images/ieeeieslogo2.png";
 import iemlogo from "../assets/images/iemlogo.png";
 import Button from "./Button.jsx";
-import clsx from "clsx"
+import clsx from "clsx";
 
 function Homebanner() {
-  
   const quotes = [
     "IEEE is the world's largest technical professional organization dedicated to advancing technology",
     "At IEEE IES SBC, we turn knowledge into action and technology into impact.",
@@ -30,7 +29,9 @@ function Homebanner() {
       />
       <div className="relative z-[1] w-full h-full bg-black/50 flex flex-col justify-evenly items-center box-border px-[3%] py-[3%]">
         <div className="hero-title whitespace-nowrap text-xl sm:text-2xl md:text-3xl lg:text-5xl">
-          <p className="textshadow text-sm sm:text-lg md:text-xl font-medium text-orange-100/90">Welcome to IEEE</p>
+          <p className="textshadow text-sm sm:text-lg md:text-xl font-medium text-orange-100/90">
+            Welcome to IEEE
+          </p>
           <p className="textshadow">Industrial Electronics Society</p>
           <p className="textshadow text-xs sm:text-sm md:text-base font-semibold text-yellow-50/95 mt-1">
             Student's Branch Chapter | EE & EEE | IEM, Kolkata
@@ -40,9 +41,9 @@ function Homebanner() {
           id="logo"
           className="w-full flex justify-center items-center scale-[0.8]"
         >
-          <img src={ieeeieslogo2} className="h-[2.8rem]" />
+          <img src={ieeeieslogo2} className="h-[4.6rem] sm:h-[7.8rem]" />
         </div>
-        <p className="hero-quote w-[85%] sm:w-[75%] max-w-2xl text-sm sm:text-base">
+        <p className="hero-quote w-[85%] sm:w-full max-w-2xl text-sm sm:text-base">
           {quotes[currentIndex]}
         </p>
         <Button
@@ -50,7 +51,7 @@ function Homebanner() {
           click={() => {
             const section = document.getElementById("view");
             if (section) {
-              section.scrollIntoView({ behavior: "smooth", block:"start" });
+              section.scrollIntoView({ behavior: "smooth", block: "start" });
             }
           }}
           Content="Get Insights"
