@@ -6,10 +6,8 @@ import { successmessage, errormessage } from "../util/notification";
 function Gallerycard() {
   const [gallery, setGallery] = useState([]);
   const url =
-    import.meta.env.VITE_API_URL || "https://ieee-ies-iem.onrender.com";
-  useEffect(() => {
-    console.log(gallery);
-  }, []);
+  import.meta.env.VITE_API_URL || "https://ieee-ies-iem.onrender.com";
+  
   const handlechange = async (e) => {
     const file = e.target.files[0];
 
@@ -52,6 +50,24 @@ function Gallerycard() {
     };
     fetchimages();
   }, []);
+
+
+  const deleteimage = async (img) => {
+    
+    try {
+      const response = await axios.delete(`${url}/galleryapi/deleteimage/${img}`);
+      const { success,message} = response.data;
+      console.log(success,message)
+      if (!success) {
+        errormessage("Delete unsuccessful: ");
+        return;
+      }
+      successmessage("Deletion successful:");
+      setGallery((prev) => prev.filter((image) => image.id !== img));
+    } catch (err) {
+      console.log("API error deleting gallery: ", err);
+    }
+  };
 
   return (
     <section className="w-full rounded-xl border border-slate-200 bg-white">
@@ -127,20 +143,9 @@ function Gallerycard() {
 
                 {/* Actions */}
                 <div className="absolute right-2 top-2 flex gap-1">
+                  
                   <button
-                    className="
-                      flex h-7 w-7 items-center justify-center
-                      rounded-md bg-white/95
-                      text-slate-600
-                      shadow-sm
-                      hover:text-blue-600
-                    "
-                    title="Edit"
-                  >
-                    <Pencil size={14} />
-                  </button>
-
-                  <button
+                    onClick={()=>{deleteimage(item.id)}}
                     className="
                       flex h-7 w-7 items-center justify-center
                       rounded-md bg-white/95

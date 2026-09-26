@@ -14,9 +14,13 @@ export const addimage = async (req, res) => {
             folder: "gallery_folder",
         });
 
-        const count = await gallerymodel.countDocuments();
+        const lastImage = await gallerymodel
+    .findOne()
+    .sort({ id: -1 });
+
+const newId = lastImage ? lastImage.id + 1 : 1;
         const uploadimage=await gallerymodel.create({
-            id:count+1,
+            id:newId,
             galleryimage:result.secure_url,
             imageid:result.public_id
         });
@@ -55,3 +59,45 @@ export const getimage=async (req,res)=>{
         })
     }
 }
+
+
+
+export const deleteimage = async (req,res)=>{
+    try
+    {
+        const {id}=req.params;
+        const deleteimg=await gallerymodel.findOne({ id: Number(id)});
+
+        if(!deleteimg){
+            return res.json({
+                success:false,
+                message:"Image already doesnt exist"
+            })
+        }
+
+        if(deleteimg.imageid)
+        {
+            await cloudinary.uploader.destroy(deleteimg.imageid);
+        }
+
+        const deleteimage = await gallerymodel.findOneAndDelete({id:Number(id)});
+        if (!deleteimage) {
+            return res.json({ success: false, message: "Cant delete image as it doesnt exists" });
+          }
+      
+          return res.json({
+            success: true,
+            message: "Gallery image deleted successfully",
+          });
+
+
+    }
+    catch(error)
+    {
+        return res.json({
+            success:false,
+            message:"Failed to delete image",
+            error:error.message
+        })
+    }
+} 
