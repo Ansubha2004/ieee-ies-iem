@@ -6,6 +6,7 @@ import contactroute from "./routes/contactroute.js";
 import socialmediaroute from "./routes/socialmediaroute.js";
 import enquiryroute from "./routes/enquiryroute.js";
 import eventroutes from "./routes/eventroutes.js";
+import galleryroute from "./routes/galleryroute.js";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -40,6 +41,7 @@ app.use("/contactapi",contactroute);
 app.use("/socialmediaapi",socialmediaroute);
 app.use('/enquiryapi',enquiryroute);
 app.use('/eventapi',eventroutes);
+app.use("/galleryapi",galleryroute);
 
 
 
