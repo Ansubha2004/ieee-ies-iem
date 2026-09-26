@@ -39,7 +39,7 @@ export const addimage = async (req, res) => {
 
 export const getimage=async (req,res)=>{
     try{
-        const galleryimages = await gallerymodel.find().sort({ id: 1 });
+        const galleryimages = (await gallerymodel.find().sort({ id: 1 })).reverse();
         return res.json({
           success: true,
           message: "All gallery images fetched successfully",

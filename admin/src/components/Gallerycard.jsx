@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Images, Plus, Pencil, Trash2, CalendarDays } from "lucide-react";
 import axios from "axios";
-import {successmessage,errormessage} from "../util/notification";
+import { successmessage, errormessage } from "../util/notification";
 
 function Gallerycard() {
   const [gallery, setGallery] = useState([]);
@@ -20,22 +20,38 @@ function Gallerycard() {
       formData.append("galleryimage", file);
       const response = await axios.post(`${url}/galleryapi/addimage`, formData);
 
-      const { success, message,data } = response.data;
+      const { success, message, data } = response.data;
       if (success) {
         successmessage("Image uploaded successfully");
         // Add newly uploaded image to state
         setGallery((prev) => [...prev, data]);
-      }
-      else {
+      } else {
         errormessage(message || "Failed to save event");
       }
-
-
-      
     } catch (error) {
       console.error("Upload failed:", error);
     }
   };
+
+  useEffect(() => {
+    const fetchimages = async () => {
+      try {
+        const response = await axios.get(`${url}/galleryapi/getimage`);
+        const { success, data } = response.data;
+
+        if (success) {
+          setGallery(data);
+        }
+        else
+        {
+            errormessage("Failed to display");
+        }
+      } catch (err) {
+        errormessage("API error in gallery");
+      }
+    };
+    fetchimages();
+  }, []);
 
   return (
     <section className="w-full rounded-xl border border-slate-200 bg-white">
@@ -104,8 +120,8 @@ function Gallerycard() {
               {/* Image */}
               <div className="relative h-32 bg-slate-100">
                 <img
-                  src={item.image}
-                  alt={item.title}
+                  src={item.galleryimage}
+             
                   className="h-full w-full object-cover"
                 />
 

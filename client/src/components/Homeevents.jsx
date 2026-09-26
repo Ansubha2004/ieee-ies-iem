@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import event1 from "../assets/upcomingevents/installationieeeies.jpeg"
-import event2 from "../assets/upcomingevents/aiappmakingevent.jpeg"
 import Button from "../components/Button.jsx";
 import Events from "../data/events.json";
 import { useNavigate } from "react-router-dom";
