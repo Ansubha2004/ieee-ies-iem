@@ -3,6 +3,7 @@ import "./App.css";
 import Sidebar from "../src/components/sidebar.jsx"
 import Navbar from "../src/components/navbar.jsx"
 import CWCs from "./pages/cwcs.jsx"
+import Dashboard from "./pages/dashboardanalytics.jsx"
 import Contact from "./pages/contactpage.jsx"
 import Events from "./pages/eventpage.jsx"
 import { ToastContainer } from "react-toastify";
@@ -16,6 +17,7 @@ function App() {
         <Navbar/>
         <main className="flex-1 overflow-y-auto hide-scrollbar min-h-0 w-full">
           <Routes>
+            <Route path="/" element={<Dashboard/>}/>
             <Route path="cwcs" element={<CWCs />}/>
             <Route path="contact" element={<Contact />}/>
             <Route path="events" element={<Events/>} />
