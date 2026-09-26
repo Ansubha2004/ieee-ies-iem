@@ -5,18 +5,11 @@ import { useNavigate } from "react-router-dom";
 
 function Homeevents() {
 
-    const eventposter = [event2];
+   
 
     const [Index, setIndex] = useState(0);
 
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            setIndex((prev) => (prev + 1) % eventposter.length);
-        }, 10000);
-
-        return () => clearInterval(intervalId); // Cleanup to avoid memory leak
-    }, [eventposter.length]);
-
+    
     const navigate=useNavigate();
 
     return (
@@ -52,7 +45,7 @@ function Homeevents() {
                 <div className="w-full text-center bg-amber-600 px-3 py-2.5 text-white section-label">
                     Upcoming Event
                 </div>
-                <img src={eventposter[Index]} className="w-full aspect-[16/11]  p-[3%]" />
+                <img src="" className="w-full aspect-[16/11]  p-[3%]" />
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSexnIc1FB_y8E_TO4w6RLG7IKPiJJhkwHgWHVII8qMUGrZhpg/viewform" target="main" className="w-full  mb-5 text-center font-bold text-blue-800 linkanimate">Registration Portal is Live !</a>
             </div>
         </div>
