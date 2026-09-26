@@ -1,18 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Images, Plus, Pencil, Trash2, CalendarDays } from "lucide-react";
+import axios from "axios";
+import {successmessage,errormessage} from "../util/notification";
 
 function Gallerycard() {
-  const [gallery, setGallery] = useState([
-    {
-      id: 1,
-      title: "AARAMBH 1.0",
-      date: "16 July 2025",
-      image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678",
-    }
-  ]);
+  const [gallery, setGallery] = useState([]);
+  const url =
+    import.meta.env.VITE_API_URL || "https://ieee-ies-iem.onrender.com";
+  useEffect(() => {
+    console.log(gallery);
+  }, []);
+  const handlechange = async (e) => {
+    const file = e.target.files[0];
 
-  const handleDelete = (id) => {
-    setGallery((prev) => prev.filter((item) => item.id !== id));
+    if (!file) return;
+
+    try {
+      const formData = new FormData();
+      formData.append("galleryimage", file);
+      const response = await axios.post(`${url}/galleryapi/addimage`, formData);
+
+      const { success, message,data } = response.data;
+      if (success) {
+        successmessage("Image uploaded successfully");
+        // Add newly uploaded image to state
+        setGallery((prev) => [...prev, data]);
+      }
+      else {
+        errormessage(message || "Failed to save event");
+      }
+
+
+      
+    } catch (error) {
+      console.error("Upload failed:", error);
+    }
   };
 
   return (
@@ -35,7 +57,13 @@ function Gallerycard() {
           </div>
         </div>
         <label>
-          <input name="image" type="file" accept="image/*" className="hidden" />
+          <input
+            name="galleryimage"
+            onChange={handlechange}
+            type="file"
+            accept="image/*"
+            className="hidden"
+          />
           <div
             className="
             flex items-center gap-1.5
@@ -97,7 +125,6 @@ function Gallerycard() {
                   </button>
 
                   <button
-                    onClick={() => handleDelete(item.id)}
                     className="
                       flex h-7 w-7 items-center justify-center
                       rounded-md bg-white/95
