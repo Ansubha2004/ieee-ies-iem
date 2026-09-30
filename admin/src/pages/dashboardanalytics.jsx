@@ -1,5 +1,6 @@
 import React from "react";
 import Gallery from "../components/Gallerycard.jsx";
+import Video from "../components/Video.jsx"
 
 function dashboardanalytics() {
   return (
@@ -12,6 +13,8 @@ function dashboardanalytics() {
           </p>
         </div>
       </div>
+      <br />
+      <Video />
       <br />
       <Gallery/>
     </section>
