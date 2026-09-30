@@ -23,7 +23,7 @@ function Videos() {
         console.log(response.data.data)
         if (response.data.success) {
           setVideo(response.data.data);
-          console.log(response.data.data)
+          
         } else {
           setVideo(null);
         }

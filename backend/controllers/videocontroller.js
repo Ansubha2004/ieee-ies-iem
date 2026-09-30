@@ -31,23 +31,27 @@ export const editvideo = async (req, res) => {
                 video: uploadvideo.secure_url,
                 videoid: uploadvideo.public_id
             });
+            return res.json({
+                success: true,
+                message: "Video uploaded successfully",
+                data: upload
+            });
         }
-        else {
-            if (checkvideo.videoid) {
-                await cloudinary.uploader.destroy(checkvideo.videoid, {
-                    resource_type: "video"
-                })
-            }
-             checkvideo.video = uploadvideo.secure_url;
-            checkvideo.videoid = uploadvideo.public_id;
 
-            await video.save();
-
+        if (checkvideo.videoid) {
+            await cloudinary.uploader.destroy(checkvideo.videoid, {
+                resource_type: "video"
+            });
         }
+
+        checkvideo.video = uploadvideo.secure_url;
+        checkvideo.videoid = uploadvideo.public_id;
+        await checkvideo.save();
+
         return res.json({
             success: true,
             message: "Video uploaded successfully",
-            data:checkvideo
+            data: checkvideo
         });
 
     }
