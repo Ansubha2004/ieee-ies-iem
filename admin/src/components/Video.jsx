@@ -11,8 +11,10 @@ function Videos() {
       try {
         const response = await axios.get(`${url}/videoapi/getvideo`);
         if (response.data.success) {
-          setVideo(response.data.data);
+          setVideo(response.data.video);
         }
+        else
+            errormessage(response.data.message)
       } catch (error) {
         console.error("Video fetch error:", error);
         errormessage(error);
@@ -26,7 +28,7 @@ function Videos() {
     try {
       const formData = new FormData();
       formData.append("video", file);
-      const response = await axios.post(`${url}/videoapi/addvideo`, formData);
+      const response = await axios.put(`${url}/videoapi/editvideo`, formData);
       const { success, message, data } = response.data;
       if (success) {
         setVideo(data);
